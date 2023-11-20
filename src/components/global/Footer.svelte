@@ -1,4 +1,5 @@
 <script>
+  import { information, contact } from "$config";
   import { Facebook, Twitter, Instagram } from "lucide-svelte";
   import Logo from "$components/global/Logo.svelte";
 
@@ -10,12 +11,16 @@
 </script>
 
 <footer class="bg-white text-gray-800 py-8 px-4">
-  <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start justify-between">
+  <div
+    class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start justify-between"
+  >
     <div class="flex items-center space-x-2 md:space-x-4">
       <Logo class="h-12 fill-red-500" />
       <div>
-        <h5 class="text-lg font-russo text-red-500">Game Day Grill</h5>
-        <p class="text-sm italic text-gray-600">"Come for the game, stay for the grill!"</p>
+        <h5 class="text-lg font-russo text-red-500">{information.name}</h5>
+        <p class="text-sm italic text-gray-600">
+          {information.slogan}
+        </p>
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600">

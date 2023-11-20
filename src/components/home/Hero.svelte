@@ -1,4 +1,5 @@
 <script>
+  import { information } from "$config";
   import Logo from "$components/global/Logo.svelte";
 
   let video;
@@ -11,14 +12,23 @@
 <svelte:window on:click={handleInteraction} />
 
 <section class="relative h-[40vh] bg-cover bg-center">
-  <video autoplay muted loop class="absolute w-full h-full object-cover" bind:this={video}>
+  <video
+    autoplay
+    muted
+    loop
+    class="absolute w-full h-full object-cover"
+    poster="/images/hero-poster.webp"
+    bind:this={video}
+  >
     <source src="/videos/hero.mp4" type="video/mp4" />
   </video>
   <div class="absolute inset-0 bg-black opacity-50" />
-  <div class="relative h-full flex flex-col items-center justify-center text-center text-white drop-shadow2xl">
+  <div
+    class="relative h-full flex flex-col items-center justify-center text-center text-white drop-shadow2xl"
+  >
     <Logo class="h-32 fill-white mb-3" />
-    <h1 class="text-5xl font-russo">Game Day Grill</h1>
-    <h2 class="font-bold">Come for the game, stay for the grill!</h2>
+    <h1 class="text-5xl font-russo">{information.name}</h1>
+    <h2 class="font-bold">{information.slogan}</h2>
     <!-- <p class="mt-2 text-xl">Experience the best game day dishes in town</p> -->
   </div>
 </section>
