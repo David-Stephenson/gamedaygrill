@@ -5,7 +5,6 @@
         <h2 class="text-2xl font-bold">Victory Club Rewards</h2>
         <p class="mt-2 text-gray-600">Join our rewards program and unlock free food, gifts, and more!</p>
       </div>
-
       <button class="bg-red-500 text-white px-6 py-3 rounded-full mt-4 md:mt-0">Join Now</button>
     </div>
   </div>
