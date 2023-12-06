@@ -1,7 +1,6 @@
 <script>
   import Hero from "$components/home/Hero.svelte";
   import DailySpecials from "$components/home/DailySpecials.svelte";
-  import Hours from "$components/home/Hours.svelte";
   import RewardsBanner from "$components/home/RewardsBanner.svelte";
 </script>
 
