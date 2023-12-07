@@ -18,14 +18,11 @@
 
 <div class="bg-white text-gray-800 px-8 py-3 shadow">
   <div class="flex justify-between items-center mb-3">
-<<<<<<< HEAD
-    <a href="https://maps.app.goo.gl/CBtUFmniFkbwYs5q6" target="_blank" class="text-sm text-gray-600 flex items-center">
-=======
     <a
       href="https://maps.app.goo.gl/CBtUFmniFkbwYs5q6"
+      target="_blank"
       class="text-sm text-gray-600 flex items-center"
     >
->>>>>>> a2e7944699356d6f92dc94781664696253bd0455
       <MapPin size="16" class="mr-1" />
       {contact.address}
     </a>
@@ -34,8 +31,8 @@
       class="text-sm text-gray-600 flex items-center"
     >
       <Phone size="16" class="mr-1" />
-      {contact.phone}</a
-    >
+      {contact.phone}
+    </a>
   </div>
   <nav class="flex justify-between items-center">
     <a href="/" class="text-2xl text-center text-red-600 font-russo"
@@ -56,23 +53,3 @@
     </div>
   </nav>
 </div>
-
-<!-- Old Nav -->
-<!-- <div class="bg-white text-gray-800 px-8 py-3 shadow">
-	<nav class="flex justify-between items-center">
-		<a href="/" class="text-2xl font-bold text-red-600">Game Day Grill</a>
-		<div class="flex justify-center flex-grow">
-			{#each Object.entries(links) as [name, url]}
-				<a href={url} class="text-gray-800 text-base hover:text-red-600 mx-4 capitalize">{name}</a>
-			{/each}
-		</div>
-		<div class="flex items-center">
-			<a href="/bag" class="text-gray-800 text-sm hover:text-red-600 mx-4">
-				<ShoppingBag />
-			</a>
-			<a href="/account" class="text-gray-800 text-sm hover:text-red-600 mx-4">
-				<User2 />
-			</a>
-		</div>
-	</nav>
-</div> -->
