@@ -59,7 +59,7 @@
             </div>
             <div class="flex items-center">
               <input class="mr-2" id="alergies" type="checkbox" name="alergies" />
-              <label for="alergies">Alergies</label>
+              <label for="alergies">Allergies</label>
             </div>
             <div class="flex items-center">
               <input class="mr-2" id="vegan" type="checkbox" name="vegan" />
@@ -75,13 +75,15 @@
       </div>
     </div>
     <div class="w-full lg:w-1/2 px-4">
+      <!--
       <div class="grid grid-cols-2 gap-4">
-        <!-- Replace with your images -->
+        
         <img src="image1.jpg" alt="Event 1" class="w-full h-32 object-cover rounded-md shadow" />
         <img src="image2.jpg" alt="Event 2" class="w-full h-32 object-cover rounded-md shadow" />
         <img src="image3.jpg" alt="Event 3" class="w-full h-32 object-cover rounded-md shadow" />
         <img src="image4.jpg" alt="Event 4" class="w-full h-32 object-cover rounded-md shadow" />
       </div>
+      -->
     </div>
   </div>
 </section>

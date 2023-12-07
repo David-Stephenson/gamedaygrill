@@ -18,7 +18,7 @@
 
 <div class="bg-white text-gray-800 px-8 py-3 shadow">
   <div class="flex justify-between items-center mb-3">
-    <a href="https://maps.app.goo.gl/CBtUFmniFkbwYs5q6" class="text-sm text-gray-600 flex items-center">
+    <a href="https://maps.app.goo.gl/CBtUFmniFkbwYs5q6" target="_blank" class="text-sm text-gray-600 flex items-center">
       <MapPin size="16" class="mr-1" />
       {contact.address}
     </a>
