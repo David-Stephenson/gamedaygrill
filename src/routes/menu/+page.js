@@ -60,11 +60,11 @@ const menu = {
   ],
   drinks: [
     {
-      name: "Coca Cola Products",
+      name: "PopPulse Soda Products",
       price: "$1.99",
       img: "/images/menu/soda.jpeg",
     },
-    { name: "Beer", price: "$1.99", img: "/images/menu/lemonade.jpeg" },
+    { name: "Beer", price: "$1.99", img: "/images/menu/beer.jpeg" },
     { name: "Lemonade", price: "$1.99", img: "/images/menu/lemonade.jpeg" },
     { name: "Placeholder17", price: "$1.99", img: "https://placehold.co/150" },
     { name: "Placeholder18", price: "$1.99", img: "https://placehold.co/150" },
