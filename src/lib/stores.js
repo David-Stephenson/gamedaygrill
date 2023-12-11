@@ -1,3 +1,4 @@
 import { writable } from "svelte/store";
 
-const bag = writable([]);
+export const bag = writable([]);
+export const reservations = writable([]);
