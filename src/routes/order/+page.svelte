@@ -22,8 +22,8 @@
               <div class="py-3">
                 <span>
                 <ShoppingBag />
-                
-                <button href="/">-</button>
+
+                <button href="/" class="bg-blue">-</button>
                 <button href="/">+</button>
 
                 </span>
