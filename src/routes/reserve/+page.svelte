@@ -1,14 +1,18 @@
 <script>
-  import { goto } from "$app/navigation";
+  import { goto } from '$app/navigation';
 
-  let partyName = "";
-  let date = "";
-  let time = "";
+  let partyName = '';
+  let date = '';
+  let time = '';
 
   function handleSubmit() {
     goto(`/reserve/complete?partyName=${partyName}&date=${date}&time=${time}`);
   }
 </script>
+
+<svelte:head>
+  <title>Reserve a Table | Game Day Grill</title>
+</svelte:head>
 
 <section class="flex justify-center items-center py-12">
   <div class="flex flex-wrap -mx-4">
@@ -44,7 +48,7 @@
               class="w-full px-3 py-2 border rounded text-gray-700"
               placeholder="Select Date"
               type="date"
-              min={new Date().toISOString().split("T")[0]}
+              min={new Date().toISOString().split('T')[0]}
               required
               bind:value={date}
             />
