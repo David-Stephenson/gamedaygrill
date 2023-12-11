@@ -1,7 +1,11 @@
 ### Images
 
+Images on the menu page were created with Bing Image Creator / DALLE3
+
 ### Videos
+
 #### Mixkit
+
 - [Table in a living room with fast food while a man watches television](https://mixkit.co/free-stock-video/table-in-a-living-room-with-fast-food-while-a-26090/)
 
 - [Well done steak being sliced by a sharp knife](https://mixkit.co/free-stock-video/well-done-steak-being-sliced-by-a-sharp-knife-45718/)
@@ -17,10 +21,15 @@
 - [Chicken burger with french fries](https://mixkit.co/free-stock-video/chicken-burger-with-french-fries-3537/)
 
 #### Hansol Kim
+
 - [Meat Grilling](https://www.pexels.com/video/meat-grilling-1111421/)
 
 ### Fonts / Icons
+
 #### Jovanny Lemonad
+
 - [Russo One](https://fonts.bunny.net/family/russo-one)
+
 #### Lucide Contributors
+
 - [Lucide](https://lucide.dev/)
