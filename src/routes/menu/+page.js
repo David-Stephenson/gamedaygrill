@@ -31,15 +31,40 @@ const menu = {
     },
   ],
   entrees: [
-    { name: "Steak", price: "$14.99", description: "bla", img: "/images/menu/entrees/steak.jpeg" },
-    { name: "Hamburger", price: "$9.99", img: "/images/menu/entrees/hamburger.jpeg" },
+    {
+      name: "Steak",
+      price: "$14.99",
+      description: "bla",
+      img: "/images/menu/entrees/steak.jpeg",
+    },
+    {
+      name: "Hamburger",
+      price: "$9.99",
+      img: "/images/menu/entrees/hamburger.jpeg",
+    },
     { name: "Wings", price: "$9.99", img: "/images/menu/entrees/wings.jpeg" },
-    { name: "Chicken Sandwich", price: "$9.99", img: "/images/menu/entrees/chickensandwich.jpeg" },
-    { name: "Caesar Salad", price: "$9.99", img: "/images/menu/entrees/salad.jpeg" },
+    {
+      name: "Chicken Sandwich",
+      price: "$9.99",
+      img: "/images/menu/entrees/chickensandwich.jpeg",
+    },
+    {
+      name: "Caesar Salad",
+      price: "$9.99",
+      img: "/images/menu/entrees/salad.jpeg",
+    },
   ],
   sides: [
-    { name: "French Fries", price: "$1.99", img: "/images/menu/sides/fries.jpeg" },
-    { name: "Mozzarella Sticks", price: "$4.99", img: "/images/menu/sides/mozzarellasticks.jpeg" },
+    {
+      name: "French Fries",
+      price: "$1.99",
+      img: "/images/menu/sides/fries.jpeg",
+    },
+    {
+      name: "Mozzarella Sticks",
+      price: "$4.99",
+      img: "/images/menu/sides/mozzarellasticks.jpeg",
+    },
     { name: "Coleslaw", price: "$2.99", img: "/images/menu/coleslaw.jpeg" },
     { name: "Placeholder11", price: "$4.99", img: "https://placehold.co/150" },
     { name: "Placeholder12", price: "$4.99", img: "https://placehold.co/150" },
@@ -48,13 +73,22 @@ const menu = {
     {
       name: "Chicken Nuggets",
       price: "$4.99",
-      description: "Chicken nuggests with fries, apple slices, and a glass of chocolate milk",
+      description:
+        "Chicken nuggests with fries, apple slices, and a glass of chocolate milk",
       img: "/images/menu/kids/nuggets.jpeg",
     },
     { name: "Mini Pizza", price: "$5.99", img: "/images/menu/kids/pizza.jpeg" },
-    { name: "Placeholder13", price: "$5.99", img: "https://placehold.co/150" },
-    { name: "Placeholder14", price: "$5.99", img: "https://placehold.co/150" },
-    { name: "Placeholder15", price: "$5.99", img: "https://placehold.co/150" },
+    {
+      name: "Grilled Cheese",
+      price: "$5.99",
+      img: "/images/menu/kids/grilledcheese.jpeg",
+    },
+    { name: "Hot Dog", price: "$5.99", img: "/images/menu/kids/hotdog.jpeg" },
+    {
+      name: "Chicken Quesadilla",
+      price: "$5.99",
+      img: "/images/menu/kids/quesadilla.jpeg",
+    },
   ],
   drinks: [
     {
