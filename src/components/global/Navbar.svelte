@@ -10,10 +10,6 @@
     reserve: "/reserve",
     order: "/order",
   };
-
-  function gotoAccount() {
-    goto("/account");
-  }
 </script>
 
 <div class="bg-white text-gray-800 px-8 py-3 shadow">
@@ -44,10 +40,10 @@
       {/each}
     </div>
     <div class="flex items-center text-gray-800">
-      <a href="#" class="text-sm mx-4">
+      <a href="/bag" class="text-sm mx-4">
         <ShoppingBag />
       </a>
-      <a href="/account" class=" text-sm mx-4" on:click={gotoAccount}>
+      <a href="/account" class=" text-sm mx-4">
         <User2 />
       </a>
     </div>
