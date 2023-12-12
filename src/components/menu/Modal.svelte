@@ -8,6 +8,7 @@
   export let isOpen = false;
   export let selectedItem = null;
   let comments = '';
+  let quantity = 1;
 
   function close() {
     dispatch('close');
@@ -22,6 +23,17 @@
     close();
   }
 
+  function increaseQuantity() {
+    quantity++;
+    }
+
+  function decreaseQuantity() {
+    if (quantity > 1){
+      quantity--;
+    }
+
+    }
+
   onMount(() => {
     if (typeof window !== 'undefined') {
       document.body.style.overflow = 'hidden';
@@ -34,6 +46,8 @@
     }
   });
 </script>
+
+
 
 <div
   class={`fixed z-10 inset-0 overflow-y-auto transition-opacity duration-500 ${
@@ -55,9 +69,9 @@
     <div
       class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
     >
-      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-        <div class="sm:flex sm:items-start">
-          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 content-center">
+        <div class="sm:flex sm:items-start justify-center">
+          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left justify-center">
             <img
               src={selectedItem.img}
               alt={selectedItem.name}
@@ -76,10 +90,11 @@
           </div>
         </div>
       </div>
+
       <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
         <button
           type="button"
-          class="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-500 text-base font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+          class="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-500 text-base font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
           on:click={addFoodToBag}
         >
           Confirm
@@ -91,7 +106,22 @@
         >
           Close
         </button>
-      </div>
+        
+          <button 
+          type="button" 
+          on:click={decreaseQuantity}
+          class="mt-3 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-500 text-base font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">-</button>
+         
+          
+          <h1 class="justify-center py-2">{quantity}</h1>
+
+          <button 
+          type="button" 
+          on:click={increaseQuantity}
+          class="mt-3 w-full inline-flex rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-500 text-base font-medium text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" >+</button>
+         
+        
+        </div>
     </div>
   </div>
 </div>

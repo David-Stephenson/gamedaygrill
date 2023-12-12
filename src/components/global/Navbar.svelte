@@ -8,7 +8,7 @@
     events: "/events",
     menu: "/menu",
     reserve: "/reserve",
-    order: "/order",
+    
   };
 </script>
 
