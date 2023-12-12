@@ -90,7 +90,7 @@
             type="button"
             on:click={decreaseQuantity}
             class="w-10 h-10 rounded-md border border-transparent shadow-sm bg-red-500 text-base font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-            ><Plus /></button
+            >-</button
           >
 
           <h1 class="mx-2">{quantity}</h1>
@@ -99,7 +99,7 @@
             type="button"
             on:click={increaseQuantity}
             class="w-10 h-10 rounded-md border border-transparent shadow-sm bg-green-500 text-base font-medium text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-            ><Minus /></button
+            >+</button
           >
         </div>
 
