@@ -1,11 +1,20 @@
 <script>
   import { goto } from '$app/navigation';
+  import { reservations } from '$lib/stores';
 
   let partyName = '';
   let date = '';
   let time = '';
 
   function handleSubmit() {
+    reservations.update(value => [
+      ...value,
+      {
+        partyName,
+        date,
+        time,
+      },
+    ]);
     goto(`/reserve/complete?partyName=${partyName}&date=${date}&time=${time}`);
   }
 </script>

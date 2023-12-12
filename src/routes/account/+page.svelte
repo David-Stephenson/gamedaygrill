@@ -1,30 +1,32 @@
 <script>
+  import { reservations } from '$lib/stores';
+
+  let reservationDetails = [];
+
+  reservations.subscribe(value => {
+    reservationDetails = value;
+    console.log(reservationDetails);
+  });
+
   // Fake user data
   const user = {
-    name: 'John Doe',
-    memberSince: 'January 2023',
-    totalPoints: 850,
+    name: 'BPA Grader',
+    memberSince: 'November 2023',
+    totalPoints: 100,
     // Sample data for demonstration
     transactions: [
       {
         date: 'Dec 1, 2023',
-        description: 'Dinner at Restaurant A',
         points: '+200',
       },
       {
         date: 'Nov 25, 2023',
-        description: 'Lunch at Restaurant B',
         points: '+150',
       },
       {
         date: 'Nov 20, 2023',
-        description: 'Redeemed Reward: Free Dessert',
         points: '-500',
       },
-    ],
-    reservations: [
-      { date: 'Dec 10, 2023', venue: 'Restaurant C', time: '7:00 PM' },
-      { date: 'Dec 12, 2023', venue: 'Restaurant D', time: '8:00 PM' },
     ],
     rewards: [
       {
@@ -73,7 +75,6 @@
             <thead>
               <tr class="border-b text-center">
                 <th class="px-2 py-1 text-left">Date</th>
-                <th class="px-2 py-1 text-left">Description</th>
                 <th class="px-2 py-1 text-left">Points</th>
               </tr>
             </thead>
@@ -81,7 +82,6 @@
               {#each user.transactions as transaction}
                 <tr class="border-b">
                   <td class="px-2 py-1">{transaction.date}</td>
-                  <td class="px-2 py-1">{transaction.description}</td>
                   <td class="px-2 py-1">
                     <span
                       class:class={transaction.points.startsWith('+')
@@ -105,16 +105,16 @@
           <table class="min-w-full text-sm">
             <thead>
               <tr class="border-b">
+                <th class="px-2 py-1 text-left">Party Name</th>
                 <th class="px-2 py-1 text-left">Date</th>
-                <th class="px-2 py-1 text-left">Venue</th>
                 <th class="px-2 py-1 text-left">Time</th>
               </tr>
             </thead>
             <tbody>
-              {#each user.reservations as reservation}
+              {#each reservationDetails as reservation}
                 <tr class="border-b">
+                  <td class="px-2 py-1">{reservation.partyName}</td>
                   <td class="px-2 py-1">{reservation.date}</td>
-                  <td class="px-2 py-1">{reservation.venue}</td>
                   <td class="px-2 py-1">{reservation.time}</td>
                 </tr>
               {/each}
