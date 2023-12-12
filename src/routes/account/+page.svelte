@@ -1,22 +1,42 @@
 <script>
   // Fake user data
   const user = {
-    name: "John Doe",
-    memberSince: "January 2023",
+    name: 'John Doe',
+    memberSince: 'January 2023',
     totalPoints: 850,
     // Sample data for demonstration
     transactions: [
-      { date: "Dec 1, 2023", description: "Dinner at Restaurant A", points: "+200" },
-      { date: "Nov 25, 2023", description: "Lunch at Restaurant B", points: "+150" },
-      { date: "Nov 20, 2023", description: "Redeemed Reward: Free Dessert", points: "-500" },
+      {
+        date: 'Dec 1, 2023',
+        description: 'Dinner at Restaurant A',
+        points: '+200',
+      },
+      {
+        date: 'Nov 25, 2023',
+        description: 'Lunch at Restaurant B',
+        points: '+150',
+      },
+      {
+        date: 'Nov 20, 2023',
+        description: 'Redeemed Reward: Free Dessert',
+        points: '-500',
+      },
     ],
     reservations: [
-      { date: "Dec 10, 2023", venue: "Restaurant C", time: "7:00 PM" },
-      { date: "Dec 12, 2023", venue: "Restaurant D", time: "8:00 PM" },
+      { date: 'Dec 10, 2023', venue: 'Restaurant C', time: '7:00 PM' },
+      { date: 'Dec 12, 2023', venue: 'Restaurant D', time: '8:00 PM' },
     ],
     rewards: [
-      { reward: "Free Dessert", pointsRequired: "500", expirationDate: "Dec 31, 2023" },
-      { reward: "Free Appetizer", pointsRequired: "800", expirationDate: "Dec 31, 2023" },
+      {
+        reward: 'Free Dessert',
+        pointsRequired: '500',
+        expirationDate: 'Dec 31, 2023',
+      },
+      {
+        reward: 'Free Appetizer',
+        pointsRequired: '800',
+        expirationDate: 'Dec 31, 2023',
+      },
     ],
   };
 </script>
@@ -24,12 +44,20 @@
 <div class="p-4">
   <main class=" mx-auto">
     <!-- User Info Card -->
-    <div class="bg-white rounded-lg shadow-md p-5 mb-6 flex items-center justify-between">
+    <div
+      class="bg-white rounded-lg shadow-md p-5 mb-6 flex items-center justify-between"
+    >
       <div class="flex items-center space-x-4">
-        <img class="h-16 w-16 rounded-lg" src="/images/profile.jpeg" alt="User Profile" />
+        <img
+          class="h-16 w-16 rounded-lg"
+          src="/images/account/profile.webp"
+          alt="User Profile"
+        />
         <div>
           <div class="font-semibold text-xl">{user.name}</div>
-          <div class="text-gray-500 text-sm">Member since: {user.memberSince}</div>
+          <div class="text-gray-500 text-sm">
+            Member since: {user.memberSince}
+          </div>
         </div>
       </div>
       <div class="text-lg font-semibold">{user.totalPoints} Points</div>
@@ -55,7 +83,11 @@
                   <td class="px-2 py-1">{transaction.date}</td>
                   <td class="px-2 py-1">{transaction.description}</td>
                   <td class="px-2 py-1">
-                    <span class:class={transaction.points.startsWith("+") ? "text-green-500" : "text-red-500"}>
+                    <span
+                      class:class={transaction.points.startsWith('+')
+                        ? 'text-green-500'
+                        : 'text-red-500'}
+                    >
                       {transaction.points}
                     </span>
                   </td>

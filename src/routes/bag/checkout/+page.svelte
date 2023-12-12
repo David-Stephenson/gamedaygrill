@@ -8,7 +8,7 @@
   bag.subscribe(value => {
     bagContent = value;
     total = bagContent.reduce(
-      (acc, item) => acc + parseFloat(item.price.slice(1)),
+      (acc, item) => acc + parseFloat(item.price.slice(1)) * item.quantity,
       0,
     );
   });
@@ -21,7 +21,8 @@
   let cardCVV = '';
 
   function handleSubmit() {
-    goto(`/checkout/complete?name=${name}&email=${email}&phone=${phone}`);
+    bag.set([]);
+    goto('/bag/checkout/success');
   }
 </script>
 

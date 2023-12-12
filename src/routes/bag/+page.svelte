@@ -9,9 +9,8 @@
 
   let total = 0;
 
-
   $: total = bagContent.reduce(
-    (acc, item) => acc + parseFloat(item.price.slice(1)),
+    (acc, item) => acc + parseFloat(item.price.slice(1)) * item.quantity,
     0,
   );
 
@@ -87,7 +86,9 @@
                 <td
                   class="px-5 py-5 border-b border-gray-200 bg-white text-base"
                 >
-                  <p class="text-gray-900 whitespace-no-wrap">{item.quantity}</p>
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    {item.quantity}
+                  </p>
                 </td>
               </tr>
             {/each}
