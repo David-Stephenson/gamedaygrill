@@ -93,7 +93,8 @@
           </button>
         </form>
         <p class="text-center text-xs mt-4">
-          * Do not put in real credit card info, Salam WILL buy MacBook Pros
+          * Do not put in real credit card info, Salam WILL buy RACING SIM
+          EQUIPMENT with it.
         </p>
       </div>
     </div>

@@ -4,17 +4,36 @@
     {
       id: 1,
       title: 'Football Night',
-      date: '2023-11-20',
+      date: '2023-12-18',
       description:
         'Enjoy the game on our big screens with special discounts on drinks.',
     },
     {
       id: 2,
       title: 'Trivia Tuesday',
-      date: '2023-11-21',
+      date: '2023-12-19',
       description: 'Join us for a fun night of trivia and win exciting prizes.',
     },
-    // Add more events here...
+    {
+      id: 3,
+      title: 'Christmas Cheese Party',
+      date: '2023-12-24',
+      description: 'Enjoy a variety of cheese with your friends and family.',
+    },
+    {
+      id: 4,
+      title: 'New Year Party',
+      date: '2023-12-31',
+      description:
+        'Celebrate the new year with us and enjoy special discounts. Grill open till 2 AM!',
+    },
+    {
+      id: 5,
+      title: "Valentine's Day",
+      date: '2024-02-14',
+      description:
+        'Enjoy a romantic dinner with your loved one and get a free dessert.',
+    },
   ];
   let upcomingEvent = null;
 
