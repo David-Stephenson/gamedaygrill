@@ -2,7 +2,6 @@
   import { createEventDispatcher } from 'svelte';
   import { onMount, onDestroy } from 'svelte';
   import { bag } from '$lib/stores.js';
-  import { Plus, Minus } from 'lucide-svelte';
 
   const dispatch = createEventDispatcher();
 
@@ -16,11 +15,12 @@
   }
 
   function addFoodToBag() {
-    const itemWithComments = { ...selectedItem, comments };
+    const itemWithComments = { ...selectedItem, quantity, comments};
     bag.update(items => {
       return [...items, itemWithComments];
     });
-    console.log($bag);
+    console.log(itemWithComments);
+
     close();
   }
 

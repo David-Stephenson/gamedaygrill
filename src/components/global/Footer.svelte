@@ -26,7 +26,6 @@
       </div>
     </div>
     <div class="flex flex-col items-center text-gray-600 text-center">
-      <h5 class="text-lg font-bold">Hours</h5>
       <p class="text-sm">Mon-Fri 9am-9pm, Sat-Sun 10am-10pm</p>
     </div>
     <div class="flex space-x-2 items-center md:items-start justify-center">

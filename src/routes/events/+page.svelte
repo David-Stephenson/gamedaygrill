@@ -31,7 +31,7 @@
 </svelte:head>
 
 <div class="container mx-auto px-4">
-  <h1 class="text-4xl font-bold mb-4 text-center text-blue-600">
+  <h1 class="text-4xl font-bold mb-4 text-center text-blue-600 pt-12">
     Upcoming Events
   </h1>
 
