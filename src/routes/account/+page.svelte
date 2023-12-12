@@ -43,6 +43,10 @@
   };
 </script>
 
+<svelte:head>
+  <title>Account | Game Day Grill</title>
+</svelte:head>
+
 <div class="p-4">
   <main class=" mx-auto">
     <!-- User Info Card -->
