@@ -8,6 +8,8 @@
   });
 
   let total = 0;
+
+
   $: total = bagContent.reduce(
     (acc, item) => acc + parseFloat(item.price.slice(1)),
     0,
@@ -102,7 +104,7 @@
             >
           </div>
         {:else}
-          <div class="text-right py-4">
+          <div class="text-right py-4 pr-4">
             <p class="text-2xl font-semibold">Total: ${total.toFixed(2)}</p>
             <a
               href="/bag/checkout"
