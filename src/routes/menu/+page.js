@@ -67,7 +67,7 @@ const menu = {
     {
       name: 'Cheese Blitz Sticks',
       price: '$4.99',
-      img: '/images/menu/sides/mozzarellasticks.jpeg',
+      img: '/images/menu/sides/mozzarellasticks.webp',
     },
     {
       name: 'Slaw Sideliner',
@@ -111,7 +111,7 @@ const menu = {
     {
       name: 'Cluck Fiesta Quesadilla',
       price: '$5.99',
-      img: '/images/menu/kids/quesadilla.jpeg',
+      img: '/images/menu/kids/quesadilla.webp',
     },
   ],
   drinks: [
@@ -143,7 +143,7 @@ const menu = {
   ],
   desserts: [
     {
-      name: 'Slam Dunk Sundae',
+      name: 'Salam Dunk Sundae',
       price: '$3.99',
       img: '/images/menu/desserts/sundae.jpeg',
     },
@@ -158,7 +158,7 @@ const menu = {
       img: '/images/menu/desserts/brownies.jpeg',
     },
     {
-      name: 'Sundae Stadium Scoops',
+      name: 'Salam Stadium Scoops',
       price: '$4.99',
       img: '/images/menu/desserts/icecream.jpeg',
     },
