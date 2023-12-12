@@ -12,6 +12,12 @@
     (acc, item) => acc + parseFloat(item.price.slice(1)),
     0,
   );
+
+  function addToBag() {
+    bag.update(items => {
+      return [...items, itemWithComments];
+    });
+  }
 </script>
 
 <div class="container mx-auto px-4 sm:px-8">
@@ -99,8 +105,8 @@
           <div class="text-right py-4">
             <p class="text-2xl font-semibold">Total: ${total.toFixed(2)}</p>
             <a
-              href="/checkout"
-              class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block"
+              href="/bag/checkout"
+              class="bg-red-500 text-white font-bold py-2 px-4 rounded mt-4 inline-block"
               >Checkout</a
             >
           </div>
