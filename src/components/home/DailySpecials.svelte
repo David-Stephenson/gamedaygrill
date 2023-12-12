@@ -3,23 +3,23 @@
     {
       name: 'Burger Supreme',
       description: 'Juicy beef patty with fresh veggies and our secret sauce.',
-      image: 'images/burger.jpg',
+      image: 'images/specials/burger.jpg',
     },
     {
       name: 'Chicken Wings Platter',
       description: 'Crispy wings tossed in our signature spicy sauce.',
-      image: 'images/wings.jpg',
+      image: 'images/specials/wings.jpg',
     },
     {
       name: 'Loaded Nachos',
       description: 'Crispy nachos topped with cheese, jalapenos, and more',
-      image: 'images/nachos.jpg',
+      image: 'images/specials/nachos.jpg',
     },
     {
       name: 'Onion Rings',
       description:
         'Hot, fresh, and crispy onion rings served with your choice of any two sauces.',
-      image: 'images/onionrings.jpg',
+      image: 'images/specials/onionrings.jpg',
     },
   ];
 </script>
