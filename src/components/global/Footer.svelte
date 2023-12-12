@@ -1,12 +1,12 @@
 <script>
-  import { information, contact } from "$config";
-  import { Facebook, Twitter, Instagram } from "lucide-svelte";
-  import Logo from "$components/global/Logo.svelte";
+  import { information, contact } from '$config';
+  import { Facebook, Twitter, Instagram } from 'lucide-svelte';
+  import Logo from '$components/global/Logo.svelte';
 
   const socialLinks = {
-    Facebook: { component: Facebook, url: "https://www.facebook.com" },
-    Twitter: { component: Twitter, url: "https://www.twitter.com" },
-    Instagram: { component: Instagram, url: "https://www.instagram.com" },
+    Facebook: { component: Facebook, url: 'https://www.facebook.com' },
+    Twitter: { component: Twitter, url: 'https://www.twitter.com' },
+    Instagram: { component: Instagram, url: 'https://www.instagram.com' },
   };
 </script>
 
@@ -27,7 +27,7 @@
     </div>
     <div class="flex flex-col items-center text-gray-600 text-center">
       <h5 class="text-lg font-bold">Hours</h5>
-      <p class="text-sm">Hours: Mon-Fri 9am-9pm, Sat-Sun 10am-10pm</p>
+      <p class="text-sm">Mon-Fri 9am-9pm, Sat-Sun 10am-10pm</p>
     </div>
     <div class="flex space-x-2 items-center md:items-start justify-center">
       {#each Object.entries(socialLinks) as [name, link]}
