@@ -6,6 +6,12 @@
     bagContent = value;
     console.log(bagContent);
   });
+
+  let total = 0;
+  $: total = bagContent.reduce(
+    (acc, item) => acc + parseFloat(item.price.slice(1)),
+    0,
+  );
 </script>
 
 <div class="container mx-auto px-4 sm:px-8">
@@ -38,7 +44,7 @@
             </tr>
           </thead>
           <tbody>
-            {#each bagContent as item }
+            {#each bagContent as item}
               <tr>
                 <td
                   class="px-5 py-5 border-b border-gray-200 bg-white text-base"
@@ -79,6 +85,26 @@
             {/each}
           </tbody>
         </table>
+        {#if bagContent.length === 0}
+          <div class="text-center py-8">
+            <h2 class="text-2xl font-semibold mb-4">Your bag is empty!</h2>
+            <p class="mb-4">Go to the Menu to add food to your bag.</p>
+            <a
+              href="/menu"
+              class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              >Menu</a
+            >
+          </div>
+        {:else}
+          <div class="text-right py-4">
+            <p class="text-2xl font-semibold">Total: ${total.toFixed(2)}</p>
+            <a
+              href="/checkout"
+              class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4 inline-block"
+              >Checkout</a
+            >
+          </div>
+        {/if}
       </div>
     </div>
   </div>
