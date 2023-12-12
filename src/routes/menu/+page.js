@@ -143,7 +143,7 @@ const menu = {
   ],
   desserts: [
     {
-      name: 'Salam Dunk Sundae',
+      name: 'Slam Dunk Sundae',
       price: '$3.99',
       img: '/images/menu/desserts/sundae.jpeg',
     },
