@@ -1,6 +1,6 @@
 <script>
-  import { information } from "$config";
-  import Logo from "$components/global/Logo.svelte";
+  import { information } from '$config';
+  import Logo from '$components/global/Logo.svelte';
 
   let video;
   function handleInteraction() {
