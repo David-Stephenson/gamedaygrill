@@ -24,7 +24,7 @@
   ];
 </script>
 
-<section class="py-12 px-4">
+<section class="py-12 px-4 hidden lg:flex xl:flex 2xl:flex">
   <h2 class="text-4xl font-bold text-center mb-5">Today's Specials</h2>
   <div class="grid grid-flow-col gap-8">
     <!-- For each dish in array -->
