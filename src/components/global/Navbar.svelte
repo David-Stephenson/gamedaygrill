@@ -4,14 +4,15 @@
 
   // Links for the navbar
   const links = {
+    about: '/about',
     events: '/events',
     menu: '/menu',
     reserve: '/reserve',
   };
 </script>
 
-<div class="bg-white text-gray-800 px-8 py-3 shadow">
-  <div class="flex justify-between items-center mb-3">
+<div class="bg-white text-gray-800 px-8 py-3">
+  <!-- <div class="flex justify-between items-center mb-3">
     <a
       href="https://maps.app.goo.gl/CBtUFmniFkbwYs5q6"
       target="_blank"
@@ -27,7 +28,7 @@
       <Phone size="16" class="mr-1" />
       {contact.phone}
     </a>
-  </div>
+  </div> -->
   <nav class="flex justify-between items-center">
     <a href="/" class="text-2xl text-center text-red-600 font-russo"
       >{information.name}</a
