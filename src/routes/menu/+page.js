@@ -35,7 +35,7 @@ const menu = {
       name: 'Sizzle Supreme Steak',
       price: '$14.99',
       description: 'bla',
-      img: '/images/menu/entrees/steak.webp',
+      img: '/images/menu/entrees/steak.png',
     },
     {
       name: 'Gridiron Grind Burgers',

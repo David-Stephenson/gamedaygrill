@@ -1,10 +1,14 @@
 <script>
-  import Modal from "$components/menu/Modal.svelte";
+  import Modal from '$components/menu/Modal.svelte';
+  import menu from '$lib/menu.js';
+
+  console.log(menu);
+
   let isOpen = false;
   let selectedItem = null;
 
-  let menu;
-  export { menu as data };
+  // let menu;
+  // export { menu as data };
 
   function openModal(item) {
     selectedItem = item;
@@ -35,11 +39,12 @@
             on:click={() => openModal(item)}
           >
             <img
-              class="w-full h-40 mb-3 object-cover"
-              src={item.img}
+              class="w-full h-54 mb-3 object-cover drop-shadow"
+              src="/images/menu/{section}/{item.image}"
               alt={item.name}
             />
             <span class="text-lg font-bold">{item.name}</span>
+            <span>{item.description}</span>
             <span class="text-lg">{item.price}</span>
           </div>
         {/each}
