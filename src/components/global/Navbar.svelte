@@ -1,6 +1,7 @@
 <script>
   import { information, contact } from '$config';
   import { ShoppingBag, User2, MapPin, Phone } from 'lucide-svelte';
+  import Logo from '$components/global/Logo.svelte';
 
   // Links for the navbar
   const links = {
@@ -30,8 +31,9 @@
     </a>
   </div> -->
   <nav class="flex justify-between items-center">
-    <a href="/" class="text-2xl text-center text-red-600 font-russo"
-      >{information.name}</a
+    <a href="/" class="text-2xl text-center text-red-500 font-russo">
+      <Logo class="h-8 fill-red-500 inline" />
+      {information.name}</a
     >
     <div class="flex justify-center flex-grow text-gray-800">
       {#each Object.entries(links) as [name, url]}

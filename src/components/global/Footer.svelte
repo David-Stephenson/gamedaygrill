@@ -11,7 +11,7 @@
 </script>
 
 <footer>
-  <div class="bg-gray-50 text-gray-800 py-8 px-4">
+  <div class="bg-gray-50 text-gray-800 py-8">
     <div
       class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start justify-center"
     >
