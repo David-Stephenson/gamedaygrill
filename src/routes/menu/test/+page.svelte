@@ -8,11 +8,11 @@
   <div class="grid grid-cols-2 gap-4">
     <div>
       <div class="border-2 border-red-500 inline-block">
-        <img
+        <!-- <img
           src="/images/menu/appetizers/frenchfries.webp"
           alt="Ramen dish"
           class="w-full border-b-2 border-red-500"
-        />
+        /> -->
         <div class="flex">
           <div class="flex-1 border-r-2 border-red-500 p-2">
             <p class="font-bold">Proteins</p>
