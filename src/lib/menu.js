@@ -385,7 +385,7 @@ const kids = [
 
 const drinks = [
   {
-    image: 'URL_to_PopPulse_Soda_Image',
+    image: 'soda.png',
     name: 'PopPulse Soda',
     description:
       'A refreshing carbonated drink available in a variety of flavors.',
@@ -406,7 +406,7 @@ const drinks = [
     ],
   },
   {
-    image: 'URL_to_PopPulse_Soda_Image',
+    image: 'iced-tea.png',
     name: 'Iced Tea',
     description:
       'A refreshing carbonated drink available in a variety of flavors.',
@@ -415,7 +415,7 @@ const drinks = [
     options: null,
   },
   {
-    image: 'URL_to_PopPulse_Soda_Image',
+    image: 'lemonade.png',
     name: 'Lemonade',
     description:
       'A refreshing carbonated drink available in a variety of flavors.',
@@ -424,8 +424,26 @@ const drinks = [
     options: null,
   },
   {
-    image: 'URL_to_PopPulse_Soda_Image',
-    name: 'Smoothie',
+    image: 'smoothie.png',
+    name: 'Berry Smoothie',
+    description:
+      'A refreshing carbonated drink available in a variety of flavors.',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: 'coffee.png',
+    name: 'Coffee',
+    description:
+      'A refreshing carbonated drink available in a variety of flavors.',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: 'hot-chocolate.png',
+    name: 'Hot Chocolate',
     description:
       'A refreshing carbonated drink available in a variety of flavors.',
     price: '$1.99',
