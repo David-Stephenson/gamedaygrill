@@ -1,91 +1,70 @@
 <script>
-  import { information, contact } from '$config';
-  import { ShoppingBag, User2, MapPin, Phone, AlignJustify } from 'lucide-svelte';
-  import Logo from '$components/global/Logo.svelte';
-  import { onMount } from 'svelte';
+  import { information } from '$config';
+  import { ShoppingBag, User2, Menu } from 'lucide-svelte';
+  import LogoComponent from '$components/global/Logo.svelte';
 
-  // Links for the navbar
   const links = {
     About: '/about',
     Events: '/events',
     Menu: '/menu',
     Reserve: '/reserve',
   };
-let isOpen = false;
 
-  
-function toggleDropdown (){
-      isOpen = !isOpen;
-      
-    }
+  let isOpen = false;
 
-  onMount(() => {
-    function handleClick(event) {
-      if (!event.target.closest('.dropdown')) {
-        if (dropdown && !dropdown.contains(event.target)){
-        isOpen = false;
-        }
-      }
-    }
+  function toggleDropdown() {
+    isOpen = !isOpen;
+  }
 
-
-  window.addEventListener('click', handleClick)
-
-  return () => {
-    window.removeEventListener('click', handleClick);
-  };
-});
-
+  function closeDropdown() {
+    isOpen = false;
+  }
 </script>
 
-<div class="bg-white text-gray-800 px-8 py-3">
-  
-  <!-- <div class="flex justify-between items-center mb-3">
-    <a
-      href="https://maps.app.goo.gl/CBtUFmniFkbwYs5q6"
-      target="_blank"
-      class="text-sm text-gray-600 flex items-center"
-    >
-      <MapPin size="16" class="mr-1" />
-      {contact.address}
-    </a>
-    <a
-      href="tel:{contact.phone}"
-      class="text-sm text-gray-600 flex items-center"
-    >
-      <Phone size="16" class="mr-1" />
-      {contact.phone}
-    </a>
-  </div> -->
+<div class="bg-white text-gray-800 px-4 sm:px-8 py-3 relative">
   <nav class="flex justify-between items-center">
-    <a href="/" class="text-2xl text-center text-red-500 font-russo">
-      <Logo class="h-8 fill-red-500 inline" />
-      {information.name}
+    <a
+      href="/"
+      class="text-2xl text-center text-red-500 font-russo flex items-center"
+    >
+      <LogoComponent class="h-8 fill-current" />
+      <span class="hidden sm:inline">{information.name}</span>
     </a>
-    <div class="flex justify-center flex-grow text-gray-800">
-      
+    <div class="hidden sm:flex justify-center flex-grow text-gray-800">
+      {#each Object.entries(links) as [name, url]}
+        <a href={url} class="text-base mx-4 capitalize">{name}</a>
+      {/each}
     </div>
-    <div class="hidden md:flex lg:flex xl:flex 2xl:flex items-center text-gray-800">
+    <div class="hidden md:flex items-center text-gray-800">
       <a href="/bag" class="text-sm mx-4">
         <ShoppingBag />
       </a>
-      <a href="/account" class=" text-sm mx-4">
+      <a href="/account" class="text-sm mx-4">
         <User2 />
       </a>
     </div>
-    <div id='dropdown' class='md:hidden lg:hidden xl:hidden 2xl:hidden inline-block items-center content-center'>
-      <button on:click={toggleDropdown}>
-        <AlignJustify />
-      </button>
-      {#if isOpen}
-        <div id="content" class="absolute right-0 mt-2 ml-4w-48 bg-white rounded-md shadow-lg z-10">
-          {#each Object.entries(links) as [name, url]}
-        <a href={url} class="block no-underline mr-12 py-3 mx-6 ">{name}</a>
-      {/each}
-      <a href="/bag" class="block sp-6 no-underline pr-6 py-3 mx-6">Bag</a>
-      <a href="/account" class="block sp-6 no-underline pr-6 py-3 mx-6">Account</a>          
-        </div>
-        {/if}
-    </div>
+    <button
+      class="md:hidden flex items-center px-3 py-2"
+      on:click={toggleDropdown}
+    >
+      <Menu />
+    </button>
   </nav>
+  {#if isOpen}
+    <div
+      id="dropdown"
+      class="md:hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10"
+      on:click={closeDropdown}
+    >
+      {#each Object.entries(links) as [name, url]}
+        <a href={url} class="block px-4 py-2 text-base capitalize text-gray-800"
+          >{name}</a
+        >
+      {/each}
+      <a href="/bag" class="block px-4 py-2 text-base text-gray-800">Bag</a>
+      <a href="/account" class="block px-4 py-2 text-base text-gray-800"
+        >Account</a
+      >
+    </div>
+  {/if}
 </div>
