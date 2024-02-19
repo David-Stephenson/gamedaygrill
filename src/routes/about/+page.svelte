@@ -9,7 +9,7 @@
   </div>
 
   <!-- Middle 2x2 grid -->
-  <div class="grid grid-cols-2 gap-4 w-1/2">
+  <!-- <div class="grid grid-cols-2 gap-4 w-1/2">
     <div>
       <img src="path/to/your/image1.jpg" alt="Image 1" class="w-full h-auto" />
     </div>
@@ -22,7 +22,7 @@
     <div>
       <img src="path/to/your/image4.jpg" alt="Image 4" class="w-full h-auto" />
     </div>
-  </div>
+  </div> -->
 
   <!-- Right long image -->
   <div class="w-1/4">
