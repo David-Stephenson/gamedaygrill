@@ -1,4 +1,5 @@
 <script>
+  import { goto } from '$app/navigation';
   import { Splide, SplideSlide } from '@splidejs/svelte-splide';
   import '@splidejs/svelte-splide/css/core';
 </script>
@@ -38,9 +39,12 @@
             Game Day Grill.
           </h1>
 
-          <button class="bg-red-500 text-white px-5 py-3 rounded-full mt-4">
+          <a
+            href="/menu"
+            class="bg-red-500 text-white text-center px-5 py-3 rounded-full mt-4 hover:text-white hover:bg-red-600"
+          >
             Make An Order
-          </button>
+          </a>
         </div>
       </div>
     </SplideSlide>
