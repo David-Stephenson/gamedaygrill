@@ -28,7 +28,7 @@
       class="text-2xl text-center text-red-500 font-russo flex items-center"
     >
       <LogoComponent class="h-8 fill-current" />
-      <span class="hidden sm:inline">{information.name}</span>
+      <span class="ml-3 hidden sm:inline">{information.name}</span>
     </a>
     <div class="hidden sm:flex justify-center flex-grow text-gray-800">
       {#each Object.entries(links) as [name, url]}
