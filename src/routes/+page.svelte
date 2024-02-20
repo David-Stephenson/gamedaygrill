@@ -46,43 +46,6 @@
           </div>
         {/each}
       </div>
-<div class="my-5 rounded-[25px] overflow-hidden">
-  <div class="w-full h-auto bg-gray-100 items-center p-5">
-    <h1 class="text-3xl mb-3">What's Popular?</h1>
-
-    <!-- Adjusted flex container to center the cards -->
-    <div class="flex flex-wrap">
-      <div class="border border-2 border-red-500 p-5 rounded-[25px]">
-        <img src="/images/test/steak.png" alt="" class="w-96" />
-        <h1 class="text-2xl font-bold">STEAK</h1>
-        <p>This is text</p>
-        <button>Add To Cart</button>
-      </div>
-      <div class="border border-2 border-red-500 p-5 rounded-[25px]">
-        <img src="/images/test/tater-tots.png" alt="" class="w-96" />
-        <h1>STEAK</h1>
-        <p>This is text</p>
-        <button>Add To Cart</button>
-      </div>
-      <div class="border border-2 border-red-500 p-5 rounded-[25px]">
-        <img src="/images/test/steak.png" alt="" class="w-96" />
-        <h1>STEAK</h1>
-        <p>This is text</p>
-        <button>Add To Cart</button>
-      </div>
-      <div class="border border-2 border-red-500 p-5 rounded-[25px]">
-        <img src="/images/test/steak.png" alt="" class="w-96" />
-        <h1>STEAK</h1>
-        <p>This is text</p>
-        <button>Add To Cart</button>
-      </div>
-      <div class="border border-2 border-red-500 p-5 rounded-[25px]">
-        <img src="/images/test/steak.png" alt="" class="w-96" />
-        <h1>STEAK</h1>
-        <p>This is text</p>
-        <button>Add To Cart</button>
-      </div>
-    </div>
 
       <div class="flex justify-center mt-4">
         <button class="bg-red-500 px-4 py-3 rounded-full text-white"
@@ -98,9 +61,6 @@
 >
   <div class="w-full h-auto flex justify-center">
     <div class="w-full h-[500px] relative rounded-[25px] overflow-hidden">
-<div class="my-5 rounded-[25px] overflow-hidden grid grid-cols-2 gap-4">
-  <div class="w-full h-auto items-center">
-    <div class="hidden md:block lg:block xl:block 2xl:block w-[full] h-[600px] relative rounded-[25px] overflow-hidden">
       <Map />
     </div>
   </div>
