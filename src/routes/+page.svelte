@@ -20,7 +20,7 @@
     <h1 class="text-3xl mb-3">What's Popular?</h1>
 
     <!-- Adjusted flex container to center the cards -->
-    <div class="flex flex-row space-x-5 justify-center">
+    <div class="flex flex-wrap">
       <div class="border border-2 border-red-500 p-5 rounded-[25px]">
         <img src="/images/test/steak.png" alt="" class="w-96" />
         <h1 class="text-2xl font-bold">STEAK</h1>
@@ -64,7 +64,7 @@
 
 <div class="my-5 rounded-[25px] overflow-hidden grid grid-cols-2 gap-4">
   <div class="w-full h-auto items-center">
-    <div class="w-[full] h-[600px] relative rounded-[25px] overflow-hidden">
+    <div class="hidden md:block lg:block xl:block 2xl:block w-[full] h-[600px] relative rounded-[25px] overflow-hidden">
       <Map />
     </div>
   </div>

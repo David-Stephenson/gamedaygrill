@@ -3,7 +3,7 @@
   import '@splidejs/svelte-splide/css/core';
 </script>
 
-<div class="aspect-[16/3] rounded-[25px] overflow-hidden">
+<div class="lg:aspect-[16/3] lg:rounded-[25px] xl:aspect-[16/3] xl:rounded-[25px] 2xl:aspect-[16/3] 2xl:rounded-[25px] overflow-hidden my-0 py-0">
   <Splide
     aria-label="My Favorite Images"
     options={{
@@ -53,16 +53,16 @@
       >
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="z-10 text-center">
-          <h1 class="text-5xl md:text-6xl font-bold text-white">
+          <h1 class="text-5xl mt-12 md:text-6xl font-bold text-white">
             Friday Football Feast
           </h1>
-          <p class="text-xl md:text-2xl font-semibold text-white mt-4">
+          <p class="hidden text-xl md:text-2xl font-semibold text-white mt-4">
             Kickstart your weekend with live football and our special game day
             menu!
           </p>
           <a
             href="/events"
-            class="mt-6 inline-block bg-white text-red-500 px-8 py-3 text-lg font-semibold rounded-[25px] shadow-md hover:bg-red-500 hover:text-white transition-colors duration-200"
+            class="mt-6 my-12 inline-block bg-white text-red-500 px-8 py-3 text-lg font-semibold rounded-[25px] shadow-md hover:bg-red-500 hover:text-white transition-colors duration-200"
           >
             Discover More
           </a>
@@ -82,7 +82,7 @@
         <div class="z-10 text-center">
           <h1 class="text-5xl md:text-6xl font-bold text-white">
             Milkshakes that make you go <span
-              style="font-family: 'Yellowtail', handwriting;">Mmm</span
+              style="font-family: 'Yellowtail', handwriting;">Mmm...</span
             >
           </h1>
         </div>
