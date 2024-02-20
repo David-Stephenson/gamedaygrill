@@ -1,11 +1,11 @@
 <script>
-  import Hero from '$components/home/Hero.svelte';
-  import DailySpecials from '$components/home/DailySpecials.svelte';
   import RewardsBanner from '$components/home/RewardsBanner.svelte';
 
   import Carousel from '$components/home/Carousel.svelte';
   import Map from '$components/home/Map.svelte';
   import Hours from '$components/home/Hours.svelte';
+
+  import { popular_now } from '$lib/menu.js';
 </script>
 
 <!-- HTML Head -->
@@ -15,62 +15,62 @@
 
 <Carousel />
 
-<div class="my-5 rounded-[25px] overflow-hidden">
-  <div class="w-full h-auto bg-gray-100 items-center p-5">
-    <h1 class="text-3xl mb-3">What's Popular?</h1>
+<div class="my-5 px-4 sm:px-0">
+  <h1 class="text-2xl font-bold mb-3 text-center sm:text-left">POPULAR NOW</h1>
 
-    <!-- Adjusted flex container to center the cards -->
-    <div class="flex flex-row space-x-5 justify-center">
-      <div class="border border-2 border-red-500 p-5 rounded-[25px]">
-        <img src="/images/test/steak.png" alt="" class="w-96" />
-        <h1 class="text-2xl font-bold">STEAK</h1>
-        <p>This is text</p>
-        <button>Add To Cart</button>
-      </div>
-      <div class="border border-2 border-red-500 p-5 rounded-[25px]">
-        <img src="/images/test/tater-tots.png" alt="" class="w-96" />
-        <h1>STEAK</h1>
-        <p>This is text</p>
-        <button>Add To Cart</button>
-      </div>
-      <div class="border border-2 border-red-500 p-5 rounded-[25px]">
-        <img src="/images/test/steak.png" alt="" class="w-96" />
-        <h1>STEAK</h1>
-        <p>This is text</p>
-        <button>Add To Cart</button>
-      </div>
-      <div class="border border-2 border-red-500 p-5 rounded-[25px]">
-        <img src="/images/test/steak.png" alt="" class="w-96" />
-        <h1>STEAK</h1>
-        <p>This is text</p>
-        <button>Add To Cart</button>
-      </div>
-      <div class="border border-2 border-red-500 p-5 rounded-[25px]">
-        <img src="/images/test/steak.png" alt="" class="w-96" />
-        <h1>STEAK</h1>
-        <p>This is text</p>
-        <button>Add To Cart</button>
-      </div>
-    </div>
-
-    <!-- Container for the "View More" button to center it -->
-    <div class="flex justify-center mt-4">
-      <button class="bg-red-500 px-4 py-3 rounded-full text-white"
-        >View More</button
+  <div class="rounded-[25px] overflow-hidden">
+    <div class="w-full h-auto items-center p-5">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 py-4"
       >
+        {#each popular_now as item, index}
+          <div
+            class="flex flex-col border-2 border-red-500 rounded-2xl overflow-hidden"
+          >
+            <div class="aspect-w-1 aspect-h-1 w-full">
+              <img
+                src={item.image}
+                alt={item.name}
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+              <h1 class="text-2xl font-bold uppercase mb-2">{item.name}</h1>
+              <p class="flex-grow text-sm line-clamp-3">{item.description}</p>
+              <button
+                class="bg-red-500 px-3 py-2 rounded-full text-white mt-4 self-start"
+              >
+                Add To Cart
+              </button>
+            </div>
+          </div>
+        {/each}
+      </div>
+
+      <div class="flex justify-center mt-4">
+        <button class="bg-red-500 px-4 py-3 rounded-full text-white"
+          >View More</button
+        >
+      </div>
     </div>
   </div>
 </div>
 
-<div class="my-5 rounded-[25px] overflow-hidden grid grid-cols-2 gap-4">
-  <div class="w-full h-auto items-center">
-    <div class="w-[full] h-[600px] relative rounded-[25px] overflow-hidden">
+<div
+  class="my-5 rounded-[25px] overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-4"
+>
+  <div class="w-full h-auto flex justify-center">
+    <div class="w-full h-[500px] relative rounded-[25px] overflow-hidden">
       <Map />
     </div>
   </div>
 
-  <div class="w-full h-[600px] items-center rounded-[25px] overflow-hidden">
-    <Hours />
+  <div
+    class="w-full h-auto flex justify-center items-center rounded-[25px] overflow-hidden"
+  >
+    <div class="h-[400px] w-full">
+      <Hours />
+    </div>
   </div>
 </div>
 

@@ -453,14 +453,32 @@ const drinks = [
   },
 ];
 
-const popular_now = [
-  entrees[3],
-  entrees[1],
-  entrees[0],
-  appetizers[5],
-  entrees[6],
+const alcohol = [
+  {
+    image: '/images/menu/drinks/hot-chocolate.png',
+    name: 'Bla',
+    description:
+      'A refreshing carbonated drink available in a variety of flavors.',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
 ];
+
+const desserts = [
+  {
+    image: '/images/menu/drinks/hot-chocolate.png',
+    name: 'Bla',
+    description:
+      'A refreshing carbonated drink available in a variety of flavors.',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+];
+
+const popular_now = [entrees[3], entrees[1], entrees[0], appetizers[6]];
 
 export { popular_now };
 
-export default { appetizers, entrees, salads, kids, drinks };
+export default { appetizers, entrees, salads, kids, drinks, desserts, alcohol };
