@@ -3,7 +3,7 @@
   import '@splidejs/svelte-splide/css/core';
 </script>
 
-<div class="aspect-[16/3] rounded-[25px] overflow-hidden">
+<div class="h-96 rounded-[25px] overflow-hidden">
   <Splide
     aria-label="My Favorite Images"
     options={{
@@ -15,7 +15,7 @@
   >
     <!-- Slide 1 -->
     <SplideSlide>
-      <div class="aspect-[16/3] h-full w-full flex items-center relative">
+      <div class="h-96 w-full flex items-center relative">
         <video
           autoplay
           muted
@@ -28,7 +28,7 @@
           Your browser does not support HTML5 video.
         </video>
         <div
-          class="p-5 space-y-4 max-h-full bg-gray-100 bg-opacity-50 relative"
+          class="flex flex-col p-5 space-y-4 h-full bg-gray-100 relative justify-center"
         >
           <h1 class="text-xl md:text-3xl lg:text-4xl font-bold">Great Food.</h1>
           <h1 class="text-xl md:text-3xl lg:text-4xl font-bold">
@@ -48,7 +48,7 @@
     <!-- Slide 2 -->
     <SplideSlide>
       <div
-        class="relative aspect-[16/3] h-full w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
+        class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
         style="background-image: url('/images/test/banner.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
       >
         <div class="absolute inset-0 bg-black opacity-50"></div>
@@ -75,7 +75,7 @@
     <!-- Slide 2 -->
     <SplideSlide>
       <div
-        class="relative aspect-[16/3] h-full w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
+        class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
         style="background-image: url('/images/test/banner2.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
       >
         <div class="absolute inset-0 bg-black opacity-50"></div>
