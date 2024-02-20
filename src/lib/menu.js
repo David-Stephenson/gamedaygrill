@@ -78,6 +78,14 @@ const appetizers = [
     serves: '2',
     options: null,
   },
+  {
+    image: '/images/menu/appetizers/cheese-curds.png',
+    name: 'Fried Cheese Curds',
+    description: '',
+    price: '$4.99',
+    serves: '2',
+    options: null,
+  },
 ];
 
 const entrees = [
@@ -169,6 +177,20 @@ const entrees = [
   {
     image: '/images/menu/entrees/wings.png',
     name: 'Wings',
+    description: '',
+    price: '$4.99',
+    serves: '1',
+    options: [
+      {
+        name: 'Doneness',
+        options: doneness,
+      },
+      { name: 'Sides', options: sides },
+    ],
+  },
+  {
+    image: '/images/menu/entrees/grilled-chicken.png',
+    name: 'Grilled Chicken',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -281,6 +303,14 @@ const salads = [
       { name: 'Sides', options: sides },
     ],
   },
+  {
+    image: '/images/menu/salads/orzo.png',
+    name: 'orzo Salad',
+    description: '',
+    price: '$4.99',
+    serves: '1',
+    options: null,
+  },
 ];
 
 const kids = [
@@ -290,13 +320,7 @@ const kids = [
     description: '',
     price: '$4.99',
     serves: '1',
-    options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
-    ],
+    options: null,
   },
   {
     image: '/images/menu/kids/grilled-cheese.png',
@@ -304,13 +328,7 @@ const kids = [
     description: '',
     price: '$4.99',
     serves: '1',
-    options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
-    ],
+    options: null,
   },
   {
     image: '/images/menu/kids/hotdog.png',
@@ -318,13 +336,7 @@ const kids = [
     description: '',
     price: '$4.99',
     serves: '1',
-    options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
-    ],
+    options: null,
   },
   {
     image: '/images/menu/kids/nuggets.png',
@@ -332,13 +344,7 @@ const kids = [
     description: '',
     price: '$4.99',
     serves: '1',
-    options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
-    ],
+    options: null,
   },
   {
     image: '/images/menu/kids/pbj.png',
@@ -346,13 +352,7 @@ const kids = [
     description: '',
     price: '$4.99',
     serves: '1',
-    options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
-    ],
+    options: null,
   },
   {
     image: '/images/menu/kids/pizza.png',
@@ -360,13 +360,7 @@ const kids = [
     description: '',
     price: '$4.99',
     serves: '1',
-    options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
-    ],
+    options: null,
   },
   {
     image: '/images/menu/kids/slider.png',
@@ -374,13 +368,15 @@ const kids = [
     description: '',
     price: '$4.99',
     serves: '1',
-    options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
-    ],
+    options: null,
+  },
+  {
+    image: '/images/menu/kids/fish-sticks.png',
+    name: 'Fish Sticks',
+    description: '',
+    price: '$4.99',
+    serves: '1',
+    options: null,
   },
 ];
 
@@ -467,10 +463,65 @@ const alcohol = [
 
 const desserts = [
   {
-    image: '/images/menu/drinks/hot-chocolate.png',
-    name: 'Bla',
-    description:
-      'A refreshing carbonated drink available in a variety of flavors.',
+    image: '/images/menu/desserts/apple-pie.png',
+    name: 'Apple Pie',
+    description: 'A classic dessert made with fresh apples and a flaky crust.',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/desserts/banoffee-pie.png',
+    name: 'Banoffee Pie',
+    description: '',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/desserts/brownie-sundae.png',
+    name: 'Brownie Sundae',
+    description: '',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/desserts/cheese-cake.png',
+    name: 'New York Cheesecake',
+    description: '',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/desserts/lava-cake.png',
+    name: 'Lava Cake',
+    description: '',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/desserts/strawberry-cake.png',
+    name: 'Strawberry Cake',
+    description: '',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/desserts/icecream.png',
+    name: 'Ice Cream Scoops',
+    description: '',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/desserts/oreo-cupcake.png',
+    name: 'Orea Cupcake',
+    description: '',
     price: '$1.99',
     serves: 1,
     options: null,
