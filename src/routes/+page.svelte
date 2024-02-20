@@ -15,44 +15,38 @@
 
 <Carousel />
 
-<div class="my-5 px-4 sm:px-0">
-  <h1 class="text-2xl font-bold mb-3 text-center sm:text-left">POPULAR NOW</h1>
+<!-- "Popular Items" -->
 
-  <div class="rounded-[25px] overflow-hidden">
-    <div class="w-full h-auto items-center p-5">
+<div class="mt-5">
+  <h1 class="text-2xl font-bold mb-1 text-center sm:text-left uppercase">
+    Popular Now
+  </h1>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+  >
+    {#each popular_now as item, index}
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 py-4"
+        class="flex flex-col border-2 border-red-500 rounded-2xl overflow-hidden"
       >
-        {#each popular_now as item, index}
-          <div
-            class="flex flex-col border-2 border-red-500 rounded-2xl overflow-hidden"
+        <div class="aspect-w-1 aspect-h-1 w-full">
+          <img
+            src={item.image}
+            alt={item.name}
+            class="object-cover w-full h-full"
+          />
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <h1 class="text-2xl font-bold uppercase mb-2">{item.name}</h1>
+          <p class="flex-grow text-sm line-clamp-3">{item.description}</p>
+          <button
+            class="bg-red-500 px-3 py-2 rounded-full text-white mt-4 self-start"
           >
-            <div class="aspect-w-1 aspect-h-1 w-full">
-              <img
-                src={item.image}
-                alt={item.name}
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <div class="p-4 flex flex-col flex-grow">
-              <h1 class="text-2xl font-bold uppercase mb-2">{item.name}</h1>
-              <p class="flex-grow text-sm line-clamp-3">{item.description}</p>
-              <button
-                class="bg-red-500 px-3 py-2 rounded-full text-white mt-4 self-start"
-              >
-                Add To Cart
-              </button>
-            </div>
-          </div>
-        {/each}
+            Add To Cart
+          </button>
+        </div>
       </div>
-
-      <div class="flex justify-center mt-4">
-        <button class="bg-red-500 px-4 py-3 rounded-full text-white"
-          >View More</button
-        >
-      </div>
-    </div>
+    {/each}
   </div>
 </div>
 
