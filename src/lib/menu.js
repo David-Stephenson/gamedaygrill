@@ -13,7 +13,7 @@ const sides = ['Mashed Potatos', ' Fries', 'Mac and Cheese'];
 const kids_sides = [
   'Apple Slices',
   'Mashed Potatos',
-  'Mac and CHeese',
+  'Mac and Cheese',
   'Fries',
   'Strawberry Yogurt',
   'Bowl of fruit',
@@ -406,7 +406,7 @@ const drinks = [
     image: '/images/menu/drinks/iced-tea.png',
     name: 'Iced Tea',
     description:
-      'A refreshing carbonated drink available in a variety of flavors.',
+      'A nice, cold refreshing tea.  Available sweetened or unsweetened.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -415,7 +415,7 @@ const drinks = [
     image: '/images/menu/drinks/lemonade.png',
     name: 'Lemonade',
     description:
-      'A refreshing carbonated drink available in a variety of flavors.',
+      'A refreshing sweet and sour lemonade, perfect to pair with a meal.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -424,7 +424,7 @@ const drinks = [
     image: '/images/menu/drinks/smoothie.png',
     name: 'Berry Smoothie',
     description:
-      'A refreshing carbonated drink available in a variety of flavors.',
+      'Our specialty sweet, delicious berry smoothie made in-house.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -433,7 +433,7 @@ const drinks = [
     image: '/images/menu/drinks/coffee.png',
     name: 'Coffee',
     description:
-      'A refreshing carbonated drink available in a variety of flavors.',
+      'Get back in the game with a smooth, energizing cup of our house blend coffee.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -442,7 +442,7 @@ const drinks = [
     image: '/images/menu/drinks/hot-chocolate.png',
     name: 'Hot Chocolate',
     description:
-      'A refreshing carbonated drink available in a variety of flavors.',
+      'A delicious beverage, perfect to enjoy in cold weather. (Or year-round, no judgements.)',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -473,7 +473,7 @@ const desserts = [
   {
     image: '/images/menu/desserts/banoffee-pie.png',
     name: 'Banoffee Pie',
-    description: '',
+    description: 'A banana-caramel pie served with a scoop of vanilla ice cream.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -481,7 +481,7 @@ const desserts = [
   {
     image: '/images/menu/desserts/brownie-sundae.png',
     name: 'Brownie Sundae',
-    description: '',
+    description: 'A nice vanilla sundae with brownie bits mixed in.  Topped with chocolate syrup.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -489,7 +489,7 @@ const desserts = [
   {
     image: '/images/menu/desserts/cheese-cake.png',
     name: 'New York Cheesecake',
-    description: '',
+    description: 'A classic New York cheesecake topped with raspberries and strawberry sauce.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -497,7 +497,7 @@ const desserts = [
   {
     image: '/images/menu/desserts/lava-cake.png',
     name: 'Lava Cake',
-    description: '',
+    description: 'A chocolate cake topped with hot chocolate syrup.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -505,7 +505,7 @@ const desserts = [
   {
     image: '/images/menu/desserts/strawberry-cake.png',
     name: 'Strawberry Cake',
-    description: '',
+    description: 'Our classic vanilla-strawberry cake topped with strawberry jam.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -513,7 +513,7 @@ const desserts = [
   {
     image: '/images/menu/desserts/icecream.png',
     name: 'Ice Cream Scoops',
-    description: '',
+    description: 'A single scoop of ice cream available in a variety of flavors.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -521,7 +521,7 @@ const desserts = [
   {
     image: '/images/menu/desserts/oreo-cupcake.png',
     name: 'Orea Cupcake',
-    description: '',
+    description: 'A rich Orea cupcake to scratch your sweet tooth.',
     price: '$1.99',
     serves: 1,
     options: null,
