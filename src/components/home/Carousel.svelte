@@ -4,7 +4,7 @@
   import '@splidejs/svelte-splide/css/core';
 </script>
 
-<div class="aspect-[16/3] rounded-[25px] overflow-hidden">
+<div class="h-96 rounded-[25px] overflow-hidden">
   <Splide
     aria-label="My Favorite Images"
     options={{
