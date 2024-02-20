@@ -8,15 +8,6 @@
   // Components
   import Navbar from '$components/global/Navbar.svelte';
   import Footer from '$components/global/Footer.svelte';
-
-  onMount(() => {
-    /* Used to detect if the user is using Microsoft Edge
-		 Used for changing images and videos to formats that are supported by Edge
-		 Edge doesn't support AV1 or AVIF for some reason even though it's based on Chromium */
-    if (navigator.userAgent.indexOf('Edg') > -1) {
-      console.log('Microsoft Edge');
-    }
-  });
 </script>
 
 <!-- Import Fonts -->
