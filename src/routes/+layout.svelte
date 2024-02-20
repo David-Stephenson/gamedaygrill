@@ -21,8 +21,6 @@
   />
 </svelte:head>
 
-{@html '<!-- This comment shows up in production-->'}
-
 <main class="flex flex-col min-h-screen">
   <!-- Navbar -->
   <header>
