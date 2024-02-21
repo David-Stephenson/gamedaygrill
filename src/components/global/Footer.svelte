@@ -1,6 +1,6 @@
 <script>
   import { information, contact } from '$config';
-  import { Facebook, Twitter, Instagram } from 'lucide-svelte';
+  import { Facebook, Twitter, Instagram, Phone, MapPin } from 'lucide-svelte';
   import Logo from '$components/global/Logo.svelte';
 
   const socialLinks = {
@@ -27,7 +27,8 @@
         </div>
       </div>
       <div class="flex flex-col items-center text-gray-600 text-center">
-        <p class="text-sm">Mon-Fri 9am-9pm, Sat-Sun 10am-10pm</p>
+        <p class="text-sm"><MapPin />Address</p>
+        <a class="text-sm" href="tel:6145935935"><Phone /> (614)-5483-5833</a>
       </div>
       <div class="flex space-x-2 items-center md:items-start justify-center">
         {#each Object.entries(socialLinks) as [name, link]}
