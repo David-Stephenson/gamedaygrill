@@ -99,9 +99,9 @@ const entrees = [
     options: [
       {
         name: 'Doneness',
-        options: doneness,
+        choices: doneness,
       },
-      { name: 'Sides', options: sides },
+      { name: 'Sides', choices: sides },
     ],
   },
   {
@@ -391,7 +391,7 @@ const drinks = [
     options: [
       {
         name: 'Flavor',
-        options: [
+        choices: [
           'Cola',
           'Diet Cola',
           'Lemon and Lime',
@@ -423,8 +423,7 @@ const drinks = [
   {
     image: '/images/menu/drinks/smoothie.png',
     name: 'Berry Smoothie',
-    description:
-      'Our specialty sweet, delicious berry smoothie made in-house.',
+    description: 'Our specialty sweet, delicious berry smoothie made in-house.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -443,6 +442,22 @@ const drinks = [
     name: 'Hot Chocolate',
     description:
       'A delicious beverage, perfect to enjoy in cold weather. (Or year-round, no judgements.)',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/drinks/apple-cider.png',
+    name: 'Apple Cider',
+    description: 'Our specialty sweet, delicious berry smoothie made in-house.',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/drinks/arnold-palmer.png',
+    name: 'Iced Tea Lemonade',
+    description: 'Our specialty sweet, delicious berry smoothie made in-house.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -473,7 +488,8 @@ const desserts = [
   {
     image: '/images/menu/desserts/banoffee-pie.png',
     name: 'Banoffee Pie',
-    description: 'A banana-caramel pie served with a scoop of vanilla ice cream.',
+    description:
+      'A banana-caramel pie served with a scoop of vanilla ice cream.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -481,7 +497,8 @@ const desserts = [
   {
     image: '/images/menu/desserts/brownie-sundae.png',
     name: 'Brownie Sundae',
-    description: 'A nice vanilla sundae with brownie bits mixed in.  Topped with chocolate syrup.',
+    description:
+      'A nice vanilla sundae with brownie bits mixed in.  Topped with chocolate syrup.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -489,7 +506,8 @@ const desserts = [
   {
     image: '/images/menu/desserts/cheese-cake.png',
     name: 'New York Cheesecake',
-    description: 'A classic New York cheesecake topped with raspberries and strawberry sauce.',
+    description:
+      'A classic New York cheesecake topped with raspberries and strawberry sauce.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -505,7 +523,8 @@ const desserts = [
   {
     image: '/images/menu/desserts/strawberry-cake.png',
     name: 'Strawberry Cake',
-    description: 'Our classic vanilla-strawberry cake topped with strawberry jam.',
+    description:
+      'Our classic vanilla-strawberry cake topped with strawberry jam.',
     price: '$1.99',
     serves: 1,
     options: null,
@@ -513,7 +532,8 @@ const desserts = [
   {
     image: '/images/menu/desserts/icecream.png',
     name: 'Ice Cream Scoops',
-    description: 'A single scoop of ice cream available in a variety of flavors.',
+    description:
+      'A single scoop of ice cream available in a variety of flavors.',
     price: '$1.99',
     serves: 1,
     options: null,
