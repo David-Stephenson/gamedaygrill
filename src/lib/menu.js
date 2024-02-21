@@ -543,7 +543,7 @@ const desserts = [
 const alcohol = [
   {
     image: '/images/menu/alcohol/beer.png',
-    name: 'Beer',
+    name: 'Draft Beer',
     description: '',
     price: '$1.99',
     serves: 1,
@@ -560,6 +560,14 @@ const alcohol = [
   {
     image: '/images/menu/alcohol/spiked-cranberry.png',
     name: 'Spiked Cranberry Juice',
+    description: '',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/alcohol/cola-rum.png',
+    name: 'Cola and Rum',
     description: '',
     price: '$1.99',
     serves: 1,
