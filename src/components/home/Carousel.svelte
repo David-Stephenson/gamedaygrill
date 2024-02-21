@@ -114,7 +114,7 @@
             Text
           </p>
           <a
-            href="#"
+            href="/account"
             class="mt-4 inline-block bg-white text-red-500 px-6 py-3 text-lg lg:text-xl font-semibold rounded-full shadow-md hover:bg-red-500 hover:text-white transition-colors duration-300 ease-in-out"
           >
             Join
