@@ -22,7 +22,7 @@
   <title>Menu | Game Day Grill</title>
 </svelte:head>
 
-<Modal />
+<Modal bind:isOpen {selectedItem} />
 
 <div class="container mx-auto px-6 py-8">
   {#each Object.keys(menu) as section (section)}
