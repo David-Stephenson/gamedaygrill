@@ -60,7 +60,7 @@
           <h1 class="text-5xl mt-12 md:text-6xl font-bold text-white">
             Friday Football Feast
           </h1>
-          <p class="hidden text-xl md:text-2xl font-semibold text-white mt-4">
+          <p class=" text-xl md:text-2xl font-semibold text-white mt-4">
             Kickstart your weekend with live football and our special game day
             menu!
           </p>
@@ -75,8 +75,6 @@
     </SplideSlide>
 
     <!-- Slide 3 -->
-
-    <!-- Slide 2 -->
     <SplideSlide>
       <div
         class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
@@ -89,6 +87,38 @@
               style="font-family: 'Yellowtail', handwriting;">Mmm...</span
             >
           </h1>
+        </div>
+      </div>
+    </SplideSlide>
+
+    <!-- Slide 3 -->
+    <SplideSlide>
+      <div
+        class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
+        style="background-image: url('/images/banners/rewards_banner.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+      >
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <!-- Increased opacity for better readability -->
+        <div class="z-10 text-center px-4">
+          <!-- Added padding for better responsiveness -->
+          <h1
+            class="text-4xl md:text-6xl lg:text-7xl font-bold text-white shadow-lg"
+          >
+            <!-- Responsive font size and added text shadow -->
+            Victory Club Rewards
+          </h1>
+          <p
+            class="text-lg md:text-xl lg:text-2xl font-semibold text-white mt-4 shadow"
+          >
+            <!-- Responsive font size and subtle text shadow -->
+            Text
+          </p>
+          <a
+            href="#"
+            class="mt-4 inline-block bg-white text-red-500 px-6 py-3 text-lg lg:text-xl font-semibold rounded-full shadow-md hover:bg-red-500 hover:text-white transition-colors duration-300 ease-in-out"
+          >
+            Join
+          </a>
         </div>
       </div>
     </SplideSlide>
