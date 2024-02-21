@@ -23,7 +23,7 @@
 
 <main class="flex flex-col min-h-screen">
   <!-- Navbar -->
-  <header class='pt-5'>
+  <header>
     <Navbar />
   </header>
 
