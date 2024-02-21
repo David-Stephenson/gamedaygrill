@@ -51,18 +51,18 @@
 </div>
 
 <div
-  class="my-5 rounded-[25px] overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-4"
+  class="my-5 rounded-[25px] overflow-hidden flex flex-col md:flex-row gap-4"
 >
-  <div class="w-full h-auto flex justify-center">
-    <div class="w-full h-[500px] relative rounded-[25px] overflow-hidden">
+  <div class="flex-grow md:flex-grow-3 w-full h-auto flex justify-center">
+    <div class="w-full h-[550px] relative rounded-[25px] overflow-hidden">
       <Map />
     </div>
   </div>
 
   <div
-    class="w-full h-auto flex justify-center items-center rounded-[25px] overflow-hidden"
+    class="flex-grow md:flex-grow-1 w-full h-auto flex justify-center items-center rounded-[25px] overflow-hidden border-2 border-red-500"
   >
-    <div class="h-[400px] w-full">
+    <div class="h-full w-full">
       <Hours />
     </div>
   </div>
@@ -91,6 +91,13 @@
       >Reserve Now</a
     >
   </section>
+</div>
+
+<div
+  class="w-full h-96 rounded-[25px]"
+  style="background-image: url('/images/test/bar.png');"
+>
+  <h1>Milkshke Bar</h1>
 </div>
 
 <div class="my-5 rounded-[25px] overflow-hidden">
