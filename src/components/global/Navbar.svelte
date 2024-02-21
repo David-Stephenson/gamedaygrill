@@ -21,7 +21,7 @@
   }
 </script>
 
-<div class="bg-white text-gray-800 px-4 sm:px-8 py-3 relative">
+<div class="bg-white text-gray-800 px-4 sm:px-8 pt-5 relative">
   <nav class="flex justify-between items-center">
     <a
       href="/"
