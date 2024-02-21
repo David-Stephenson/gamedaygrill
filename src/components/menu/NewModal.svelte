@@ -1,5 +1,6 @@
 <script>
   import { createDialog, melt } from '@melt-ui/svelte';
+  import { X } from 'lucide-svelte';
 
   const {
     elements: { trigger, portalled, overlay, content, close },
@@ -25,14 +26,14 @@
       <div
         class="bg-white rounded-lg shadow-lg max-w-lg md:max-w-4xl w-full mx-2 md:p-6 p-4 space-y-4 overflow-auto"
       >
-        <!-- <button
+        <button
           on:click={() => {
             isOpen = false;
           }}
           class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 float-right"
         >
-          Close
-        </button> -->
+          <X />
+        </button>
         <section class="mx-auto">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
             <div>
@@ -40,26 +41,8 @@
                 <img
                   src={selectedItem.image}
                   alt={selectedItem.name}
-                  class="w- border-b-2 border-red-500"
+                  class="w-96"
                 />
-                <div class="flex flex-wrap">
-                  <div class="flex-1 border-r-2 border-red-500 p-2">
-                    <p class="font-bold">Proteins</p>
-                    <p>6.2 g</p>
-                  </div>
-                  <div class="flex-1 border-r-2 border-red-500 p-2">
-                    <p class="font-bold">Fats</p>
-                    <p>8.3 g</p>
-                  </div>
-                  <div class="flex-1 border-r-2 border-red-500 p-2">
-                    <p class="font-bold">Carbohydrates</p>
-                    <p>28.6 g</p>
-                  </div>
-                  <div class="flex-1 p-2">
-                    <p class="font-bold">Calories</p>
-                    <p>213.7 kcal</p>
-                  </div>
-                </div>
               </div>
             </div>
 

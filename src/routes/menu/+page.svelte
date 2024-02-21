@@ -5,16 +5,9 @@
   let isOpen = false;
   let selectedItem = null;
 
-  // let menu;
-  // export { menu as data };
-
   function openModal(item) {
     selectedItem = item;
     isOpen = true;
-  }
-
-  function closeModal() {
-    isOpen = false;
   }
 </script>
 
@@ -45,7 +38,7 @@
                 alt={item.name}
               />
               <span class="text-lg font-bold">{item.name}</span>
-              <span>{item.description}</span>
+              <span class="truncate-lines">{item.description}</span>
               <span class="text-lg">{item.price}</span>
             </div>
           </div>
@@ -54,3 +47,14 @@
     </div>
   {/each}
 </div>
+
+<style>
+  /* Custom CSS for truncating text after a certain number of lines */
+  .truncate-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines you want to display */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
