@@ -1,5 +1,4 @@
 // Dont directly export these
-
 const doneness = [
   'Blue',
   'Rare',
@@ -10,6 +9,7 @@ const doneness = [
 ];
 
 const sides = ['Mashed Potatos', ' Fries', 'Mac and Cheese'];
+
 const kids_sides = [
   'Apple Slices',
   'Mashed Potatos',
@@ -20,12 +20,12 @@ const kids_sides = [
 ];
 
 // Export these
-
 const appetizers = [
   {
     image: '/images/menu/appetizers/onion-rings.png',
     name: 'Olympic Onion Rings',
-    description: '',
+    description:
+      'A triumph of flavor and crunch! Picture thick, sweet onions coated in a golden batter, seasoned with a blend of zesty spices and a hint of sweetness.',
     price: '$4.99',
     serves: '2',
     options: null,
@@ -33,7 +33,8 @@ const appetizers = [
   {
     image: '/images/menu/appetizers/nachos.png',
     name: 'Knockout Nachos',
-    description: '',
+    description:
+      'A flavor-packed explosion of crispy tortilla chips, generously layered with melted cheese, zesty salsa, and creamy guacamole.',
     price: '$7.99',
     serves: '2',
     options: null,
@@ -41,14 +42,15 @@ const appetizers = [
   {
     image: '/images/menu/appetizers/fries.png',
     name: 'Fighter Fries',
-    description: '',
+    description:
+      'These fries are a powerhouse of flavor, boasting a golden exterior that crunches with each bite, revealing a fluffy, potato center.',
     price: '$6.99',
     serves: '2',
     options: null,
   },
   {
     image: '/images/menu/appetizers/coleslaw.png',
-    name: 'Coleslaw',
+    name: 'Curling Coleslaw',
     description: '',
     price: '$8.99',
     serves: '2',
@@ -57,15 +59,17 @@ const appetizers = [
   {
     image: '/images/menu/appetizers/tator-tots.png',
     name: 'Tackle Tator Tots',
-    description: '',
+    description:
+      'These tots are a gridiron delight, with a crispy exterior that crunches with each bite, giving way to a soft, potatoey center. Seasoned to perfection with a savory blend of spices, they are the MVP of any game-day spread.',
     price: '$4.99',
     serves: '2',
     options: null,
   },
   {
     image: '/images/menu/appetizers/beet-chips.png',
-    name: 'Beet Chips',
-    description: '',
+    name: 'Batting Beet Chips',
+    description:
+      'These chips offer a vibrant explosion of flavor, featuring thin slices of earthy beets roasted to crispy perfection. Seasoned lightly with sea salt or herbs, they are a wholesome snack that packs a punch of nutrition and taste.',
     price: '$4.99',
     serves: '2',
     options: null,
@@ -80,7 +84,7 @@ const appetizers = [
   },
   {
     image: '/images/menu/appetizers/cheese-curds.png',
-    name: 'Fried Cheese Curds',
+    name: 'Captain Cheese Curds',
     description: '',
     price: '$4.99',
     serves: '2',
@@ -91,7 +95,7 @@ const appetizers = [
 const entrees = [
   {
     image: '/images/menu/entrees/steak.png',
-    name: 'Steak',
+    name: 'Sudden Death Steak',
     description:
       "Get in the game with our Sirloin Supreme! A champion cut, expertly seared for a robust flavor that's always a crowd-pleaser.",
     price: '$4.99',
@@ -106,7 +110,7 @@ const entrees = [
   },
   {
     image: '/images/menu/entrees/hamburger.png',
-    name: 'Hamburger',
+    name: 'Half-time Hamburger',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -120,7 +124,7 @@ const entrees = [
   },
   {
     image: '/images/menu/entrees/chicken-sandwich.png',
-    name: 'Chicken Sandwich',
+    name: "Coach's Chicken Sandwich",
     description: '',
     price: '$4.99',
     serves: '1',
@@ -134,7 +138,7 @@ const entrees = [
   },
   {
     image: '/images/menu/entrees/porkchop.png',
-    name: 'Porkchop',
+    name: 'Penalty Porkchop',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -148,7 +152,7 @@ const entrees = [
   },
   {
     image: '/images/menu/entrees/ribs.png',
-    name: 'Ribs',
+    name: 'Rifle Ribs',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -162,7 +166,7 @@ const entrees = [
   },
   {
     image: '/images/menu/entrees/salmon.png',
-    name: 'Salmon',
+    name: 'Soccer Salmon',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -176,7 +180,7 @@ const entrees = [
   },
   {
     image: '/images/menu/entrees/wings.png',
-    name: 'Wings',
+    name: 'Wild Card Wings',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -190,7 +194,7 @@ const entrees = [
   },
   {
     image: '/images/menu/entrees/grilled-chicken.png',
-    name: 'Grilled Chicken',
+    name: 'Game Day Grilled Chicken',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -207,7 +211,7 @@ const entrees = [
 const salads = [
   {
     image: '/images/menu/salads/buffalo-chicken.png',
-    name: 'Buffalo Chicken',
+    name: 'Ball Boy Buffalo Chicken',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -221,7 +225,7 @@ const salads = [
   },
   {
     image: '/images/menu/salads/caprese.png',
-    name: 'Caprese Salad',
+    name: 'Clutch Caprese Salad',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -235,7 +239,7 @@ const salads = [
   },
   {
     image: '/images/menu/salads/ceaser.png',
-    name: 'Ceaser Salad',
+    name: 'Fencing Ceaser Salad',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -263,7 +267,7 @@ const salads = [
   },
   {
     image: '/images/menu/salads/steakhouse.png',
-    name: 'Steakhouse Salad',
+    name: 'Strength Steakhouse Salad',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -277,7 +281,7 @@ const salads = [
   },
   {
     image: '/images/menu/salads/taco.png',
-    name: 'Taco Salad',
+    name: 'Timeout Taco Salad',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -305,7 +309,7 @@ const salads = [
   },
   {
     image: '/images/menu/salads/orzo.png',
-    name: 'orzo Salad',
+    name: 'Orzo Salad',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -464,18 +468,6 @@ const drinks = [
   },
 ];
 
-const alcohol = [
-  {
-    image: '/images/menu/drinks/hot-chocolate.png',
-    name: 'Bla',
-    description:
-      'A refreshing carbonated drink available in a variety of flavors.',
-    price: '$1.99',
-    serves: 1,
-    options: null,
-  },
-];
-
 const desserts = [
   {
     image: '/images/menu/desserts/apple-pie.png',
@@ -542,6 +534,33 @@ const desserts = [
     image: '/images/menu/desserts/oreo-cupcake.png',
     name: 'Orea Cupcake',
     description: 'A rich Orea cupcake to scratch your sweet tooth.',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+];
+
+const alcohol = [
+  {
+    image: '/images/menu/alcohol/beer.png',
+    name: 'Beer',
+    description: '',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/alcohol/hard-seltzer.png',
+    name: 'Hard Seltzer',
+    description: '',
+    price: '$1.99',
+    serves: 1,
+    options: null,
+  },
+  {
+    image: '/images/menu/alcohol/spiked-cranberry.png',
+    name: 'Spiked Cranberry Juice',
+    description: '',
     price: '$1.99',
     serves: 1,
     options: null,
