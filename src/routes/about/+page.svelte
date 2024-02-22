@@ -92,38 +92,13 @@
       </p>
     </div>
 
-    <!-- Call to Action Section -->
-    <div class="mt-8 text-center">
+    <div class=" text-center">
       <a
         href="/reserve"
-        class="inline-block bg-white text-red-500 font-bold py-2 px-4 rounded-lg shadow hover:bg-gray-100 transition-colors"
+        class="inline-block bg-red-500 text-white font-bold py-2 px-4 rounded-lg shadow hover:bg-red-600 hover:text-white transition-colors"
       >
         Book Your Table Now
       </a>
-    </div>
-
-    <!-- Footer Image Gallery -->
-    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-      <img
-        src="/images/about/footer1.png"
-        alt="Gallery Image 1"
-        class="w-full h-auto rounded-lg shadow"
-      />
-      <img
-        src="/path/to/your/gallery-image-2.jpg"
-        alt="Gallery Image 2"
-        class="w-full h-auto rounded-lg shadow"
-      />
-      <img
-        src="/path/to/your/gallery-image-3.jpg"
-        alt="Gallery Image 3"
-        class="w-full h-auto rounded-lg shadow"
-      />
-      <img
-        src="/path/to/your/gallery-image-4.jpg"
-        alt="Gallery Image 4"
-        class="w-full h-auto rounded-lg shadow"
-      />
     </div>
   </div>
 </div>
