@@ -1,5 +1,4 @@
 <script>
-  import { goto } from '$app/navigation';
   import { Splide, SplideSlide } from '@splidejs/svelte-splide';
   import '@splidejs/svelte-splide/css/core';
 </script>
