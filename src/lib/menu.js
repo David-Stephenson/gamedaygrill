@@ -40,9 +40,15 @@ const appetizers = [
     image: '/images/menu/appetizers/nachos.png',
     name: 'Knockout Nachos',
     description:
-      'A flavor-packed explosion of crispy tortilla chips, generously layered with melted cheese, zesty salsa, and creamy guacamole.',
+      'A flavor-packed explosion of crispy tortilla chips, generously layered with melted cheese, zesty salsa, creamy guacamole, and your choice of meat.',
     price: '$7.99',
-    options: null,
+    options: [
+      {
+        name: 'Meat',
+        selectMax: 1,
+        choices: ['Beef', 'Pork', 'Chicken'],
+      },
+    ],
   },
   {
     image: '/images/menu/appetizers/fries.png',
@@ -339,6 +345,7 @@ const drinks = [
     options: [
       {
         name: 'Flavor',
+        selectMax: 1,
         choices: [
           'Cola',
           'Diet Cola',
@@ -476,14 +483,44 @@ const alcohol = [
     name: 'Draft Beer',
     description: 'Draft Beer (Supplies may vary)',
     price: '$1.99',
-    options: null,
+    options: [
+      {
+        name: 'Style',
+        selectMax: 1,
+        choices: [
+          'Galactic Invasion',
+          'Mystic Barrel',
+          'Thunderclap Wheat Ale',
+          'Shadow Cask Stout',
+          'Solar Flare Saison',
+          'Frost Giant Lager',
+        ],
+      },
+    ],
   },
   {
     image: '/images/menu/alcohol/hard-seltzer.png',
     name: 'Hard Seltzer',
     description: 'Alcoholic Seltzer',
     price: '$1.99',
-    options: null,
+    options: [
+      {
+        name: 'Flavor',
+        selectMax: 1,
+        choices: [
+          'Wild Berry',
+          'Cherry',
+          'Blueberry',
+          'Citrus',
+          'Fruity Blast',
+        ],
+      },
+      {
+        name: 'Sizes',
+        selectMax: 1,
+        choices: ['12 oz', '16 oz', '19.2 oz'],
+      },
+    ],
   },
   {
     image: '/images/menu/alcohol/spiked-cranberry.png',
