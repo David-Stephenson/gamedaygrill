@@ -28,14 +28,17 @@
       class="text-2xl text-center text-red-500 font-russo flex items-center"
     >
       <LogoComponent class="h-8 fill-current" />
-      <span class="ml-3 hidden sm:inline">{information.name}</span>
+      <span class="ml-3 hidden md:inline">{information.name}</span>
+      <!-- Adjusted to md:inline -->
     </a>
-    <div class="hidden sm:flex justify-center flex-grow text-gray-800">
+    <div class="hidden md:flex justify-center flex-grow text-gray-800">
+      <!-- Adjusted to md:flex -->
       {#each Object.entries(links) as [name, url]}
         <a href={url} class="text-base mx-4 capitalize">{name}</a>
       {/each}
     </div>
-    <div class="hidden md:flex items-center text-gray-800">
+    <div class="hidden lg:flex items-center text-gray-800">
+      <!-- Adjusted to lg:flex for larger screens -->
       <a href="/bag" class="text-sm mx-4">
         <ShoppingBag />
       </a>
@@ -44,7 +47,7 @@
       </a>
     </div>
     <button
-      class="md:hidden flex items-center px-3 py-2"
+      class="lg:hidden flex items-center px-3 py-2"
       on:click={toggleDropdown}
     >
       <Menu />
@@ -53,17 +56,25 @@
   {#if isOpen}
     <div
       id="dropdown"
-      class="md:hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10"
-      on:click={closeDropdown}
+      class="lg:hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10"
+      tabindex="0"
     >
       {#each Object.entries(links) as [name, url]}
-        <a href={url} class="block px-4 py-2 text-base capitalize text-gray-800"
-          >{name}</a
+        <a
+          href={url}
+          class="block px-4 py-2 text-base capitalize text-gray-800"
+          on:click={closeDropdown}>{name}</a
         >
       {/each}
-      <a href="/bag" class="block px-4 py-2 text-base text-gray-800">Bag</a>
-      <a href="/account" class="block px-4 py-2 text-base text-gray-800"
-        >Account</a
+      <a
+        href="/bag"
+        class="block px-4 py-2 text-base text-gray-800"
+        on:click={closeDropdown}>Bag</a
+      >
+      <a
+        href="/account"
+        class="block px-4 py-2 text-base text-gray-800"
+        on:click={closeDropdown}>Account</a
       >
     </div>
   {/if}
