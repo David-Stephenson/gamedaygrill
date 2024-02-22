@@ -27,8 +27,12 @@
         </div>
       </div>
       <div class="flex flex-col items-center text-gray-600 text-center">
-        <p class="text-sm"><MapPin />Address</p>
-        <a class="text-sm" href="tel:6145935935"><Phone /> (614)-5483-5833</a>
+        <a class="text-sm flex items-center gap-1" href="#"
+          ><MapPin size="16" /><span>{contact.address}</span></a
+        >
+        <a class="text-sm flex items-center gap-1" href="tel:{contact.phone}"
+          ><Phone size="16" /><span>{contact.phone}</span></a
+        >
       </div>
       <div class="flex space-x-2 items-center md:items-start justify-center">
         {#each Object.entries(socialLinks) as [name, link]}
