@@ -83,7 +83,7 @@
 
         <!-- Title and description -->
         <h2 class="text-2xl md:text-3xl font-semibold">
-          {selectedItem.name}
+          {selectedItem.name} • {selectedItem.price}
         </h2>
         <p class="mb-4">
           {selectedItem.description}
@@ -134,7 +134,6 @@
               >
                 Add to Bag
               </button>
-              <p class="text-xl font-semibold">{selectedItem.price}</p>
             </div>
           </div>
         </div>
