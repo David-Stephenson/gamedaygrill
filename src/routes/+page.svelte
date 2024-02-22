@@ -73,7 +73,7 @@
   <!-- <Hero /> -->
 
   <!-- Rewards Banner Section -->
-  <RewardsBanner />
+  <!-- <RewardsBanner /> -->
 
   <!-- Daily Specials Section -->
   <!-- <DailySpecials /> -->
