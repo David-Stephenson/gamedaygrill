@@ -123,11 +123,7 @@ const entrees = [
       'Juicy, grilled to perfection, and nestled between a soft, toasted bun. Topped with fresh lettuce, ripe tomatoes, and a hint of sauce for a classic taste sensation.',
     price: '$4.99',
     options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
+      { name: 'Sides', selectMax: 1, choices: sides }
     ],
   },
   {
@@ -137,11 +133,7 @@ const entrees = [
       'Crispy on the outside, tender on the inside chicken breast, topped with fresh greens and a creamy sauce, all encased in a soft, toasted bun for a satisfying bite.',
     price: '$4.99',
     options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
+      { name: 'Sides', selectMax: 1, choices: sides }
     ],
   },
   {
@@ -151,11 +143,7 @@ const entrees = [
       'Tender and succulent, expertly seasoned and seared to lock in the flavors. Served with a hint of herbs for a mouthwatering experience.',
     price: '$4.99',
     options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
+      { name: 'Sides', selectMax: 1, choices: sides }
     ],
   },
   {
@@ -165,11 +153,7 @@ const entrees = [
       'Slow-cooked to fall-off-the-bone perfection, these ribs are glazed in a smoky, sweet barbecue sauce, offering a rich, finger-licking good flavor.',
     price: '$4.99',
     options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
+      { name: 'Sides', selectMax: 1, choices: sides }
     ],
   },
   {
@@ -179,11 +163,7 @@ const entrees = [
       'Delicately seasoned and perfectly grilled, this salmon fillet boasts a flaky texture and a rich, buttery flavor, complemented by a light, citrusy glaze.',
     price: '$4.99',
     options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
+      { name: 'Sides', selectMax: 1, choices: sides }
     ],
   },
   {
@@ -193,11 +173,7 @@ const entrees = [
       'Crispy on the outside, juicy on the inside, tossed in your choice of savory sauces for a flavor-packed bite.',
     price: '$4.99',
     options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
+      { name: 'Sides', selectMax: 1, choices: sides }
     ],
   },
   {
@@ -207,11 +183,7 @@ const entrees = [
       'Marinated and grilled to perfection, this chicken is infused with a blend of spices, offering a smoky, tender delight with every bite.',
     price: '$4.99',
     options: [
-      {
-        name: 'Doneness',
-        options: doneness,
-      },
-      { name: 'Sides', options: sides },
+      { name: 'Sides', selectMax: 1, choices: sides }
     ],
   },
 ];
