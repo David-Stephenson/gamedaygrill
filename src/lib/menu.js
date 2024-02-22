@@ -33,7 +33,7 @@ const appetizers = [
     name: 'Olympic Onion Rings',
     description:
       'A triumph of flavor and crunch! Picture thick, sweet onions coated in a golden batter, seasoned with a blend of zesty spices and a hint of sweetness.',
-    price: '$4.99',
+    price: '$3.99',
     options: null,
   },
   {
@@ -41,7 +41,7 @@ const appetizers = [
     name: 'Knockout Nachos',
     description:
       'A flavor-packed explosion of crispy tortilla chips, generously layered with melted cheese, zesty salsa, creamy guacamole, and your choice of meat.',
-    price: '$7.99',
+    price: '$6.99',
     options: [
       {
         name: 'Meat',
@@ -55,7 +55,7 @@ const appetizers = [
     name: 'Fighter Fries',
     description:
       'These fries are a powerhouse of flavor, boasting a golden exterior that crunches with each bite, revealing a fluffy, potato center.',
-    price: '$6.99',
+    price: '$4.99',
     options: null,
   },
   {
@@ -63,7 +63,7 @@ const appetizers = [
     name: 'Curling Coleslaw',
     description:
       'Crisp, shredded cabbage and carrots, tossed in a creamy, tangy dressing. A refreshing blend of textures and flavors, making it the perfect side.',
-    price: '$8.99',
+    price: '$2.99',
     options: null,
   },
   {
@@ -79,7 +79,7 @@ const appetizers = [
     name: 'Batting Beet Chips',
     description:
       'These chips offer a vibrant explosion of flavor, featuring thin slices of earthy beets roasted to crispy perfection. Seasoned lightly with sea salt or herbs, they are a wholesome snack that packs a punch of nutrition and taste.',
-    price: '$4.99',
+    price: '$2.99',
     options: null,
   },
   {
@@ -87,7 +87,7 @@ const appetizers = [
     name: 'Battered Broccoli',
     description:
       '"Experience the crunch with our Battered Broccoli: tender florets wrapped in a crispy, seasoned batter. A perfect harmony of garden freshness and savory delight!"',
-    price: '$4.99',
+    price: '$3.99',
     options: null,
   },
   {
@@ -106,7 +106,7 @@ const entrees = [
     name: 'Sudden Death Steak',
     description:
       "Get in the game with our Sirloin Supreme! A champion cut, expertly seared for a robust flavor that's always a crowd-pleaser.",
-    price: '$4.99',
+    price: '$9.99',
     options: [
       {
         name: 'Doneness',
@@ -121,7 +121,7 @@ const entrees = [
     name: 'Half-time Hamburger',
     description:
       'Juicy, grilled to perfection, and nestled between a soft, toasted bun. Topped with fresh lettuce, ripe tomatoes, and a hint of sauce for a classic taste sensation.',
-    price: '$4.99',
+    price: '$8.99',
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
@@ -129,7 +129,7 @@ const entrees = [
     name: "Coach's Chicken Sandwich",
     description:
       'Crispy on the outside, tender on the inside chicken breast, topped with fresh greens and a creamy sauce, all encased in a soft, toasted bun for a satisfying bite.',
-    price: '$4.99',
+    price: '$7.99',
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
@@ -137,7 +137,7 @@ const entrees = [
     name: 'Penalty Porkchop',
     description:
       'Tender and succulent, expertly seasoned and seared to lock in the flavors. Served with a hint of herbs for a mouthwatering experience.',
-    price: '$4.99',
+    price: '$8.99',
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
@@ -145,7 +145,7 @@ const entrees = [
     name: 'Rifle Ribs',
     description:
       'Slow-cooked to fall-off-the-bone perfection, these ribs are glazed in a smoky, sweet barbecue sauce, offering a rich, finger-licking good flavor.',
-    price: '$4.99',
+    price: '$10.99',
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
@@ -153,7 +153,7 @@ const entrees = [
     name: 'Soccer Salmon',
     description:
       'Delicately seasoned and perfectly grilled, this salmon fillet boasts a flaky texture and a rich, buttery flavor, complemented by a light, citrusy glaze.',
-    price: '$4.99',
+    price: '$10.99',
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
@@ -161,7 +161,7 @@ const entrees = [
     name: 'Wild Card Wings',
     description:
       'Crispy on the outside, juicy on the inside, tossed in your choice of savory sauces for a flavor-packed bite.',
-    price: '$4.99',
+    price: '$7.99',
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
@@ -169,7 +169,7 @@ const entrees = [
     name: 'Game Day Grilled Chicken',
     description:
       'Marinated and grilled to perfection, this chicken is infused with a blend of spices, offering a smoky, tender delight with every bite.',
-    price: '$4.99',
+    price: '$8.99',
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
 ];
@@ -180,7 +180,7 @@ const salads = [
     name: 'Ball Boy Buffalo Chicken Salad',
     description:
       'A delectible salad that brings together the zesty kick of buffalo sauce with the crisp freshness of garden greens.',
-    price: '$4.99',
+    price: '$7.99',
     options: null,
   },
   {
@@ -188,7 +188,7 @@ const salads = [
     name: 'Clutch Caprese Salad',
     description:
       'Our Caprese Salads are crafted with care and attention to quality, each salad features slices of ripe, juicy tomatoes layered with thick, creamy mozzarella cheese.',
-    price: '$4.99',
+    price: '$5.99',
     options: null,
   },
   {
@@ -196,7 +196,7 @@ const salads = [
     name: 'Fencing Caesar Salad',
     description:
       'Each of our Caesar Salads feature crisp romaine lettuce leaves, gently tossed in our signature Caesar dressing, a mix of other vegetables, and a velvety blend of tangy Parmesan cheese.',
-    price: '$4.99',
+    price: '$6.99',
     options: null,
   },
   {
@@ -204,7 +204,7 @@ const salads = [
     name: 'Olympic Greek Salad',
     description:
       'Each of our Greek Salads feature a colorful array of crisp lettuce, juicy tomatoes, crunchy cucumbers, tangy Kalamata olives, and briny feta cheese.',
-    price: '$4.99',
+    price: '$5.50',
     options: null,
   },
   {
@@ -212,7 +212,7 @@ const salads = [
     name: 'Strength Steakhouse Salad',
     description:
       'Our Steakhouse Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
-    price: '$4.99',
+    price: '$8.99',
     options: null,
   },
   {
@@ -220,7 +220,7 @@ const salads = [
     name: 'Timeout Taco Salad',
     description:
       'Our Taco Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
-    price: '$4.99',
+    price: '$7.50',
     options: null,
   },
   {
@@ -255,7 +255,7 @@ const kids = [
     name: 'Champ Grilled Cheese',
     description:
       'Each grilled cheese sandwich features layers of premium, ooey-gooey cheese sandwiched between two slices of perfectly toasted bread.',
-    price: '$4.99',
+    price: '$4.50',
     options: null,
   },
   {
@@ -263,7 +263,7 @@ const kids = [
     name: 'Slamdog',
     description:
       'A plain hotdog between a golden bun.  Condiments can be ordered to your liking.',
-    price: '$4.99',
+    price: '$3.50',
     options: null,
   },
   {
@@ -271,7 +271,7 @@ const kids = [
     name: 'End Zone Chicken Nuggets',
     description:
       'Chicken Nuggets crafted from tender chicken breast meat. Each nugget is coated in a crisp, golden breading that delivers a satisfying crunch with every bite.',
-    price: '$4.99',
+    price: '$4.50',
     options: null,
   },
   {
@@ -279,7 +279,7 @@ const kids = [
     name: 'Triple Play PB&J',
     description:
       'A Peanut Butter & Jelly sandwich.  Each sandwich features creamy peanut butter spread with sweet grape jelly.',
-    price: '$4.99',
+    price: '$3.99',
     options: null,
   },
   {
@@ -296,14 +296,14 @@ const kids = [
     name: 'Slam Dunk Sliders',
     description:
       'Sliders served with a perfectly seasoned patty made from premium beef, gently grilled to mouthwatering perfection.',
-    price: '$4.99',
+    price: '$5.99',
     options: null,
   },
   {
     image: '/images/menu/kids/fish-sticks.png',
     name: 'Hooked Up Fish Sticks',
     description: 'Fish Sticks made from the finest cuts of premium white fish',
-    price: '$4.99',
+    price: '$2.99',
     options: null,
   },
 ];
@@ -314,7 +314,7 @@ const drinks = [
     name: 'PopPulse Soda',
     description:
       'A refreshing carbonated drink available in a variety of flavors.',
-    price: '$1.99',
+    price: '$2.20',
     options: [
       {
         name: 'Flavor',
@@ -335,7 +335,7 @@ const drinks = [
     name: 'Iced Tea',
     description:
       'A nice, cold refreshing tea.  Available sweetened or unsweetened.',
-    price: '$1.99',
+    price: '$2.75',
     options: null,
   },
   {
@@ -350,7 +350,7 @@ const drinks = [
     image: '/images/menu/drinks/smoothie.png',
     name: 'Berry Blast Smoothie',
     description: 'Our specialty sweet, delicious berry smoothie made in-house.',
-    price: '$1.99',
+    price: '$2.99',
     serves: 1,
     options: null,
   },
@@ -367,7 +367,7 @@ const drinks = [
     name: 'Hot Cocoa Rush',
     description:
       'A delicious Hot Chocolate, perfect to enjoy in cold weather. (Or year-round, no judgements.)',
-    price: '$1.99',
+    price: '$2.45',
     options: null,
   },
   {
@@ -375,14 +375,14 @@ const drinks = [
     name: 'Crisp Apple Cider',
     description:
       'Apple Cider slow-simmered with a delicate blend of aromatic spices, including cinnamon, cloves, and nutmeg.',
-    price: '$1.99',
+    price: '$2.20',
     options: null,
   },
   {
     image: '/images/menu/drinks/arnold-palmer.png',
     name: 'Lemon Kick Iced Tea',
     description: 'A blend of chilled black tea and zesty lemonade. ',
-    price: '$1.99',
+    price: '$2.40',
     options: null,
   },
 ];
@@ -392,7 +392,7 @@ const desserts = [
     image: '/images/menu/desserts/apple-pie.png',
     name: 'Apple Pie',
     description: 'A classic dessert made with fresh apples and a flaky crust.',
-    price: '$1.99',
+    price: '$3.99',
     options: null,
   },
   {
@@ -400,7 +400,7 @@ const desserts = [
     name: 'Banoffee Pie',
     description:
       'A banana-caramel pie served with a scoop of vanilla ice cream.',
-    price: '$1.99',
+    price: '$3.99',
     options: null,
   },
   {
@@ -408,7 +408,7 @@ const desserts = [
     name: 'Brownie Sundae',
     description:
       'A nice vanilla sundae with brownie bits mixed in.  Topped with chocolate syrup.',
-    price: '$1.99',
+    price: '$3.50',
     options: null,
   },
   {
@@ -416,14 +416,14 @@ const desserts = [
     name: 'New York Cheesecake',
     description:
       'A classic New York cheesecake topped with raspberries and strawberry sauce.',
-    price: '$1.99',
+    price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/desserts/lava-cake.png',
     name: 'Lava Cake',
     description: 'A chocolate cake topped with hot chocolate syrup.',
-    price: '$1.99',
+    price: '$5.20',
     options: null,
   },
   {
@@ -431,7 +431,7 @@ const desserts = [
     name: 'Strawberry Cake',
     description:
       'Our classic vanilla-strawberry cake topped with strawberry jam.',
-    price: '$1.99',
+    price: '$3.99',
     options: null,
   },
   {
@@ -439,14 +439,14 @@ const desserts = [
     name: 'Ice Cream Scoops',
     description:
       'A single scoop of ice cream available in a variety of flavors.',
-    price: '$1.99',
+    price: '$3.50',
     options: null,
   },
   {
     image: '/images/menu/desserts/oreo-cupcake.png',
     name: 'Orea Cupcake',
     description: 'A rich Orea cupcake to scratch your sweet tooth.',
-    price: '$1.99',
+    price: '$2.99',
     options: null,
   },
 ];
@@ -456,7 +456,7 @@ const alcohol = [
     image: '/images/menu/alcohol/beer.png',
     name: 'Draft Beer',
     description: 'Draft Beer (Supplies may vary)',
-    price: '$1.99',
+    price: '$7.99',
     options: [
       {
         name: 'Style',
@@ -476,7 +476,7 @@ const alcohol = [
     image: '/images/menu/alcohol/hard-seltzer.png',
     name: 'FizzQuench Co. Hard Seltzers',
     description: 'Alcoholic Seltzer',
-    price: '$1.99',
+    price: '$7.99',
     options: [
       {
         name: 'Flavor',
@@ -500,14 +500,14 @@ const alcohol = [
     image: '/images/menu/alcohol/spiked-cranberry.png',
     name: 'Spiked Cranberry Juice',
     description: 'Alcoholic cranberry juice.',
-    price: '$1.99',
+    price: '$8.99',
     options: null,
   },
   {
     image: '/images/menu/alcohol/cola-rum.png',
     name: 'Cola and Rum',
     description: 'Cola spiked with rum.',
-    price: '$1.99',
+    price: '$8.99',
     options: null,
   },
 ];
