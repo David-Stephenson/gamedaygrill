@@ -23,8 +23,10 @@ const kids_sides = [
   'Mac and Cheese',
   'Fries',
   'Strawberry Yogurt',
-  'Bowl of fruit',
+  'Bowl of Fruit',
 ];
+
+const cup_sizes = ['Small', 'Medium', 'Large'];
 
 // Export these
 const appetizers = [
@@ -205,7 +207,7 @@ const salads = [
     description:
       'Each of our Greek Salads feature a colorful array of crisp lettuce, juicy tomatoes, crunchy cucumbers, tangy Kalamata olives, and briny feta cheese.',
     price: '$5.50',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
     image: '/images/menu/salads/steakhouse.png',
@@ -213,7 +215,7 @@ const salads = [
     description:
       'Our Steakhouse Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
     price: '$8.99',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
     image: '/images/menu/salads/taco.png',
@@ -221,7 +223,7 @@ const salads = [
     description:
       'Our Taco Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
     price: '$7.50',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
     image: '/images/menu/salads/cobb.png',
@@ -229,7 +231,7 @@ const salads = [
     description:
       'Our Cobb Salad features lettuce, grilled chicken, eggs, bacon, avocado, tomatoes, and blue cheese crumbles with vinaigrette.',
     price: '$4.99',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
     image: '/images/menu/salads/orzo.png',
@@ -237,7 +239,7 @@ const salads = [
     description:
       'Our Orzo Salad is orzo pasta tossed with diced vegetables, feta cheese, fresh herbs, and a tangy vinaigrette dressing.',
     price: '$4.99',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
 ];
 
@@ -248,7 +250,7 @@ const kids = [
     description:
       'Our chicken quesadilla is enhanced with a medley of colorful peppers and onions, as well as fragrant spices like cumin, paprika, and chili powder.  Served with salsa, guacamole, and sour cream.',
     price: '$4.99',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
     image: '/images/menu/kids/grilled-cheese.png',
@@ -256,7 +258,7 @@ const kids = [
     description:
       'Each grilled cheese sandwich features layers of premium, ooey-gooey cheese sandwiched between two slices of perfectly toasted bread.',
     price: '$4.50',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
     image: '/images/menu/kids/hotdog.png',
@@ -264,7 +266,7 @@ const kids = [
     description:
       'A plain hotdog between a golden bun.  Condiments can be ordered to your liking.',
     price: '$3.50',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
     image: '/images/menu/kids/nuggets.png',
@@ -272,7 +274,7 @@ const kids = [
     description:
       'Chicken Nuggets crafted from tender chicken breast meat. Each nugget is coated in a crisp, golden breading that delivers a satisfying crunch with every bite.',
     price: '$4.50',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
     image: '/images/menu/kids/pbj.png',
@@ -280,7 +282,7 @@ const kids = [
     description:
       'A Peanut Butter & Jelly sandwich.  Each sandwich features creamy peanut butter spread with sweet grape jelly.',
     price: '$3.99',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
     image: '/images/menu/kids/pizza.png',
@@ -289,7 +291,7 @@ const kids = [
       'Cheese Pizza served with a blend of premium cheeses, including mozzarella, provolone, and Parmesan',
     price: '$4.99',
     serves: '1',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
     image: '/images/menu/kids/slider.png',
@@ -297,14 +299,14 @@ const kids = [
     description:
       'Sliders served with a perfectly seasoned patty made from premium beef, gently grilled to mouthwatering perfection.',
     price: '$5.99',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
     image: '/images/menu/kids/fish-sticks.png',
     name: 'Hooked Up Fish Sticks',
     description: 'Fish Sticks made from the finest cuts of premium white fish',
     price: '$2.99',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
 ];
 
@@ -327,7 +329,7 @@ const drinks = [
           'Citizen Pepper',
         ],
       },
-      { name: 'Size', options: ['Small', 'Medium', 'Large'] },
+      { name: 'Size', selectMax: 1, choices: cup_sizes },
     ],
   },
   {
@@ -440,7 +442,13 @@ const desserts = [
     description:
       'A single scoop of ice cream available in a variety of flavors.',
     price: '$3.50',
-    options: null,
+    options: [
+      {
+        name: 'Flavors',
+        selectMax: 1,
+        choices: ['Vanilla', 'Chocolate', 'Strawberry'],
+      },
+    ],
   },
   {
     image: '/images/menu/desserts/oreo-cupcake.png',
@@ -486,7 +494,8 @@ const alcohol = [
           'Cherry',
           'Blueberry',
           'Citrus',
-          'Fruity Blast',
+          'Grapefruit',
+          'Melonator',
         ],
       },
       {
@@ -501,14 +510,14 @@ const alcohol = [
     name: 'Spiked Cranberry Juice',
     description: 'Alcoholic cranberry juice.',
     price: '$8.99',
-    options: null,
+    options: [{ name: 'Size', selectMax: 1, choices: cup_sizes }],
   },
   {
     image: '/images/menu/alcohol/cola-rum.png',
     name: 'Cola and Rum',
     description: 'Cola spiked with rum.',
     price: '$8.99',
-    options: null,
+    options: [{ name: 'Size', selectMax: 1, choices: cup_sizes }],
   },
 ];
 
