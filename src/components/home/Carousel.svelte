@@ -3,7 +3,9 @@
   import '@splidejs/svelte-splide/css/core';
 </script>
 
-<div class="h-96 rounded-none md:rounded-[25px] overflow-hidden">
+<div
+  class="h-96 rounded-none md:rounded-[25px] overflow-hidden border-2 border-red-500"
+>
   <Splide
     aria-label="My Favorite Images"
     options={{
@@ -52,7 +54,7 @@
     <SplideSlide>
       <div
         class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
-        style="background-image: url('/images/test/banner.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
+        style="background-image: url('/images/banners/football.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
       >
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="z-10 text-center">
@@ -77,7 +79,7 @@
     <SplideSlide>
       <div
         class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
-        style="background-image: url('/images/test/banner2.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
+        style="background-image: url('/images/banners/milkshakes.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
       >
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="z-10 text-center">
@@ -94,7 +96,7 @@
     <SplideSlide>
       <div
         class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
-        style="background-image: url('/images/banners/rewards_banner.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+        style="background-image: url('/images/banners/rewards.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
       >
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <!-- Increased opacity for better readability -->

@@ -37,13 +37,10 @@
           />
         </div>
         <div class="p-4 flex flex-col flex-grow">
-          <h1 class="text-2xl font-bold uppercase mb-2">{item.name}</h1>
-          <p class="flex-grow text-sm line-clamp-3">{item.description}</p>
-          <button
-            class="bg-red-500 px-3 py-2 rounded-full text-white mt-4 self-start"
-          >
-            Add To Cart
-          </button>
+          <h1 class="text-2xl font-bold uppercase mb-2 text-center">
+            {item.name}
+          </h1>
+          <!-- <p class="flex-grow text-sm line-clamp-3">{item.description}</p> -->
         </div>
       </div>
     {/each}
@@ -54,7 +51,9 @@
   class="my-5 rounded-[25px] overflow-hidden flex flex-col md:flex-row gap-4"
 >
   <div class="flex-grow md:flex-grow-3 w-full h-auto flex justify-center">
-    <div class="w-full h-[550px] relative rounded-[25px] overflow-hidden">
+    <div
+      class="w-full h-[550px] relative rounded-[25px] overflow-hidden border-2 border-red-500"
+    >
       <Map />
     </div>
   </div>
@@ -68,31 +67,22 @@
   </div>
 </div>
 
-<div class="bg-gray-50 min-h-screen flex flex-col">
-  <!-- Hero Section -->
-  <!-- <Hero /> -->
-
-  <!-- Rewards Banner Section -->
-  <!-- <RewardsBanner /> -->
-
-  <!-- Daily Specials Section -->
-  <!-- <DailySpecials /> -->
-
-  <!-- Reservation CTA Section -->
-  <section class="py-12 px-4 bg-red-600 text-white text-center">
-    <h2 class="text-4xl font-bold mb-8">Reserve Your Table Now</h2>
-    <p class="text-xl mb-8">
-      Experience the best game day dishes in town. Reserve your table now and
-      enjoy the game with us.
-    </p>
-    <a
-      href="/reserve"
-      class="inline-block py-4 px-8 bg-white text-red-600 text-xl font-bold rounded-lg transition duration-200 hover:bg-opacity-90"
-      >Reserve Now</a
-    >
-  </section>
-</div>
-
+<section
+  class="my-5 py-12 px-4 md:px-12 bg-red-600 text-white text-center rounded-[25px] shadow-lg transform"
+>
+  <h2 class="text-3xl md:text-4xl font-extrabold mb-8">
+    Reserve Your Table Now
+  </h2>
+  <p class="text-lg md:text-xl mb-8">
+    What are you waiting for? Experience the best game day dishes in town!
+    Reserve your table now and enjoy the game with us.
+  </p>
+  <a
+    href="/reserve"
+    class="inline-block py-3 md:py-4 px-6 md:px-8 bg-white text-red-600 text-lg md:text-xl font-bold rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-opacity-90"
+    >Reserve Now</a
+  >
+</section>
 <div
   class="w-full h-96 rounded-[25px]"
   style="background-image: url('/images/test/bar.png');"

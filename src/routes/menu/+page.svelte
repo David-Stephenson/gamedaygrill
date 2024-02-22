@@ -30,7 +30,7 @@
             on:click={() => openModal(item)}
           >
             <div
-              class="bg-white shadow-md rounded-lg px-4 pb-4 flex flex-col items-center overflow-hidden cursor-pointer h-full"
+              class="bg-white shadow-md rounded-[25px] px-4 pb-4 flex flex-col items-center overflow-hidden cursor-pointer h-full border-2 border-red-500"
             >
               <img
                 class="w-full mb-3 object-cover drop-shadow"
@@ -49,7 +49,6 @@
 </div>
 
 <style>
-  /* Custom CSS for truncating text after a certain number of lines */
   .truncate-lines {
     display: -webkit-box;
     -webkit-line-clamp: 3; /* Number of lines you want to display */

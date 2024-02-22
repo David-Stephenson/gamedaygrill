@@ -1,6 +1,7 @@
 <script>
+  import { bag } from '$lib/stores.js';
   import { createDialog, melt } from '@melt-ui/svelte';
-  import { X } from 'lucide-svelte';
+  import { Badge, X } from 'lucide-svelte';
 
   const {
     elements: { trigger, portalled, overlay, content, close },
@@ -13,6 +14,13 @@
   let selectedOptions = {};
 
   $: isOpen ? open.set(true) : open.set(false);
+
+  // Function that handles adding food to bag
+  function addFoodToBag() {
+    bag.update(items => {
+      return [...items, { ...selectedItem, selectedOptions }];
+    });
+  }
 
   // Function to handle option selection
   function toggleOption(category, choice, selectMax) {
@@ -82,7 +90,7 @@
         </p>
 
         <!-- Image and options content -->
-        <div class="flex flex-col md:flex-row items-center">
+        <div class="flex flex-col md:flex-row items-start">
           <div class="flex flex-1 justify-center items-center mb-4 md:mb-0">
             <div class="border-4 border-red-500 rounded-[25px]">
               <img
@@ -93,33 +101,38 @@
             </div>
           </div>
 
-          <div class="flex-1">
+          <div class="flex-1 self-stretch flex flex-col justify-between">
             {#if selectedItem.options}
-              {#each selectedItem.options as option (option.name)}
-                <h3 class="text-xl font-semibold my-2">{option.name}</h3>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-                  {#each option.choices as choice (choice)}
-                    <label
-                      class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-150 flex items-center"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={isSelected(option.name, choice)}
-                        on:change={() =>
-                          toggleOption(option.name, choice, option.selectMax)}
-                      />
-                      <span class="ml-2">{choice}</span>
-                    </label>
-                  {/each}
-                </div>
-              {/each}
+              <div>
+                {#each selectedItem.options as option (option.name)}
+                  <h3 class="text-xl font-semibold my-2">{option.name}</h3>
+                  <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                    {#each option.choices as choice (choice)}
+                      <label
+                        class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-150 flex items-center"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={isSelected(option.name, choice)}
+                          on:change={() =>
+                            toggleOption(option.name, choice, option.selectMax)}
+                        />
+                        <span class="ml-2">{choice}</span>
+                      </label>
+                    {/each}
+                  </div>
+                {/each}
+              </div>
             {/if}
 
-            <div class="flex justify-between items-center mt-6">
+            <div class="mt-6">
               <button
-                class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-150"
+                class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-150"
+                on:click={() => {
+                  addFoodToBag();
+                }}
               >
-                Add to Cart
+                Add to Bag
               </button>
               <p class="text-xl font-semibold">{selectedItem.price}</p>
             </div>
