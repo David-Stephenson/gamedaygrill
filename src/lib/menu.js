@@ -122,9 +122,7 @@ const entrees = [
     description:
       'Juicy, grilled to perfection, and nestled between a soft, toasted bun. Topped with fresh lettuce, ripe tomatoes, and a hint of sauce for a classic taste sensation.',
     price: '$4.99',
-    options: [
-      { name: 'Sides', selectMax: 1, choices: sides }
-    ],
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
     image: '/images/menu/entrees/chicken-sandwich.png',
@@ -132,9 +130,7 @@ const entrees = [
     description:
       'Crispy on the outside, tender on the inside chicken breast, topped with fresh greens and a creamy sauce, all encased in a soft, toasted bun for a satisfying bite.',
     price: '$4.99',
-    options: [
-      { name: 'Sides', selectMax: 1, choices: sides }
-    ],
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
     image: '/images/menu/entrees/porkchop.png',
@@ -142,9 +138,7 @@ const entrees = [
     description:
       'Tender and succulent, expertly seasoned and seared to lock in the flavors. Served with a hint of herbs for a mouthwatering experience.',
     price: '$4.99',
-    options: [
-      { name: 'Sides', selectMax: 1, choices: sides }
-    ],
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
     image: '/images/menu/entrees/ribs.png',
@@ -152,9 +146,7 @@ const entrees = [
     description:
       'Slow-cooked to fall-off-the-bone perfection, these ribs are glazed in a smoky, sweet barbecue sauce, offering a rich, finger-licking good flavor.',
     price: '$4.99',
-    options: [
-      { name: 'Sides', selectMax: 1, choices: sides }
-    ],
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
     image: '/images/menu/entrees/salmon.png',
@@ -162,9 +154,7 @@ const entrees = [
     description:
       'Delicately seasoned and perfectly grilled, this salmon fillet boasts a flaky texture and a rich, buttery flavor, complemented by a light, citrusy glaze.',
     price: '$4.99',
-    options: [
-      { name: 'Sides', selectMax: 1, choices: sides }
-    ],
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
     image: '/images/menu/entrees/wings.png',
@@ -172,9 +162,7 @@ const entrees = [
     description:
       'Crispy on the outside, juicy on the inside, tossed in your choice of savory sauces for a flavor-packed bite.',
     price: '$4.99',
-    options: [
-      { name: 'Sides', selectMax: 1, choices: sides }
-    ],
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
     image: '/images/menu/entrees/grilled-chicken.png',
@@ -182,9 +170,7 @@ const entrees = [
     description:
       'Marinated and grilled to perfection, this chicken is infused with a blend of spices, offering a smoky, tender delight with every bite.',
     price: '$4.99',
-    options: [
-      { name: 'Sides', selectMax: 1, choices: sides }
-    ],
+    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
 ];
 
@@ -192,56 +178,64 @@ const salads = [
   {
     image: '/images/menu/salads/buffalo-chicken.png',
     name: 'Ball Boy Buffalo Chicken Salad',
-    description: 'A delectible salad that brings together the zesty kick of buffalo sauce with the crisp freshness of garden greens.',
+    description:
+      'A delectible salad that brings together the zesty kick of buffalo sauce with the crisp freshness of garden greens.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/salads/caprese.png',
     name: 'Clutch Caprese Salad',
-    description: 'Our Caprese Salads are crafted with care and attention to quality, each salad features slices of ripe, juicy tomatoes layered with thick, creamy mozzarella cheese.',
+    description:
+      'Our Caprese Salads are crafted with care and attention to quality, each salad features slices of ripe, juicy tomatoes layered with thick, creamy mozzarella cheese.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/salads/ceaser.png',
     name: 'Fencing Caesar Salad',
-    description: 'Each of our Caesar Salads feature crisp romaine lettuce leaves, gently tossed in our signature Caesar dressing, a mix of other vegetables, and a velvety blend of tangy Parmesan cheese.',
+    description:
+      'Each of our Caesar Salads feature crisp romaine lettuce leaves, gently tossed in our signature Caesar dressing, a mix of other vegetables, and a velvety blend of tangy Parmesan cheese.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/salads/greek.png',
     name: 'Olympic Greek Salad',
-    description: 'Each of our Greek Salads feature a colorful array of crisp lettuce, juicy tomatoes, crunchy cucumbers, tangy Kalamata olives, and briny feta cheese.',
+    description:
+      'Each of our Greek Salads feature a colorful array of crisp lettuce, juicy tomatoes, crunchy cucumbers, tangy Kalamata olives, and briny feta cheese.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/salads/steakhouse.png',
     name: 'Strength Steakhouse Salad',
-    description: 'Our Steakhouse Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
+    description:
+      'Our Steakhouse Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/salads/taco.png',
     name: 'Timeout Taco Salad',
-    description: 'Our Taco Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
+    description:
+      'Our Taco Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/salads/cobb.png',
     name: 'Field Goal Cobb Salad',
-    description: 'Our Cobb Salad features lettuce, grilled chicken, eggs, bacon, avocado, tomatoes, and blue cheese crumbles with vinaigrette.',
+    description:
+      'Our Cobb Salad features lettuce, grilled chicken, eggs, bacon, avocado, tomatoes, and blue cheese crumbles with vinaigrette.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/salads/orzo.png',
     name: 'Penalty Box Orzo Salad',
-    description: 'Our Orzo Salad is orzo pasta tossed with diced vegetables, feta cheese, fresh herbs, and a tangy vinaigrette dressing.',
+    description:
+      'Our Orzo Salad is orzo pasta tossed with diced vegetables, feta cheese, fresh herbs, and a tangy vinaigrette dressing.',
     price: '$4.99',
     options: null,
   },
@@ -251,42 +245,48 @@ const kids = [
   {
     image: '/images/menu/kids/chicken-quesadilla.png',
     name: 'Touchdown Chicken Quesadilla',
-    description: 'Our chicken quesadilla is enhanced with a medley of colorful peppers and onions, as well as fragrant spices like cumin, paprika, and chili powder.  Served with salsa, guacamole, and sour cream.',
+    description:
+      'Our chicken quesadilla is enhanced with a medley of colorful peppers and onions, as well as fragrant spices like cumin, paprika, and chili powder.  Served with salsa, guacamole, and sour cream.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/grilled-cheese.png',
     name: 'Champ Grilled Cheese',
-    description: 'Each grilled cheese sandwich features layers of premium, ooey-gooey cheese sandwiched between two slices of perfectly toasted bread.',
+    description:
+      'Each grilled cheese sandwich features layers of premium, ooey-gooey cheese sandwiched between two slices of perfectly toasted bread.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/hotdog.png',
     name: 'Slamdog',
-    description: 'A plain hotdog between a golden bun.  Condiments can be ordered to your liking.',
+    description:
+      'A plain hotdog between a golden bun.  Condiments can be ordered to your liking.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/nuggets.png',
     name: 'End Zone Chicken Nuggets',
-    description: 'Chicken Nuggets crafted from tender chicken breast meat. Each nugget is coated in a crisp, golden breading that delivers a satisfying crunch with every bite.',
+    description:
+      'Chicken Nuggets crafted from tender chicken breast meat. Each nugget is coated in a crisp, golden breading that delivers a satisfying crunch with every bite.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/pbj.png',
     name: 'Triple Play PB&J',
-    description: 'A Peanut Butter & Jelly sandwich.  Each sandwich features creamy peanut butter spread with sweet grape jelly.',
+    description:
+      'A Peanut Butter & Jelly sandwich.  Each sandwich features creamy peanut butter spread with sweet grape jelly.',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/pizza.png',
     name: "Slammin' Cheese Pizza",
-    description: 'Cheese Pizza served with a blend of premium cheeses, including mozzarella, provolone, and Parmesan',
+    description:
+      'Cheese Pizza served with a blend of premium cheeses, including mozzarella, provolone, and Parmesan',
     price: '$4.99',
     serves: '1',
     options: null,
@@ -294,7 +294,8 @@ const kids = [
   {
     image: '/images/menu/kids/slider.png',
     name: 'Slam Dunk Sliders',
-    description: 'Sliders served with a perfectly seasoned patty made from premium beef, gently grilled to mouthwatering perfection.',
+    description:
+      'Sliders served with a perfectly seasoned patty made from premium beef, gently grilled to mouthwatering perfection.',
     price: '$4.99',
     options: null,
   },
@@ -372,7 +373,8 @@ const drinks = [
   {
     image: '/images/menu/drinks/apple-cider.png',
     name: 'Crisp Apple Cider',
-    description: 'Apple Cider slow-simmered with a delicate blend of aromatic spices, including cinnamon, cloves, and nutmeg.',
+    description:
+      'Apple Cider slow-simmered with a delicate blend of aromatic spices, including cinnamon, cloves, and nutmeg.',
     price: '$1.99',
     options: null,
   },
@@ -472,7 +474,7 @@ const alcohol = [
   },
   {
     image: '/images/menu/alcohol/hard-seltzer.png',
-    name: 'Hard Seltzer',
+    name: 'FizzQuench Co. Hard Seltzers',
     description: 'Alcoholic Seltzer',
     price: '$1.99',
     options: [
