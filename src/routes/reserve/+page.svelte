@@ -26,7 +26,9 @@
 <section class="flex justify-center items-center py-12">
   <div class="flex flex-wrap -mx-4">
     <div class="w-ful px-4 mb-4 lg:mb-0">
-      <div class="max-w-xl mx-auto py-6 px-4 bg-white rounded shadow-md">
+      <div
+        class="max-w-xl mx-auto py-6 px-4 bg-white shadow-md rounded-[25px] border-2 border-red-500"
+      >
         <h2 class="text-2xl font-bold mb-4 text-center">Reserve a Table</h2>
         <form on:submit|preventDefault={handleSubmit}>
           <div class="mb-4">
@@ -99,7 +101,7 @@
             ></textarea>
           </div>
           <button
-            class="w-full py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600"
+            class="w-full py-2 px-4 bg-red-500 text-white rounded-full hover:bg-red-600"
             type="submit"
           >
             Reserve Now

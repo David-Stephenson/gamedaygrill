@@ -23,7 +23,8 @@
       <h2 class="text-2xl mb-3 capitalize font-russo">
         {section}
       </h2>
-      <div class="flex flex-wrap -mx-2">
+      <div class="flex flex-wrap -mx-2 justify-center">
+        <!-- Added justify-center here -->
         {#each menu[section] as item (item.name)}
           <div
             class="p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
@@ -37,9 +38,8 @@
                 src={item.image}
                 alt={item.name}
               />
-              <span class="text-lg font-bold">{item.name}</span>
+              <span class="text-lg font-bold">{item.name} • {item.price}</span>
               <span class="truncate-lines">{item.description}</span>
-              <span class="text-lg">{item.price}</span>
             </div>
           </div>
         {/each}

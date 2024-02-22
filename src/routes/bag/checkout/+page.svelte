@@ -86,15 +86,14 @@
             />
           </div>
           <button
-            class="w-full py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600"
+            class="w-full py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600 rounded-full transition-colors duration-150"
             type="submit"
           >
             Complete Purchase
           </button>
         </form>
         <p class="text-center text-xs mt-4">
-          * Do not put in real credit card info, Salam WILL buy RACING SIM
-          EQUIPMENT with it.
+          * No actual purchase will be made. This is a demo site.
         </p>
       </div>
     </div>

@@ -1,16 +1,9 @@
+<svelte:head>
+  <title>About | Game Day Grill</title>
+</svelte:head>
+
 <div>
   <div class="max-w-6xl mx-auto px-4 py-8">
-    <h1 class="text-5xl font-bold text-center mb-6">About Game Day Grill</h1>
-
-    <!-- Hero Image -->
-    <div class="mb-8">
-      <img
-        src="/path/to/your/hero-image.jpg"
-        alt="Game Day Grill"
-        class="w-full h-auto rounded-lg shadow-lg"
-      />
-    </div>
-
     <div class="bg-white text-gray-800 rounded-lg p-6">
       <p class="mb-6">
         Welcome to <strong>Game Day Grill</strong>, your premier destination for
@@ -24,8 +17,8 @@
       <div class="flex flex-wrap md:flex-nowrap gap-6 mb-6">
         <div class="md:w-1/2">
           <img
-            src="/path/to/your/story-image.jpg"
-            alt="Our Story"
+            src="/images/about/john-doe.jpg"
+            alt="Portait of John Doe"
             class="w-full h-auto rounded-lg shadow-md"
           />
         </div>
@@ -102,7 +95,7 @@
     <!-- Call to Action Section -->
     <div class="mt-8 text-center">
       <a
-        href="/reservations"
+        href="/reserve"
         class="inline-block bg-white text-red-500 font-bold py-2 px-4 rounded-lg shadow hover:bg-gray-100 transition-colors"
       >
         Book Your Table Now
@@ -112,7 +105,7 @@
     <!-- Footer Image Gallery -->
     <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
       <img
-        src="/path/to/your/gallery-image-1.jpg"
+        src="/images/about/footer1.png"
         alt="Gallery Image 1"
         class="w-full h-auto rounded-lg shadow"
       />

@@ -51,11 +51,11 @@
   <main class=" mx-auto">
     <!-- User Info Card -->
     <div
-      class="bg-white rounded-lg shadow-md p-5 mb-6 flex items-center justify-between"
+      class="bg-white rounded-[25px] shadow-md p-5 mb-6 flex items-center justify-between border-2 border-red-500"
     >
       <div class="flex items-center space-x-4">
         <img
-          class="h-16 w-16 rounded-lg"
+          class="h-16 w-16 rounded-[25px]"
           src="/images/account/profile.webp"
           alt="User Profile"
         />
@@ -72,7 +72,9 @@
     <!-- Cards Container -->
     <div class="grid gap-6 md:grid-cols-2">
       <!-- Point Transaction History Card -->
-      <div class="bg-white rounded-lg shadow-md p-5">
+      <div
+        class="bg-white rounded-[25px] shadow-md p-5 border-2 border-red-500"
+      >
         <h3 class="text-lg font-semibold mb-4">Point Transaction History</h3>
         <div class="overflow-auto">
           <table class="min-w-full text-sm">
@@ -103,7 +105,9 @@
       </div>
 
       <!-- Upcoming Reservations Card -->
-      <div class="bg-white rounded-lg shadow-md p-5">
+      <div
+        class="bg-white rounded-[25px] shadow-md p-5 border-2 border-red-500"
+      >
         <h3 class="text-lg font-semibold mb-4">Upcoming Reservations</h3>
         <div class="overflow-auto">
           <table class="min-w-full text-sm">
@@ -128,7 +132,9 @@
       </div>
 
       <!-- Available Rewards Card -->
-      <div class="bg-white rounded-lg shadow-md p-5">
+      <div
+        class="bg-white rounded-[25px] shadow-md p-5 border-2 border-red-500"
+      >
         <h3 class="text-lg font-semibold mb-4">Available Rewards</h3>
         <div class="overflow-auto">
           <table class="min-w-full text-sm">

@@ -16,7 +16,6 @@
 <Carousel />
 
 <!-- "Popular Items" -->
-
 <div class="mt-5">
   <h1 class="text-2xl font-bold mb-1 text-center sm:text-left uppercase">
     Popular Now
@@ -44,6 +43,14 @@
         </div>
       </div>
     {/each}
+  </div>
+  <!-- Centered View More Button -->
+  <div class="text-center mt-4">
+    <a
+      href="/menu"
+      class="inline-block py-3 px-6 bg-red-500 rounded-full text-white font-medium text-lg hover:bg-red-600 hover:text-white transition-colors duration-200 ease-in-out"
+      >View More</a
+    >
   </div>
 </div>
 
@@ -91,15 +98,11 @@
 </div>
 
 <div class="my-5 rounded-[25px] overflow-hidden">
-  <div class="bg-white p-5">
+  <div class="bg-gray-100 p-5">
     <h2 class="text-lg font-bold text-center mb-4">
       Subscribe to Our Newsletter
     </h2>
-    <form
-      action="YOUR_SUBSCRIPTION_ENDPOINT"
-      method="POST"
-      class="flex flex-col items-center gap-2"
-    >
+    <form method="POST" class="flex flex-col items-center gap-2">
       <input
         type="email"
         name="email"
@@ -109,7 +112,7 @@
       />
       <button
         type="submit"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md w-full max-w-md"
+        class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full max-w-md"
         >Subscribe</button
       >
     </form>
