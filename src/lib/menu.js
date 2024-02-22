@@ -8,7 +8,14 @@ const doneness = [
   'Well Done',
 ];
 
-const sides = ['Mashed Potatos', ' Fries', 'Mac and Cheese'];
+const sides = [
+  'French Fries',
+  'Macaroni and Cheese',
+  'Garden Salad',
+  'Mozzarella Sticks',
+  'Corn on the Cob',
+  'Baked Beans',
+];
 
 const kids_sides = [
   'Apple Slices',
@@ -103,9 +110,10 @@ const entrees = [
     options: [
       {
         name: 'Doneness',
+        selectMax: 2,
         choices: doneness,
       },
-      { name: 'Sides', choices: sides },
+      { name: 'Sides', selectMax: 1, choices: sides },
     ],
   },
   {
