@@ -40,9 +40,15 @@ const appetizers = [
     image: '/images/menu/appetizers/nachos.png',
     name: 'Knockout Nachos',
     description:
-      'A flavor-packed explosion of crispy tortilla chips, generously layered with melted cheese, zesty salsa, and creamy guacamole.',
+      'A flavor-packed explosion of crispy tortilla chips, generously layered with melted cheese, zesty salsa, creamy guacamole, and your choice of meat.',
     price: '$7.99',
-    options: null,
+    options: [
+      {
+        name: 'Meat',
+        selectMax: 1,
+        choices: ['Beef', 'Pork', 'Chicken'],
+      },
+    ],
   },
   {
     image: '/images/menu/appetizers/fries.png',
@@ -255,14 +261,14 @@ const salads = [
   },
   {
     image: '/images/menu/salads/cobb.png',
-    name: 'Cobb Salad',
+    name: 'Championship Cobb Salad',
     description: '',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/salads/orzo.png',
-    name: 'Orzo Salad',
+    name: 'Orzo Offside Salad',
     description: '',
     price: '$4.99',
     options: null,
@@ -272,42 +278,42 @@ const salads = [
 const kids = [
   {
     image: '/images/menu/kids/chicken-quesadilla.png',
-    name: 'Chicken Quesadilla',
+    name: 'Quarterback Quesadillas',
     description: '',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/grilled-cheese.png',
-    name: 'Grilled Cheese',
+    name: 'Gridiron Grilled Cheese',
     description: '',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/hotdog.png',
-    name: 'Hotdog',
+    name: 'Home Run Hotdog',
     description: '',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/nuggets.png',
-    name: 'Chicken Nuggets',
+    name: 'Net Swish Nuggets',
     description: '',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/pbj.png',
-    name: 'Peanut Butter and Jelly',
+    name: 'PB&J Playoffs',
     description: '',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/pizza.png',
-    name: 'Cheese Pizza',
+    name: 'Cheesy Champion Pizza',
     description: '',
     price: '$4.99',
     serves: '1',
@@ -315,14 +321,14 @@ const kids = [
   },
   {
     image: '/images/menu/kids/slider.png',
-    name: 'Sliders',
+    name: 'Slam Dunk Sliders',
     description: '',
     price: '$4.99',
     options: null,
   },
   {
     image: '/images/menu/kids/fish-sticks.png',
-    name: 'Fish Sticks',
+    name: 'Goalpost Guppies',
     description: '',
     price: '$4.99',
     options: null,
@@ -339,6 +345,7 @@ const drinks = [
     options: [
       {
         name: 'Flavor',
+        selectMax: 1,
         choices: [
           'Cola',
           'Diet Cola',
@@ -476,14 +483,44 @@ const alcohol = [
     name: 'Draft Beer',
     description: '',
     price: '$1.99',
-    options: null,
+    options: [
+      {
+        name: 'Style',
+        selectMax: 1,
+        choices: [
+          'Galactic Invasion',
+          'Mystic Barrel',
+          'Thunderclap Wheat Ale',
+          'Shadow Cask Stout',
+          'Solar Flare Saison',
+          'Frost Giant Lager',
+        ],
+      },
+    ],
   },
   {
     image: '/images/menu/alcohol/hard-seltzer.png',
-    name: 'Hard Seltzer',
+    name: 'Fizz & Whiz Hard Seltzer',
     description: '',
     price: '$1.99',
-    options: null,
+    options: [
+      {
+        name: 'Flavor',
+        selectMax: 1,
+        choices: [
+          'Wild Berry',
+          'Cherry',
+          'Blueberry',
+          'Citrus',
+          'Fruity Blast',
+        ],
+      },
+      {
+        name: 'Sizes',
+        selectMax: 1,
+        choices: ['12 oz', '16 oz', '19.2 oz'],
+      },
+    ],
   },
   {
     image: '/images/menu/alcohol/spiked-cranberry.png',
