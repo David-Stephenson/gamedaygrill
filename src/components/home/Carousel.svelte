@@ -54,7 +54,7 @@
     <SplideSlide>
       <div
         class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
-        style="background-image: url('/images/banners/football.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
+        style="background-image: url('/images/home/banners/football.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
       >
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="z-10 text-center">
@@ -79,7 +79,7 @@
     <SplideSlide>
       <div
         class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
-        style="background-image: url('/images/banners/milkshakes.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
+        style="background-image: url('/images/home/banners/milkshakes.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
       >
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="z-10 text-center">
@@ -96,24 +96,24 @@
     <SplideSlide>
       <div
         class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
-        style="background-image: url('/images/banners/rewards.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+        style="background-image: url('/images/home/banners/rewards.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
       >
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="z-10 text-center px-4">
           <h1
-            class="text-4xl md:text-6xl lg:text-7xl font-bold text-white shadow-lg"
+            class="text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg"
           >
             Victory Club Rewards
           </h1>
           <p
-            class="text-lg md:text-xl lg:text-2xl font-semibold text-white mt-4 shadow"
+            class="text-lg md:text-xl lg:text-2xl font-semibold text-white mt-4 drop-shadow"
           >
             Dine & Earn! With every visit, savor delicious meals while accruing
             points towards exciting rewards.
           </p>
           <a
             href="/account"
-            class="mt-4 inline-block bg-white text-red-500 px-6 py-3 text-lg lg:text-xl font-semibold rounded-full shadow-md hover:bg-red-500 hover:text-white transition-colors duration-300 ease-in-out"
+            class="mt-4 inline-block bg-white text-red-500 px-6 py-3 text-lg lg:text-xl font-semibold rounded-full drop-shadow-md hover:bg-red-500 hover:text-white transition-colors duration-300 ease-in-out"
           >
             Join
           </a>
