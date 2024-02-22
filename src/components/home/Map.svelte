@@ -73,7 +73,7 @@
     {bearing} | Zoom:
     {zoom.toFixed(2)}
   </div> -->
-  <div class="">
+  <div>
     <div class="map" bind:this={mapContainer} />
   </div>
 </div>
