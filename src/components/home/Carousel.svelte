@@ -92,27 +92,24 @@
       </div>
     </SplideSlide>
 
-    <!-- Slide 3 -->
+    <!-- Slide 4 -->
     <SplideSlide>
       <div
         class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
         style="background-image: url('/images/banners/rewards.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
       >
         <div class="absolute inset-0 bg-black opacity-60"></div>
-        <!-- Increased opacity for better readability -->
         <div class="z-10 text-center px-4">
-          <!-- Added padding for better responsiveness -->
           <h1
             class="text-4xl md:text-6xl lg:text-7xl font-bold text-white shadow-lg"
           >
-            <!-- Responsive font size and added text shadow -->
             Victory Club Rewards
           </h1>
           <p
             class="text-lg md:text-xl lg:text-2xl font-semibold text-white mt-4 shadow"
           >
-            <!-- Responsive font size and subtle text shadow -->
-            Text
+            Dine & Earn! With every visit, savor delicious meals while accruing
+            points towards exciting rewards.
           </p>
           <a
             href="/account"
