@@ -1,6 +1,13 @@
 <script>
   import { information, contact } from '$config';
-  import { Facebook, Twitter, Instagram, Phone, MapPin } from 'lucide-svelte';
+  import {
+    Facebook,
+    Twitter,
+    Instagram,
+    Phone,
+    MapPin,
+    Mail,
+  } from 'lucide-svelte';
   import Logo from '$components/global/Logo.svelte';
 
   const socialLinks = {
@@ -27,11 +34,14 @@
         </div>
       </div>
       <div class="flex flex-col items-center text-gray-600 text-center">
-        <a class="text-sm flex items-center gap-1" href="#"
-          ><MapPin size="16" /><span>{contact.address}</span></a
-        >
         <a class="text-sm flex items-center gap-1" href="tel:{contact.phone}"
           ><Phone size="16" /><span>{contact.phone}</span></a
+        >
+        <a class="text-sm flex items-center gap-1" href="mailto:{contact.email}"
+          ><Mail size="16" /><span>{contact.email}</span></a
+        >
+        <a class="text-sm flex items-center gap-1" href="#"
+          ><MapPin size="16" /><span>{contact.address}</span></a
         >
       </div>
       <div class="flex space-x-2 items-center md:items-start justify-center">
