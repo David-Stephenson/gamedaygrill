@@ -29,6 +29,7 @@
   "dependencies": {
     "@splidejs/svelte-splide": "^0.2.9",
     "lucide-svelte": "^0.292.0",
-    "mapbox-gl": "^3.1.2"
+    "mapbox-gl": "^3.1.2",
+    "nanoid": "^5.0.6"
   }
 }
