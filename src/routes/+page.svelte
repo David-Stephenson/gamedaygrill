@@ -1,9 +1,8 @@
 <script>
-  import RewardsBanner from '$components/home/RewardsBanner.svelte';
-
   import Carousel from '$components/home/Carousel.svelte';
   import Map from '$components/home/Map.svelte';
   import Hours from '$components/home/Hours.svelte';
+  import CustomerReview from '$components/home/CustomerReview.svelte';
 
   import { popular_now } from '$lib/menu.js';
 </script>
@@ -73,6 +72,8 @@
     </div>
   </div>
 </div>
+
+<CustomerReview></CustomerReview>
 
 <section
   class="my-5 py-12 px-4 md:px-12 bg-red-600 text-white text-center rounded-[25px] shadow-lg transform"
