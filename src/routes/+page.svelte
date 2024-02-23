@@ -16,7 +16,7 @@
 
 <!-- "Popular Items" -->
 <div class="mt-5">
-  <h1 class="text-2xl font-bold mb-1 text-center sm:text-left uppercase">
+  <h1 class="text-2xl mb-1 text-center sm:text-left rounded-[25px] font-russo">
     Popular Now
   </h1>
 
@@ -40,7 +40,7 @@
           </picture>
         </div>
         <div class="p-4 flex flex-col flex-grow">
-          <h1 class="text-2xl font-bold uppercase mb-2 text-center">
+          <h1 class="text-2xl font-bold rounded-[25px] mb-2 text-center">
             {item.name}
           </h1>
         </div>
