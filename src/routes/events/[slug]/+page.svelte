@@ -5,7 +5,7 @@
 
 <article>
   <header
-    class="relative h-96 w-full rounded-[25px] overflow-hidden border-2 border-red-500"
+    class="relative h-96 w-full rounded-none md:rounded-[25px] overflow-hidden border-2 border-red-500"
   >
     <img
       src={data.meta.image}

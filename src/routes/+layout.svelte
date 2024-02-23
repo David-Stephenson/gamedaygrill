@@ -13,8 +13,6 @@
 <!-- Import Fonts -->
 <svelte:head>
   <link rel="preconnect" href="https://fonts.bunny.net" />
-  <link rel="preconnect" href="https://fonts.bunny.net" />
-  <link rel="preconnect" href="https://fonts.bunny.net" />
   <link
     href="https://fonts.bunny.net/css?family=russo-one:400|yellowtail:400"
     rel="stylesheet"

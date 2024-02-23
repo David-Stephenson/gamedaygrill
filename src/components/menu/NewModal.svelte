@@ -99,7 +99,7 @@
 
         <div class="text-center">
           <h2 class="text-xl md:text-2xl font-semibold">
-            {selectedItem.name} • \${selectedItem.price}
+            {selectedItem.name} • ${selectedItem.price}
           </h2>
           <p class="mt-2 text-sm md:text-base">
             {selectedItem.description}
@@ -182,7 +182,7 @@
                   <Minus size="24" />
                 </button>
                 <span class="mx-auto">
-                  Add {quantity} to Bag
+                  {quantity}
                 </span>
                 <button
                   class="focus:outline-none"

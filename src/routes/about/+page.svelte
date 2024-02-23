@@ -13,7 +13,6 @@
         camaraderie, and culinary excellence.
       </p>
 
-      <!-- Story Section -->
       <div class="flex flex-wrap md:flex-nowrap gap-6 mb-6">
         <div class="md:w-1/2">
           <img
@@ -35,7 +34,6 @@
         </div>
       </div>
 
-      <!-- Mission Section -->
       <h2 class="text-3xl font-bold mb-3">Our Mission</h2>
       <p class="mb-6">
         At Game Day Grill, our mission is simple: to provide an unmatched sports
@@ -46,7 +44,6 @@
         memorable.
       </p>
 
-      <!-- Unique Features Section -->
       <h2 class="text-3xl font-bold mb-3">What Sets Us Apart</h2>
       <div class="grid md:grid-cols-2 gap-4 mb-6">
         <div class="space-y-2">
@@ -95,7 +92,7 @@
     <div class=" text-center">
       <a
         href="/reserve"
-        class="inline-block bg-red-500 text-white font-bold py-2 px-4 rounded-lg shadow hover:bg-red-600 hover:text-white transition-colors"
+        class="inline-block bg-red-500 text-white font-bold py-2 px-4 rounded-full shadow hover:bg-red-600 hover:text-white transition-colors"
       >
         Book Your Table Now
       </a>
