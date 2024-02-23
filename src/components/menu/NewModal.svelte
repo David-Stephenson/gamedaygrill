@@ -12,39 +12,42 @@
   export let isOpen = false;
 
   let selectedOptions = {};
+  let specialInstructions = ''; // State variable for storing special instructions
 
   $: isOpen ? open.set(true) : open.set(false);
 
-  // Function that handles adding food to bag
-  function addFoodToBag() {
-    bag.update(items => {
-      return [...items, { ...selectedItem, selectedOptions }];
-    });
+  $: if (isOpen) {
+    specialInstructions = '';
   }
 
-  // Function to handle option selection
+  function addFoodToBag() {
+    bag.update(items => {
+      return [
+        ...items,
+        { ...selectedItem, selectedOptions, specialInstructions },
+      ];
+    });
+    isOpen = false;
+  }
+
   function toggleOption(category, choice, selectMax) {
     const selected = selectedOptions[category] || [];
     const index = selected.indexOf(choice);
     if (index > -1) {
-      // Remove if already selected
       selected.splice(index, 1);
     } else {
-      // Check against dynamic selectMax
       if (selected.length < selectMax) {
-        selected.push(choice); // Add if not present and within selectMax limit
+        selected.push(choice);
       } else {
-        // Handle case where selection exceeds selectMax
         console.log(
           `Maximum of ${selectMax} selections allowed for ${category}.`,
         );
-        return; // Optionally notify the user
+        return;
       }
     }
-    selectedOptions = { ...selectedOptions, [category]: [...selected] }; // Update the reactive variable
+    selectedOptions = { ...selectedOptions, [category]: [...selected] };
   }
 
-  // Check if an option is selected
   function isSelected(category, choice) {
     return selectedOptions[category]?.includes(choice);
   }
@@ -69,9 +72,8 @@
       on:click|stopPropagation
     >
       <div
-        class="bg-white rounded-[25px] shadow-xl max-w-lg md:max-w-4xl w-full mx-auto p-6 space-y-6 overflow-auto relative"
+        class="bg-white rounded-[25px] shadow-xl max-w-md md:max-w-2xl lg:max-w-4xl w-full mx-auto p-4 md:p-6 space-y-4 md:space-y-6 overflow-auto relative border-2 border-red-500"
       >
-        <!-- Close button overlaying everything -->
         <button
           on:click={() => {
             isOpen = false;
@@ -81,60 +83,70 @@
           <X size="24" />
         </button>
 
-        <!-- Title and description -->
-        <h2 class="text-2xl md:text-3xl font-semibold">
-          {selectedItem.name} • {selectedItem.price}
-        </h2>
-        <p class="mb-4">
-          {selectedItem.description}
-        </p>
+        <div class="text-center">
+          <h2 class="text-xl md:text-2xl font-semibold">
+            {selectedItem.name} • ${selectedItem.price}
+          </h2>
+          <p class="mt-2 text-sm md:text-base">
+            {selectedItem.description}
+          </p>
+        </div>
 
-        <!-- Image and options content -->
-        <div class="flex flex-col md:flex-row items-start">
-          <div class="flex flex-1 justify-center items-center mb-4 md:mb-0">
-            <div class="border-4 border-red-500 rounded-[25px]">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="md:flex-1">
+            <div class="border-2 border-red-500 rounded-[25px] overflow-hidden">
               <img
                 src={selectedItem.image}
                 alt={selectedItem.name}
-                class="w-full md:w-96 rounded-lg object-cover"
+                class="w-full object-cover"
               />
             </div>
           </div>
 
-          <div class="flex-1 self-stretch flex flex-col justify-between">
+          <div class="md:flex-1 space-y-4">
             {#if selectedItem.options}
-              <div>
+              <div class="space-y-2">
                 {#each selectedItem.options as option (option.name)}
-                  <h3 class="text-xl font-semibold my-2">{option.name}</h3>
-                  <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    {#each option.choices as choice (choice)}
-                      <label
-                        class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-150 flex items-center"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={isSelected(option.name, choice)}
-                          on:change={() =>
-                            toggleOption(option.name, choice, option.selectMax)}
-                        />
-                        <span class="ml-2">{choice}</span>
-                      </label>
-                    {/each}
+                  <div>
+                    <h3 class="text-lg font-semibold">{option.name}</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                      {#each option.choices as choice (choice)}
+                        <label
+                          class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-150 flex items-center cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={isSelected(option.name, choice)}
+                            on:change={() =>
+                              toggleOption(
+                                option.name,
+                                choice,
+                                option.selectMax,
+                              )}
+                            class="mr-2"
+                          />
+                          {choice}
+                        </label>
+                      {/each}
+                    </div>
                   </div>
                 {/each}
               </div>
             {/if}
 
-            <div class="mt-6">
-              <button
-                class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-150"
-                on:click={() => {
-                  addFoodToBag();
-                }}
-              >
-                Add to Bag
-              </button>
-            </div>
+            <textarea
+              bind:value={specialInstructions}
+              class="w-full p-2 border border-gray-300 rounded-lg"
+              placeholder="Special instructions, notes, comments..."
+              rows="3"
+            ></textarea>
+
+            <button
+              class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-150"
+              on:click={addFoodToBag}
+            >
+              Add to Bag
+            </button>
           </div>
         </div>
       </div>

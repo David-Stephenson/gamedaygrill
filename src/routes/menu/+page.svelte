@@ -38,7 +38,7 @@
                 src={item.image}
                 alt={item.name}
               />
-              <span class="text-lg font-bold">{item.name} • {item.price}</span>
+              <span class="text-lg font-bold">{item.name} • ${item.price}</span>
               <span class="truncate-lines">{item.description}</span>
             </div>
           </div>
