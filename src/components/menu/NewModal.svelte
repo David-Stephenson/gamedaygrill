@@ -23,6 +23,7 @@
     specialInstructions = '';
     quantity = 0; // Reset quantity to 0 every time the modal is opened
     orderId = nanoid(); // Generate a new unique ID for the order
+    selectedOptions = {};
   }
 
   function addFoodToBag() {

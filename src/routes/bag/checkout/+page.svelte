@@ -8,7 +8,7 @@
   bag.subscribe(value => {
     bagContent = value;
     total = bagContent.reduce(
-      (acc, item) => acc + parseFloat(item.price.slice(1)) * item.quantity,
+      (acc, item) => acc + parseFloat(item.price) * item.quantity,
       0,
     );
   });
@@ -33,7 +33,9 @@
 <section class="flex justify-center items-center py-12">
   <div class="flex flex-wrap -mx-4">
     <div class="w-full px-4 mb-4 lg:mb-0">
-      <div class="max-w-xl mx-auto py-6 px-4 bg-white rounded shadow-md">
+      <div
+        class="max-w-xl mx-auto py-6 px-4 bg-white rounded-[25px] shadow-md border-2 border-red-500"
+      >
         <h2 class="text-2xl font-bold mb-4 text-center">Checkout</h2>
         <p class="text-center mb-4">Total: ${total.toFixed(2)}</p>
         <form on:submit|preventDefault={handleSubmit}>

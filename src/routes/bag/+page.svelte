@@ -4,7 +4,6 @@
 
   bag.subscribe(value => {
     bagContent = value;
-    console.log(bagContent);
   });
 
   let total = 0;
