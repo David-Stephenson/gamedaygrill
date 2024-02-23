@@ -8,6 +8,6 @@ export const information = {
 // Restaurant Contact Information
 export const contact = {
   phone: '(614) 764-4932',
-  email: 'contact@gmaedaygrill.com',
+  email: 'contact@gamedaygrill.com',
   address: '4595 Bridge Park Ave, Dublin, OH',
 };
