@@ -1,5 +1,6 @@
 <script>
   import { information } from '$config';
+  import { bag } from '$lib/stores';
   import { ShoppingBag, User2, Menu } from 'lucide-svelte';
   import LogoComponent from '$components/global/Logo.svelte';
 
@@ -11,6 +12,15 @@
   };
 
   let isOpen = false;
+  let bagCount;
+
+  bag.subscribe(value => {
+    bagCount = 0;
+
+    value.forEach(item => {
+      bagCount += item.quantity;
+    });
+  });
 
   function toggleDropdown() {
     isOpen = !isOpen;
@@ -29,18 +39,21 @@
     >
       <LogoComponent class="h-8 fill-current" />
       <span class="ml-3 hidden md:inline">{information.name}</span>
-      <!-- Adjusted to md:inline -->
     </a>
     <div class="hidden md:flex justify-center flex-grow text-gray-800">
-      <!-- Adjusted to md:flex -->
       {#each Object.entries(links) as [name, url]}
         <a href={url} class="text-base mx-4 capitalize">{name}</a>
       {/each}
     </div>
     <div class="hidden lg:flex items-center text-gray-800">
-      <!-- Adjusted to lg:flex for larger screens -->
-      <a href="/bag" class="text-sm mx-4">
+      <a href="/bag" class="text-sm mx-4 relative">
         <ShoppingBag />
+        {#if bagCount}
+          <span
+            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2 py-0.5"
+            >{bagCount}</span
+          >
+        {/if}
       </a>
       <a href="/account" class="text-sm mx-4">
         <User2 />
