@@ -25,7 +25,7 @@
   >
     {#each popular_now as item, index}
       <div
-        class="flex flex-col border-2 border-red-500 rounded-2xl overflow-hidden"
+        class="flex flex-col border-2 border-red-500 rounded-[25px] overflow-hidden"
       >
         <div class="aspect-w-1 aspect-h-1 w-full">
           <picture class="aspect-w-1 aspect-h-1 w-full">
@@ -77,9 +77,9 @@
   </div>
 </div>
 
-<CustomerReview></CustomerReview>
+<CustomerReview />
 
-<section
+<!-- <section
   class="my-5 py-12 px-4 md:px-12 bg-red-600 text-white text-center rounded-[25px] shadow-lg transform"
 >
   <h2 class="text-3xl md:text-4xl font-extrabold mb-8">
@@ -100,7 +100,7 @@
   style="background-image: url('/images/test/bar.png');"
 >
   <h1>Milkshke Bar</h1>
-</div>
+</div> -->
 
 <div class="my-5 rounded-[25px] overflow-hidden">
   <div class="bg-gray-100 p-5">

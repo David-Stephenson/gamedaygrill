@@ -455,7 +455,13 @@ const desserts = [
     name: 'Orea Cupcake',
     description: 'A rich Orea cupcake to scratch your sweet tooth.',
     price: '2.99',
-    options: null,
+    options: [
+      {
+        name: 'Flavor',
+        selectMax: 1,
+        choices: ['Chocolate', 'Vanilla'],
+      },
+    ],
   },
 ];
 

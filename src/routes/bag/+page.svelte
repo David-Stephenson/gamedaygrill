@@ -89,8 +89,15 @@
                 <p class="text-gray-900 whitespace-no-wrap">${item.price}</p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-base">
-                <p class="text-gray-900 whitespace-no-wrap">"FILL"</p>
+                <div class="text-gray-900 whitespace-no-wrap">
+                  {#each Object.entries(item.selectedOptions) as [optionName, selectedValues]}
+                    <p>
+                      <b>{optionName}</b>: {selectedValues.join(', ')}
+                    </p>
+                  {/each}
+                </div>
               </td>
+
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-base">
                 <p class="text-gray-900 whitespace-no-wrap">
                   {item.specialInstructions}

@@ -26,7 +26,6 @@
             loading="lazy"
           />
         </picture>
-
         <div class="p-4">
           <h2 class="font-semibold text-xl mb-2 text-gray-800 text-center">
             {event.title}

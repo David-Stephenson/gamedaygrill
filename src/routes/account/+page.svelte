@@ -5,7 +5,6 @@
 
   reservations.subscribe(value => {
     reservationDetails = value;
-    console.log(reservationDetails);
   });
 
   // Fake user data
@@ -54,11 +53,16 @@
       class="bg-white rounded-[25px] shadow-md p-5 mb-6 flex items-center justify-between border-2 border-red-500"
     >
       <div class="flex items-center space-x-4">
-        <img
-          class="h-16 w-16 rounded-[25px]"
-          src="/images/account/profile.webp"
-          alt="User Profile"
-        />
+        <picture class="w-full h-full rounded-full">
+          <source type="image/avif" srcset="/images/account/profile.avif" />
+          <source type="image/webp" srcset="/images/account/profile.webp" />
+          <img
+            src="/images/account/profile.png"
+            alt="User Profile"
+            class="h-16 w-16 rounded-[25px]"
+            loading="lazy"
+          />
+        </picture>
         <div>
           <div class="font-semibold text-xl">{user.name}</div>
           <div class="text-gray-500 text-sm">
@@ -69,7 +73,6 @@
       <div class="text-lg font-semibold">{user.totalPoints} Points</div>
     </div>
 
-    <!-- Cards Container -->
     <div class="grid gap-6 md:grid-cols-2">
       <!-- Point Transaction History Card -->
       <div

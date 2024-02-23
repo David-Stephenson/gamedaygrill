@@ -15,12 +15,18 @@
 
       <div class="flex flex-wrap md:flex-nowrap gap-6 mb-6">
         <div class="md:w-1/2">
-          <img
-            src="/images/about/john-doe.jpg"
-            alt="Portait of John Doe"
-            class="w-full h-auto rounded-lg shadow-md"
-          />
+          <picture class="w-full h-full rounded-full">
+            <source type="image/avif" srcset="/images/about/john-doe.avif" />
+            <source type="image/webp" srcset="/images/about/john-doe.webp" />
+            <img
+              src="/images/about/john-doe.png"
+              alt="Portait of John Doe"
+              class="w-full h-auto rounded-lg shadow-md"
+              loading="lazy"
+            />
+          </picture>
         </div>
+
         <div class="md:w-1/2 space-y-4">
           <h2 class="text-3xl font-bold mb-3">Our Story</h2>
           <p>
