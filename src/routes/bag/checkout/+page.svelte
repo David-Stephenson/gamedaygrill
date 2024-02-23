@@ -86,7 +86,7 @@
             />
           </div>
           <button
-            class="w-full py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600 rounded-full transition-colors duration-150"
+            class="w-full py-2 px-4 bg-red-500 text-white hover:bg-red-600 rounded-full transition-colors duration-150"
             type="submit"
           >
             Complete Purchase

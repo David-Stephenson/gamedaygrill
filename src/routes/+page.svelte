@@ -102,17 +102,21 @@
     <h2 class="text-lg font-bold text-center mb-4">
       Subscribe to Our Newsletter
     </h2>
+    <p class="text-sm text-gray-700 text-center mb-4">
+      Stay updated with the latest news, exclusive offers, and special events at
+      Game Day Grill. Sign up now to not miss out!
+    </p>
     <form method="POST" class="flex flex-col items-center gap-2">
       <input
         type="email"
         name="email"
         placeholder="Enter your email"
         required
-        class="px-4 py-2 border rounded-md w-full max-w-md"
+        class="px-4 py-2 border rounded-md w-full max-w-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
       />
       <button
         type="submit"
-        class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full max-w-md"
+        class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full max-w-md transition duration-150 ease-in-out"
         >Subscribe</button
       >
     </form>

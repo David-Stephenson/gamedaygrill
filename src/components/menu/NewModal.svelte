@@ -1,10 +1,11 @@
 <script>
   import { bag } from '$lib/stores.js';
   import { createDialog, melt } from '@melt-ui/svelte';
-  import { Badge, X } from 'lucide-svelte';
+  import { X, Plus, Minus } from 'lucide-svelte';
+  import { nanoid } from 'nanoid';
 
   const {
-    elements: { trigger, portalled, overlay, content, close },
+    elements: { portalled, overlay, content },
     states: { open },
   } = createDialog();
 
@@ -12,22 +13,39 @@
   export let isOpen = false;
 
   let selectedOptions = {};
-  let specialInstructions = ''; // State variable for storing special instructions
+  let specialInstructions = '';
+  let quantity = 0;
+  let orderId = ''; // Unique order ID
 
   $: isOpen ? open.set(true) : open.set(false);
 
   $: if (isOpen) {
     specialInstructions = '';
+    quantity = 0; // Reset quantity to 0 every time the modal is opened
+    orderId = nanoid(); // Generate a new unique ID for the order
   }
 
   function addFoodToBag() {
+    if (quantity === 0) return; // Prevent adding to bag if quantity is 0
+
     bag.update(items => {
-      return [
-        ...items,
-        { ...selectedItem, selectedOptions, specialInstructions },
-      ];
+      const index = items.findIndex(item => item.orderId === orderId);
+      if (index === -1) {
+        return [
+          ...items,
+          {
+            ...selectedItem,
+            selectedOptions,
+            specialInstructions,
+            quantity,
+            orderId,
+          },
+        ];
+      } else {
+        items[index].quantity += quantity;
+        return [...items];
+      }
     });
-    isOpen = false;
   }
 
   function toggleOption(category, choice, selectMax) {
@@ -50,10 +68,6 @@
 
   function isSelected(category, choice) {
     return selectedOptions[category]?.includes(choice);
-  }
-
-  $: {
-    console.log(selectedOptions);
   }
 </script>
 
@@ -85,7 +99,7 @@
 
         <div class="text-center">
           <h2 class="text-xl md:text-2xl font-semibold">
-            {selectedItem.name} • ${selectedItem.price}
+            {selectedItem.name} • \${selectedItem.price}
           </h2>
           <p class="mt-2 text-sm md:text-base">
             {selectedItem.description}
@@ -141,12 +155,45 @@
               rows="3"
             ></textarea>
 
-            <button
-              class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-150"
-              on:click={addFoodToBag}
-            >
-              Add to Bag
-            </button>
+            {#if quantity == 0}
+              <button
+                class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-150 flex items-center justify-center"
+                on:click={() => {
+                  quantity = 1;
+                  addFoodToBag();
+                }}
+              >
+                Add to Bag
+              </button>
+            {:else}
+              <div
+                class="w-full bg-red-500 text-white font-bold py-2 px-6 rounded-full transition-colors duration-150 flex items-center justify-between"
+              >
+                <button
+                  class="focus:outline-none"
+                  on:click={() => {
+                    if (quantity > 1) {
+                      quantity -= 1;
+                    } else {
+                      quantity = 0; // Allow quantity to go back to 0
+                    }
+                  }}
+                >
+                  <Minus size="24" />
+                </button>
+                <span class="mx-auto">
+                  Add {quantity} to Bag
+                </span>
+                <button
+                  class="focus:outline-none"
+                  on:click={() => {
+                    quantity += 1;
+                  }}
+                >
+                  <Plus size="24" />
+                </button>
+              </div>
+            {/if}
           </div>
         </div>
       </div>
