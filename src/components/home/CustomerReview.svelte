@@ -25,10 +25,10 @@
   ];
 </script>
 
-<div class="flex flex-wrap justify-around items-stretch p-4">
+<div class="flex flex-wrap gap-4 justify-around items-stretch">
   {#each reviews as review}
     <div
-      class="max-w-full md:max-w-xs lg:max-w-sm xl:max-w-md p-4 m-2 bg-white border-2 border-red-500 rounded-[25px] space-y-2 flex flex-col"
+      class="w-full md:w-1/3 lg:w-1/4 xl:w-1/5 flex-grow p-4 bg-white border-2 border-red-500 rounded-[25px] space-y-2 flex flex-col"
     >
       <div class="flex justify-center space-x-1">
         {#each Array(5) as _, i}

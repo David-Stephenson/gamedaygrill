@@ -27,25 +27,20 @@
   }
 
   function addFoodToBag() {
-    if (quantity === 0) return; // Prevent adding to bag if quantity is 0
-
     bag.update(items => {
       const index = items.findIndex(item => item.orderId === orderId);
       if (index === -1) {
-        return [
-          ...items,
-          {
-            ...selectedItem,
-            selectedOptions,
-            specialInstructions,
-            quantity,
-            orderId,
-          },
-        ];
+        items.push({
+          ...selectedItem,
+          selectedOptions,
+          specialInstructions,
+          quantity,
+          orderId,
+        });
       } else {
-        items[index].quantity += quantity;
-        return [...items];
+        items[index].quantity = quantity; // Directly set the quantity
       }
+      return items;
     });
   }
 
@@ -178,15 +173,17 @@
                 <button
                   class="focus:outline-none"
                   on:click={() => {
-                    if (quantity > 1) {
+                    if (quantity > 0) {
                       quantity -= 1;
-                    } else {
-                      quantity = 0; // Allow quantity to go back to 0
+                      if (quantity === 0) {
+                        addFoodToBag(); // Call only when quantity is 0 to remove from cart
+                      }
                     }
                   }}
                 >
                   <Minus size="24" />
                 </button>
+
                 <span class="mx-auto">
                   {quantity}
                 </span>
@@ -194,6 +191,7 @@
                   class="focus:outline-none"
                   on:click={() => {
                     quantity += 1;
+                    addFoodToBag(); // Ensure this function handles quantity updates correctly
                   }}
                 >
                   <Plus size="24" />
