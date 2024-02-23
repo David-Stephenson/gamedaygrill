@@ -26,8 +26,6 @@
           class="absolute w-full h-full object-cover"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
-          <!-- Display an image as fallback if the video doesn't load -->
-          Your browser does not support HTML5 video.
         </video>
         <div
           class="flex flex-col p-5 space-y-4 h-full bg-gray-100 relative justify-center"
@@ -52,16 +50,29 @@
 
     <!-- Slide 2 -->
     <SplideSlide>
-      <div
-        class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
-        style="background-image: url('/images/home/banners/football.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
-      >
+      <div class="relative h-96 w-full flex items-center justify-center">
+        <picture class="absolute inset-0 w-full h-full">
+          <source
+            type="image/avif"
+            srcset="/images/home/banners/football.avif"
+          />
+          <source
+            type="image/webp"
+            srcset="/images/home/banners/football.webp"
+          />
+          <img
+            src="/images/home/banners/football.png"
+            alt="Friday Football Feast"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </picture>
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="z-10 text-center">
           <h1 class="text-5xl mt-12 md:text-6xl font-bold text-white">
             Friday Football Feast
           </h1>
-          <p class=" text-xl md:text-2xl font-semibold text-white mt-4">
+          <p class="text-xl md:text-2xl font-semibold text-white mt-4">
             Kickstart your weekend with live football and our special game day
             menu!
           </p>
@@ -77,10 +88,23 @@
 
     <!-- Slide 3 -->
     <SplideSlide>
-      <div
-        class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
-        style="background-image: url('/images/home/banners/milkshakes.png');  background-size: cover; background-position: center; background-repeat: no-repeat;"
-      >
+      <div class="relative h-96 w-full flex items-center justify-center">
+        <picture class="absolute inset-0 w-full h-full">
+          <source
+            type="image/avif"
+            srcset="/images/home/banners/milkshakes.avif"
+          />
+          <source
+            type="image/webp"
+            srcset="/images/home/banners/milkshakes.webp"
+          />
+          <img
+            src="/images/home/banners/milkshakes.png"
+            alt="Milkshakes"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </picture>
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="z-10 text-center">
           <h1 class="text-5xl md:text-6xl font-bold text-white">
@@ -94,10 +118,23 @@
 
     <!-- Slide 4 -->
     <SplideSlide>
-      <div
-        class="relative h-96 w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center"
-        style="background-image: url('/images/home/banners/rewards.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
-      >
+      <div class="relative h-96 w-full flex items-center justify-center">
+        <picture class="absolute inset-0 w-full h-full">
+          <source
+            type="image/avif"
+            srcset="/images/home/banners/rewards.avif"
+          />
+          <source
+            type="image/webp"
+            srcset="/images/home/banners/rewards.webp"
+          />
+          <img
+            src="/images/home/banners/rewards.png"
+            alt="Victory Club Rewards"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </picture>
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="z-10 text-center px-4">
           <h1
@@ -109,7 +146,7 @@
             class="text-lg md:text-xl lg:text-2xl font-semibold text-white mt-4 drop-shadow"
           >
             Dine & Earn! With every visit, savor delicious meals while accruing
-            points towards exciting rewards.
+            points towards exciting rewards.
           </p>
           <a
             href="/account"

@@ -28,17 +28,21 @@
         class="flex flex-col border-2 border-red-500 rounded-2xl overflow-hidden"
       >
         <div class="aspect-w-1 aspect-h-1 w-full">
-          <img
-            src={item.image}
-            alt={item.name}
-            class="object-cover w-full h-full"
-          />
+          <picture class="aspect-w-1 aspect-h-1 w-full">
+            <source type="image/avif" srcset="{item.image}.avif" />
+            <source type="image/webp" srcset="{item.image}.webp" />
+            <img
+              src="{item.image}.png"
+              alt={item.name}
+              class="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <div class="p-4 flex flex-col flex-grow">
           <h1 class="text-2xl font-bold uppercase mb-2 text-center">
             {item.name}
           </h1>
-          <!-- <p class="flex-grow text-sm line-clamp-3">{item.description}</p> -->
         </div>
       </div>
     {/each}

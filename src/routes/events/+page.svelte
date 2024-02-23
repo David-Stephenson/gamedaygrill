@@ -16,11 +16,17 @@
           goto(`/events/${event.slug}`);
         }}
       >
-        <img
-          src={event.image}
-          alt={event.title}
-          class="w-full h-64 object-cover"
-        />
+        <picture class="w-full h-full rounded-full">
+          <source type="image/avif" srcset="{event.image}.avif" />
+          <source type="image/webp" srcset="{event.image}.webp" />
+          <img
+            src="{event.image}.png"
+            alt={event.title}
+            class="w-full h-64 object-cover"
+            loading="lazy"
+          />
+        </picture>
+
         <div class="p-4">
           <h2 class="font-semibold text-xl mb-2 text-gray-800 text-center">
             {event.title}

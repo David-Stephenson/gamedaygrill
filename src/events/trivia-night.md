@@ -4,7 +4,7 @@ date: 11/18/24
 description:
   'Join us for Trivia Night, where teams compete in a battle of wits for prizes
   and glory, accompanied by great food and a lively atmosphere..'
-image: '/images/events/trivia-night/header.jpg'
+image: '/images/events/trivia-night/header'
 ---
 
 Gather your team and get ready for a night of fun, laughter, and brain-teasing

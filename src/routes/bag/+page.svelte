@@ -67,11 +67,16 @@
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-base">
                 <div class="flex items-center">
                   <div class="flex-shrink-0 w-20 h-20">
-                    <img
-                      class="w-full h-full rounded-full"
-                      src={item.image}
-                      alt={item.name}
-                    />
+                    <picture class="w-full h-full rounded-full">
+                      <source type="image/avif" srcset="{item.image}.avif" />
+                      <source type="image/webp" srcset="{item.image}.webp" />
+                      <img
+                        src="{item.image}.png"
+                        alt={item.name}
+                        class="w-full object-cover"
+                        loading="lazy"
+                      />
+                    </picture>
                   </div>
                   <div class="ml-3">
                     <p class="text-gray-900 whitespace-no-wrap">

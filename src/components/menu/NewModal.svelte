@@ -109,11 +109,16 @@
         <div class="flex flex-col md:flex-row gap-4">
           <div class="md:flex-1">
             <div class="border-2 border-red-500 rounded-[25px] overflow-hidden">
-              <img
-                src={selectedItem.image}
-                alt={selectedItem.name}
-                class="w-full object-cover"
-              />
+              <picture class="aspect-w-1 aspect-h-1 w-full">
+                <source type="image/avif" srcset="{selectedItem.image}.avif" />
+                <source type="image/webp" srcset="{selectedItem.image}.webp" />
+                <img
+                  src="{selectedItem.image}.png"
+                  alt={selectedItem.name}
+                  class="w-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </div>
 

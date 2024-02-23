@@ -4,7 +4,7 @@ date: 5/4/24
 description:
   'Experience the thrill of College Football Night on May 4th, cheering for the
   Thundering Herons with live screenings, themed food, and fan contests!'
-image: '/images/events/college-football-night/header.png'
+image: '/images/events/college-football-night/header'
 ---
 
 Join us for an electrifying evening of college football on **May 4th** at [Venue

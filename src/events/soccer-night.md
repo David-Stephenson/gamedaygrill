@@ -4,7 +4,7 @@ date: 10/14/24
 description:
   'Celebrate the passion of the beautiful game at Soccer Night, featuring live
   match screenings, trivia, and fun for all ages.'
-image: '/images/events/soccer-night/header.png'
+image: '/images/events/soccer-night/header'
 ---
 
 Get ready for an unforgettable Soccer Night, where fans of the beautiful game

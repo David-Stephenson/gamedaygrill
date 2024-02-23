@@ -4,7 +4,7 @@ date: 3/17/24
 description:
   'Experience fun with a charity event supporting local shelter dogs through
   purchases and auctions!'
-image: '/images/events/charity/header.png'
+image: '/images/events/charity/header'
 ---
 
 Join us on **March 17th, 2024**, for a day filled with fun, food, and

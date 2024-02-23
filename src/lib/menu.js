@@ -31,7 +31,7 @@ const cup_sizes = ['Small', 'Medium', 'Large'];
 // Export these
 const appetizers = [
   {
-    image: '/images/menu/appetizers/onion-rings.png',
+    image: '/images/menu/appetizers/onion-rings',
     name: 'Olympic Onion Rings',
     description:
       'A triumph of flavor and crunch! Picture thick, sweet onions coated in a golden batter, seasoned with a blend of zesty spices and a hint of sweetness.',
@@ -39,7 +39,7 @@ const appetizers = [
     options: null,
   },
   {
-    image: '/images/menu/appetizers/nachos.png',
+    image: '/images/menu/appetizers/nachos',
     name: 'Knockout Nachos',
     description:
       'A flavor-packed explosion of crispy tortilla chips, generously layered with melted cheese, zesty salsa, creamy guacamole, and your choice of meat.',
@@ -53,7 +53,7 @@ const appetizers = [
     ],
   },
   {
-    image: '/images/menu/appetizers/fries.png',
+    image: '/images/menu/appetizers/fries',
     name: 'Fighter Fries',
     description:
       'These fries are a powerhouse of flavor, boasting a golden exterior that crunches with each bite, revealing a fluffy, potato center.',
@@ -61,7 +61,7 @@ const appetizers = [
     options: null,
   },
   {
-    image: '/images/menu/appetizers/coleslaw.png',
+    image: '/images/menu/appetizers/coleslaw',
     name: 'Curling Coleslaw',
     description:
       'Crisp, shredded cabbage and carrots, tossed in a creamy, tangy dressing. A refreshing blend of textures and flavors, making it the perfect side.',
@@ -69,7 +69,7 @@ const appetizers = [
     options: null,
   },
   {
-    image: '/images/menu/appetizers/tator-tots.png',
+    image: '/images/menu/appetizers/tator-tots',
     name: 'Tackle Tator Tots',
     description:
       'These tots are a gridiron delight, with a crispy exterior that crunches with each bite, giving way to a soft, potatoey center. Seasoned to perfection with a savory blend of spices, they are the MVP of any game-day spread.',
@@ -77,7 +77,7 @@ const appetizers = [
     options: null,
   },
   {
-    image: '/images/menu/appetizers/beet-chips.png',
+    image: '/images/menu/appetizers/beet-chips',
     name: 'Batting Beet Chips',
     description:
       'These chips offer a vibrant explosion of flavor, featuring thin slices of earthy beets roasted to crispy perfection. Seasoned lightly with sea salt or herbs, they are a wholesome snack that packs a punch of nutrition and taste.',
@@ -85,7 +85,7 @@ const appetizers = [
     options: null,
   },
   {
-    image: '/images/menu/appetizers/battered-broccoli.png',
+    image: '/images/menu/appetizers/battered-broccoli',
     name: 'Battered Broccoli',
     description:
       '"Experience the crunch with our Battered Broccoli: tender florets wrapped in a crispy, seasoned batter. A perfect harmony of garden freshness and savory delight!"',
@@ -93,7 +93,7 @@ const appetizers = [
     options: null,
   },
   {
-    image: '/images/menu/appetizers/cheese-curds.png',
+    image: '/images/menu/appetizers/cheese-curds',
     name: 'Captain Cheese Curds',
     description:
       'Golden and gooey, these bites offer a delightful crunch on the outside with a melt-in-your-mouth center, perfectly seasoned for a cheesy indulgence.',
@@ -104,7 +104,7 @@ const appetizers = [
 
 const entrees = [
   {
-    image: '/images/menu/entrees/steak.png',
+    image: '/images/menu/entrees/steak',
     name: 'Sudden Death Steak',
     description:
       "Get in the game with our Sirloin Supreme! A champion cut, expertly seared for a robust flavor that's always a crowd-pleaser.",
@@ -119,7 +119,7 @@ const entrees = [
     ],
   },
   {
-    image: '/images/menu/entrees/hamburger.png',
+    image: '/images/menu/entrees/hamburger',
     name: 'Half-time Hamburger',
     description:
       'Juicy, grilled to perfection, and nestled between a soft, toasted bun. Topped with fresh lettuce, ripe tomatoes, and a hint of sauce for a classic taste sensation.',
@@ -127,7 +127,7 @@ const entrees = [
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
-    image: '/images/menu/entrees/chicken-sandwich.png',
+    image: '/images/menu/entrees/chicken-sandwich',
     name: "Coach's Chicken Sandwich",
     description:
       'Crispy on the outside, tender on the inside chicken breast, topped with fresh greens and a creamy sauce, all encased in a soft, toasted bun for a satisfying bite.',
@@ -135,7 +135,7 @@ const entrees = [
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
-    image: '/images/menu/entrees/porkchop.png',
+    image: '/images/menu/entrees/porkchop',
     name: 'Penalty Porkchop',
     description:
       'Tender and succulent, expertly seasoned and seared to lock in the flavors. Served with a hint of herbs for a mouthwatering experience.',
@@ -143,7 +143,7 @@ const entrees = [
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
-    image: '/images/menu/entrees/ribs.png',
+    image: '/images/menu/entrees/ribs',
     name: 'Rifle Ribs',
     description:
       'Slow-cooked to fall-off-the-bone perfection, these ribs are glazed in a smoky, sweet barbecue sauce, offering a rich, finger-licking good flavor.',
@@ -151,7 +151,7 @@ const entrees = [
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
-    image: '/images/menu/entrees/salmon.png',
+    image: '/images/menu/entrees/salmon',
     name: 'Soccer Salmon',
     description:
       'Delicately seasoned and perfectly grilled, this salmon fillet boasts a flaky texture and a rich, buttery flavor, complemented by a light, citrusy glaze.',
@@ -159,7 +159,7 @@ const entrees = [
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
-    image: '/images/menu/entrees/wings.png',
+    image: '/images/menu/entrees/wings',
     name: 'Wild Card Wings',
     description:
       'Crispy on the outside, juicy on the inside, tossed in your choice of savory sauces for a flavor-packed bite.',
@@ -167,7 +167,7 @@ const entrees = [
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
-    image: '/images/menu/entrees/grilled-chicken.png',
+    image: '/images/menu/entrees/grilled-chicken',
     name: 'Game Day Grilled Chicken',
     description:
       'Marinated and grilled to perfection, this chicken is infused with a blend of spices, offering a smoky, tender delight with every bite.',
@@ -178,7 +178,7 @@ const entrees = [
 
 const salads = [
   {
-    image: '/images/menu/salads/buffalo-chicken.png',
+    image: '/images/menu/salads/buffalo-chicken',
     name: 'Ball Boy Buffalo Chicken Salad',
     description:
       'A delectible salad that brings together the zesty kick of buffalo sauce with the crisp freshness of garden greens.',
@@ -186,7 +186,7 @@ const salads = [
     options: null,
   },
   {
-    image: '/images/menu/salads/caprese.png',
+    image: '/images/menu/salads/caprese',
     name: 'Clutch Caprese Salad',
     description:
       'Our Caprese Salads are crafted with care and attention to quality, each salad features slices of ripe, juicy tomatoes layered with thick, creamy mozzarella cheese.',
@@ -194,7 +194,7 @@ const salads = [
     options: null,
   },
   {
-    image: '/images/menu/salads/ceaser.png',
+    image: '/images/menu/salads/ceaser',
     name: 'Fencing Caesar Salad',
     description:
       'Each of our Caesar Salads feature crisp romaine lettuce leaves, gently tossed in our signature Caesar dressing, a mix of other vegetables, and a velvety blend of tangy Parmesan cheese.',
@@ -202,7 +202,7 @@ const salads = [
     options: null,
   },
   {
-    image: '/images/menu/salads/greek.png',
+    image: '/images/menu/salads/greek',
     name: 'Olympic Greek Salad',
     description:
       'Each of our Greek Salads feature a colorful array of crisp lettuce, juicy tomatoes, crunchy cucumbers, tangy Kalamata olives, and briny feta cheese.',
@@ -210,7 +210,7 @@ const salads = [
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
-    image: '/images/menu/salads/steakhouse.png',
+    image: '/images/menu/salads/steakhouse',
     name: 'Strength Steakhouse Salad',
     description:
       'Our Steakhouse Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
@@ -218,7 +218,7 @@ const salads = [
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
-    image: '/images/menu/salads/taco.png',
+    image: '/images/menu/salads/taco',
     name: 'Timeout Taco Salad',
     description:
       'Our Taco Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
@@ -226,7 +226,7 @@ const salads = [
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
-    image: '/images/menu/salads/cobb.png',
+    image: '/images/menu/salads/cobb',
     name: 'Field Goal Cobb Salad',
     description:
       'Our Cobb Salad features lettuce, grilled chicken, eggs, bacon, avocado, tomatoes, and blue cheese crumbles with vinaigrette.',
@@ -234,7 +234,7 @@ const salads = [
     options: [{ name: 'Sides', selectMax: 1, choices: sides }],
   },
   {
-    image: '/images/menu/salads/orzo.png',
+    image: '/images/menu/salads/orzo',
     name: 'Penalty Box Orzo Salad',
     description:
       'Our Orzo Salad is orzo pasta tossed with diced vegetables, feta cheese, fresh herbs, and a tangy vinaigrette dressing.',
@@ -245,7 +245,7 @@ const salads = [
 
 const kids = [
   {
-    image: '/images/menu/kids/chicken-quesadilla.png',
+    image: '/images/menu/kids/chicken-quesadilla',
     name: 'Touchdown Chicken Quesadilla',
     description:
       'Our chicken quesadilla is enhanced with a medley of colorful peppers and onions, as well as fragrant spices like cumin, paprika, and chili powder.  Served with salsa, guacamole, and sour cream.',
@@ -253,7 +253,7 @@ const kids = [
     options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
-    image: '/images/menu/kids/grilled-cheese.png',
+    image: '/images/menu/kids/grilled-cheese',
     name: 'Champ Grilled Cheese',
     description:
       'Each grilled cheese sandwich features layers of premium, ooey-gooey cheese sandwiched between two slices of perfectly toasted bread.',
@@ -261,7 +261,7 @@ const kids = [
     options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
-    image: '/images/menu/kids/hotdog.png',
+    image: '/images/menu/kids/hotdog',
     name: 'Slamdog',
     description:
       'A plain hotdog between a golden bun.  Condiments can be ordered to your liking.',
@@ -269,7 +269,7 @@ const kids = [
     options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
-    image: '/images/menu/kids/nuggets.png',
+    image: '/images/menu/kids/nuggets',
     name: 'End Zone Chicken Nuggets',
     description:
       'Chicken Nuggets crafted from tender chicken breast meat. Each nugget is coated in a crisp, golden breading that delivers a satisfying crunch with every bite.',
@@ -277,7 +277,7 @@ const kids = [
     options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
-    image: '/images/menu/kids/pbj.png',
+    image: '/images/menu/kids/pbj',
     name: 'Triple Play PB&J',
     description:
       'A Peanut Butter & Jelly sandwich.  Each sandwich features creamy peanut butter spread with sweet grape jelly.',
@@ -285,7 +285,7 @@ const kids = [
     options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
-    image: '/images/menu/kids/pizza.png',
+    image: '/images/menu/kids/pizza',
     name: "Slammin' Cheese Pizza",
     description:
       'Cheese Pizza served with a blend of premium cheeses, including mozzarella, provolone, and Parmesan',
@@ -294,7 +294,7 @@ const kids = [
     options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
-    image: '/images/menu/kids/slider.png',
+    image: '/images/menu/kids/slider',
     name: 'Slam Dunk Sliders',
     description:
       'Sliders served with a perfectly seasoned patty made from premium beef, gently grilled to mouthwatering perfection.',
@@ -302,7 +302,7 @@ const kids = [
     options: [{ name: 'Sides', selectMax: 1, choices: kids_sides }],
   },
   {
-    image: '/images/menu/kids/fish-sticks.png',
+    image: '/images/menu/kids/fish-sticks',
     name: 'Hooked Up Fish Sticks',
     description: 'Fish Sticks made from the finest cuts of premium white fish',
     price: '2.99',
@@ -312,7 +312,7 @@ const kids = [
 
 const drinks = [
   {
-    image: '/images/menu/drinks/soda.png',
+    image: '/images/menu/drinks/soda',
     name: 'PopPulse Soda',
     description:
       'A refreshing carbonated drink available in a variety of flavors.',
@@ -333,7 +333,7 @@ const drinks = [
     ],
   },
   {
-    image: '/images/menu/drinks/iced-tea.png',
+    image: '/images/menu/drinks/iced-tea',
     name: 'Iced Tea',
     description:
       'A nice, cold refreshing tea.  Available sweetened or unsweetened.',
@@ -341,7 +341,7 @@ const drinks = [
     options: null,
   },
   {
-    image: '/images/menu/drinks/lemonade.png',
+    image: '/images/menu/drinks/lemonade',
     name: 'Lemonade Blitz',
     description:
       'A refreshing sweet and sour lemonade, perfect to pair with a meal.',
@@ -349,7 +349,7 @@ const drinks = [
     options: null,
   },
   {
-    image: '/images/menu/drinks/smoothie.png',
+    image: '/images/menu/drinks/smoothie',
     name: 'Berry Blast Smoothie',
     description: 'Our specialty sweet, delicious berry smoothie made in-house.',
     price: '2.99',
@@ -357,7 +357,7 @@ const drinks = [
     options: null,
   },
   {
-    image: '/images/menu/drinks/coffee.png',
+    image: '/images/menu/drinks/coffee',
     name: 'Goalpost Gourmet Coffee',
     description:
       'Get back in the game with a smooth, energizing cup of our house blend coffee.',
@@ -365,7 +365,7 @@ const drinks = [
     options: null,
   },
   {
-    image: '/images/menu/drinks/hot-chocolate.png',
+    image: '/images/menu/drinks/hot-chocolate',
     name: 'Hot Cocoa Rush',
     description:
       'A delicious Hot Chocolate, perfect to enjoy in cold weather. (Or year-round, no judgements.)',
@@ -373,7 +373,7 @@ const drinks = [
     options: null,
   },
   {
-    image: '/images/menu/drinks/apple-cider.png',
+    image: '/images/menu/drinks/apple-cider',
     name: 'Crisp Apple Cider',
     description:
       'Apple Cider slow-simmered with a delicate blend of aromatic spices, including cinnamon, cloves, and nutmeg.',
@@ -381,7 +381,7 @@ const drinks = [
     options: null,
   },
   {
-    image: '/images/menu/drinks/arnold-palmer.png',
+    image: '/images/menu/drinks/arnold-palmer',
     name: 'Lemon Kick Iced Tea',
     description: 'A blend of chilled black tea and zesty lemonade. ',
     price: '2.40',
@@ -391,14 +391,14 @@ const drinks = [
 
 const desserts = [
   {
-    image: '/images/menu/desserts/apple-pie.png',
+    image: '/images/menu/desserts/apple-pie',
     name: 'Apple Pie',
     description: 'A classic dessert made with fresh apples and a flaky crust.',
     price: '3.99',
     options: null,
   },
   {
-    image: '/images/menu/desserts/banoffee-pie.png',
+    image: '/images/menu/desserts/banoffee-pie',
     name: 'Banoffee Pie',
     description:
       'A banana-caramel pie served with a scoop of vanilla ice cream.',
@@ -406,7 +406,7 @@ const desserts = [
     options: null,
   },
   {
-    image: '/images/menu/desserts/brownie-sundae.png',
+    image: '/images/menu/desserts/brownie-sundae',
     name: 'Brownie Sundae',
     description:
       'A nice vanilla sundae with brownie bits mixed in.  Topped with chocolate syrup.',
@@ -414,7 +414,7 @@ const desserts = [
     options: null,
   },
   {
-    image: '/images/menu/desserts/cheese-cake.png',
+    image: '/images/menu/desserts/cheese-cake',
     name: 'New York Cheesecake',
     description:
       'A classic New York cheesecake topped with raspberries and strawberry sauce.',
@@ -422,14 +422,14 @@ const desserts = [
     options: null,
   },
   {
-    image: '/images/menu/desserts/lava-cake.png',
+    image: '/images/menu/desserts/lava-cake',
     name: 'Lava Cake',
     description: 'A chocolate cake topped with hot chocolate syrup.',
     price: '5.20',
     options: null,
   },
   {
-    image: '/images/menu/desserts/strawberry-cake.png',
+    image: '/images/menu/desserts/strawberry-cake',
     name: 'Strawberry Cake',
     description:
       'Our classic vanilla-strawberry cake topped with strawberry jam.',
@@ -437,7 +437,7 @@ const desserts = [
     options: null,
   },
   {
-    image: '/images/menu/desserts/icecream.png',
+    image: '/images/menu/desserts/icecream',
     name: 'Ice Cream Scoops',
     description:
       'A single scoop of ice cream available in a variety of flavors.',
@@ -451,7 +451,7 @@ const desserts = [
     ],
   },
   {
-    image: '/images/menu/desserts/oreo-cupcake.png',
+    image: '/images/menu/desserts/oreo-cupcake',
     name: 'Orea Cupcake',
     description: 'A rich Orea cupcake to scratch your sweet tooth.',
     price: '2.99',
@@ -461,7 +461,7 @@ const desserts = [
 
 const alcohol = [
   {
-    image: '/images/menu/alcohol/beer.png',
+    image: '/images/menu/alcohol/beer',
     name: 'Draft Beer',
     description: 'Draft Beer (Supplies may vary)',
     price: '7.99',
@@ -481,7 +481,7 @@ const alcohol = [
     ],
   },
   {
-    image: '/images/menu/alcohol/hard-seltzer.png',
+    image: '/images/menu/alcohol/hard-seltzer',
     name: 'FizzQuench Co. Hard Seltzers',
     description: 'Alcoholic Seltzer',
     price: '7.99',
@@ -506,14 +506,14 @@ const alcohol = [
     ],
   },
   {
-    image: '/images/menu/alcohol/spiked-cranberry.png',
+    image: '/images/menu/alcohol/spiked-cranberry',
     name: 'Spiked Cranberry Juice',
     description: 'Alcoholic cranberry juice.',
     price: '8.99',
     options: [{ name: 'Size', selectMax: 1, choices: cup_sizes }],
   },
   {
-    image: '/images/menu/alcohol/cola-rum.png',
+    image: '/images/menu/alcohol/cola-rum',
     name: 'Cola and Rum',
     description: 'Cola spiked with rum.',
     price: '8.99',

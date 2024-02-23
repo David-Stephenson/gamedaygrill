@@ -5,7 +5,7 @@ description:
   'Join us for Fantasy Sports Drafts Night, featuring live drafts, expert
   panels, and special menus, all designed to kick off your fantasy season with a
   win!'
-image: '/images/events/fantasy-sports-drafts/header.png'
+image: '/images/events/fantasy-sports-drafts/header'
 ---
 
 Gear up for an epic evening of strategy, camaraderie, and competition at our

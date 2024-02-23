@@ -4,7 +4,7 @@ date: 7/20/24
 description:
   'Celebrate Dublinfest 2024 on July 20th at Game Day Grill, a day of Irish
   culture, music, and cuisine, promising fun for all ages.'
-image: '/images/events/dublinfest/header.png'
+image: '/images/events/dublinfest/header'
 ---
 
 Join us for an unforgettable celebration of Irish culture at the heart of our

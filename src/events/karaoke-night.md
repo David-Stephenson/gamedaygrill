@@ -5,7 +5,7 @@ host: 'Karaoke for Cancer'
 description:
   'Join us for Karaoke for Cancer, a night of music and solidarity where your
   favorite karaoke tunes help support cancer research and patient care.'
-image: '/images/events/karaoke/header.png'
+image: '/images/events/karaoke/header'
 ---
 
 Join us for a night of music, fun, and heartfelt support at our Karaoke for

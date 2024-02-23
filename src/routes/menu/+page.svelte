@@ -33,11 +33,16 @@
             <div
               class="bg-white shadow-md rounded-[25px] px-4 pb-4 flex flex-col items-center overflow-hidden cursor-pointer h-full border-2 border-red-500"
             >
-              <img
-                class="w-full mb-3 object-cover drop-shadow"
-                src={item.image}
-                alt={item.name}
-              />
+              <picture class="w-full mb-3 object-cover drop-shadow">
+                <source type="image/avif" srcset="{item.image}.avif" />
+                <source type="image/webp" srcset="{item.image}.webp" />
+                <img
+                  src="{item.image}.png"
+                  alt={item.name}
+                  class="w-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
               <span class="text-lg font-bold">{item.name} • ${item.price}</span>
               <span class="truncate-lines">{item.description}</span>
             </div>
