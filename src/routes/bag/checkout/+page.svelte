@@ -1,6 +1,7 @@
 <script>
   import { goto } from '$app/navigation';
   import { bag } from '$lib/stores';
+  import validate from 'card-validator';
 
   let bagContent;
   let total = 0;
@@ -19,10 +20,16 @@
   let cardNumber = '';
   let cardExpiry = '';
   let cardCVV = '';
+  let cardDetails;
 
   function handleSubmit() {
     bag.set([]);
     goto('/bag/checkout/success');
+  }
+
+  $: {
+    cardDetails = validate.number(cardNumber);
+    console.log(cardDetails);
   }
 </script>
 
@@ -65,24 +72,43 @@
             />
           </div>
           <div class="grid grid-cols-3 gap-4 mb-4">
-            <input
-              class="w-full px-3 py-2 border rounded text-gray-700"
-              placeholder="Card Number"
-              type="text"
-              required
-              bind:value={cardNumber}
-            />
+            <div class="relative">
+              <input
+                class="w-full pl-10 pr-3 py-2 border rounded text-gray-700"
+                placeholder="Card Number"
+                type="text"
+                required
+                bind:value={cardNumber}
+              />
+              <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <img
+                  src="/vectors/cards/{cardDetails.card
+                    ? cardDetails.card.type
+                    : 'generic'}.svg"
+                  alt="Visa"
+                  class="h-5 w-5"
+                />
+              </div>
+            </div>
+
             <input
               class="w-full px-3 py-2 border rounded text-gray-700"
               placeholder="Expiry Date"
-              type="text"
+              type="month"
               required
               bind:value={cardExpiry}
             />
             <input
               class="w-full px-3 py-2 border rounded text-gray-700"
               placeholder="CVV"
-              type="text"
+              type="number"
+              max="9999"
+              on:input={event => {
+                const inputValue = event.target.value;
+                if (inputValue.length > 4) {
+                  event.target.value = inputValue.slice(0, 4);
+                }
+              }}
               required
               bind:value={cardCVV}
             />
