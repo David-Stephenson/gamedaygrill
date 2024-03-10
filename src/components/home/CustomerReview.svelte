@@ -5,22 +5,22 @@
     {
       rating: 5,
       reviewText: 'Loved the wings and the atmosphere!',
-      reviewerName: 'Alex',
+      reviewerName: 'Connor C.',
     },
     {
       rating: 4,
       reviewText: 'Great screens, the game was awesome!',
-      reviewerName: 'Sam',
+      reviewerName: 'David S.',
     },
     {
       rating: 5,
       reviewText: 'Best sports grill in town. Period.',
-      reviewerName: 'Morgan',
+      reviewerName: 'Salam S.',
     },
     {
       rating: 4,
       reviewText: 'A fantastic place to catch a game.',
-      reviewerName: 'Casey',
+      reviewerName: 'Yousif A.',
     },
   ];
 </script>
