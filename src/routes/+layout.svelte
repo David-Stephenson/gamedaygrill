@@ -17,6 +17,13 @@
     href="https://fonts.bunny.net/css?family=russo-one:400|yellowtail:400"
     rel="stylesheet"
   />
+
+  <!-- Analytics -->
+  <script
+    defer
+    data-domain="gamedaygrill.pages.dev"
+    src="https://plausible.stephenson.systems/js/script.js"
+  ></script>
 </svelte:head>
 
 <main class="flex flex-col min-h-screen">
