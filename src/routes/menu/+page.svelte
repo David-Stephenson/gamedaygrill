@@ -113,7 +113,7 @@
     <!-- Background -->
     <div
       use:melt={$overlay}
-      class="fixed inset-0 z-50 bg-black/50"
+      class="fixed inset-0 z-50 bg-red-500/10 backdrop-blur-sm"
       transition:fade={{ duration: 250 }}
     />
 
@@ -123,7 +123,7 @@
       class="fixed z-50 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]
            w-full max-w-md md:max-w-2xl lg:max-w-4xl max-h-[85vh]
            mx-auto p-6 md:p-6 space-y-4 md:space-y-6
-           bg-white rounded-[25px] shadow-xl
+           bg-white rounded-[25px] shadow-2xl
            overflow-auto border-2 border-red-500"
       transition:scale={{
         duration: 250,
@@ -132,15 +132,18 @@
       }}
     >
       <!-- Close button -->
-      <button
-        use:melt={$close}
-        aria-label="close"
-        class="absolute right-3 top-3 inline-flex
+      <div class="relative">
+        <button
+          use:melt={$close}
+          aria-label="close"
+          class="absolute right-3 top-3 inline-flex
                 items-center justify-center rounded-full p-1 text-red-500
-                hover:bg-red-100 focus:shadow-red-500"
-      >
-        <X size="20" />
-      </button>
+                hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-500"
+        >
+          <X size="20" />
+        </button>
+        <!-- Rest of your content goes here -->
+      </div>
 
       <!-- Top -->
       <div class="">
@@ -223,7 +226,7 @@
                   }
                 }}
               >
-                <Minus size="24" />
+                <Minus size="20" />
               </button>
 
               <span class="mx-auto">
@@ -233,13 +236,15 @@
                 class="focus:outline-none"
                 on:click={() => {
                   quantity += 1;
-                  updateBag(); // Ensure this function handles quantity updates correctly
+                  updateBag();
                 }}
               >
-                <Plus size="24" />
+                <Plus size="20" />
               </button>
             </div>
           {/if}
+          <!-- Warning Text -->
+          <!-- <p class="text-center">Please select</p> -->
         </div>
       </div>
     </div>
