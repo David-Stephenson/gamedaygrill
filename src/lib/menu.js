@@ -112,10 +112,10 @@ const entrees = [
     options: [
       {
         name: 'Doneness',
-        selectMax: 2,
+        selectMax: 1,
         choices: doneness,
       },
-      { name: 'Sides', selectMax: 1, choices: sides },
+      { name: 'Sides', selectMax: 2, choices: sides },
     ],
   },
   {
@@ -124,7 +124,7 @@ const entrees = [
     description:
       'Juicy, grilled to perfection, and nestled between a soft, toasted bun. Topped with fresh lettuce, ripe tomatoes, and a hint of sauce for a classic taste sensation.',
     price: '8.99',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/entrees/chicken-sandwich',
@@ -132,7 +132,7 @@ const entrees = [
     description:
       'Crispy on the outside, tender on the inside chicken breast, topped with fresh greens and a creamy sauce, all encased in a soft, toasted bun for a satisfying bite.',
     price: '7.99',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/entrees/porkchop',
@@ -140,7 +140,7 @@ const entrees = [
     description:
       'Tender and succulent, expertly seasoned and seared to lock in the flavors. Served with a hint of herbs for a mouthwatering experience.',
     price: '8.99',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/entrees/ribs',
@@ -148,7 +148,7 @@ const entrees = [
     description:
       'Slow-cooked to fall-off-the-bone perfection, these ribs are glazed in a smoky, sweet barbecue sauce, offering a rich, finger-licking good flavor.',
     price: '10.99',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/entrees/salmon',
@@ -156,7 +156,7 @@ const entrees = [
     description:
       'Delicately seasoned and perfectly grilled, this salmon fillet boasts a flaky texture and a rich, buttery flavor, complemented by a light, citrusy glaze.',
     price: '10.99',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/entrees/wings',
@@ -164,7 +164,7 @@ const entrees = [
     description:
       'Crispy on the outside, juicy on the inside, tossed in your choice of savory sauces for a flavor-packed bite.',
     price: '7.99',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/entrees/grilled-chicken',
@@ -172,7 +172,7 @@ const entrees = [
     description:
       'Marinated and grilled to perfection, this chicken is infused with a blend of spices, offering a smoky, tender delight with every bite.',
     price: '8.99',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
 ];
 
@@ -183,7 +183,7 @@ const salads = [
     description:
       'A delectible salad that brings together the zesty kick of buffalo sauce with the crisp freshness of garden greens.',
     price: '7.99',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/salads/caprese',
@@ -191,7 +191,7 @@ const salads = [
     description:
       'Our Caprese Salads are crafted with care and attention to quality, each salad features slices of ripe, juicy tomatoes layered with thick, creamy mozzarella cheese.',
     price: '5.99',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/salads/ceaser',
@@ -199,7 +199,7 @@ const salads = [
     description:
       'Each of our Caesar Salads feature crisp romaine lettuce leaves, gently tossed in our signature Caesar dressing, a mix of other vegetables, and a velvety blend of tangy Parmesan cheese.',
     price: '6.99',
-    options: null,
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/salads/greek',
@@ -207,7 +207,7 @@ const salads = [
     description:
       'Each of our Greek Salads feature a colorful array of crisp lettuce, juicy tomatoes, crunchy cucumbers, tangy Kalamata olives, and briny feta cheese.',
     price: '5.50',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/salads/steakhouse',
@@ -215,7 +215,7 @@ const salads = [
     description:
       'Our Steakhouse Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
     price: '8.99',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/salads/taco',
@@ -223,7 +223,7 @@ const salads = [
     description:
       'Our Taco Salad brings together the bold flavors of tender, succulent steak with crisp, vibrant greens.',
     price: '7.50',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/salads/cobb',
@@ -231,7 +231,7 @@ const salads = [
     description:
       'Our Cobb Salad features lettuce, grilled chicken, eggs, bacon, avocado, tomatoes, and blue cheese crumbles with vinaigrette.',
     price: '4.99',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
   {
     image: '/images/menu/salads/orzo',
@@ -239,7 +239,7 @@ const salads = [
     description:
       'Our Orzo Salad is orzo pasta tossed with diced vegetables, feta cheese, fresh herbs, and a tangy vinaigrette dressing.',
     price: '4.99',
-    options: [{ name: 'Sides', selectMax: 1, choices: sides }],
+    options: [{ name: 'Sides', selectMax: 2, choices: sides }],
   },
 ];
 
@@ -459,7 +459,7 @@ const desserts = [
       {
         name: 'Flavor',
         selectMax: 1,
-        choices: ['Chocolate', 'Vanilla'],
+        choices: ['Vanilla', 'Chocolate'],
       },
     ],
   },
