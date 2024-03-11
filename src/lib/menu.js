@@ -327,6 +327,7 @@ const drinks = [
           'Lemon and Lime',
           'Root Beer',
           'Citizen Pepper',
+          'Orange Squeeze',
         ],
       },
       { name: 'Size', selectMax: 1, choices: cup_sizes },
