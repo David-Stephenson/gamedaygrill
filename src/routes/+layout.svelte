@@ -1,11 +1,6 @@
 <script>
-  // Global CSS imports
   import '../app.css';
-
-  // Svelte Imports
-  import { onMount } from 'svelte';
-
-  // Components
+  import { Toaster } from 'svelte-french-toast';
   import Navbar from '$components/global/Navbar.svelte';
   import Footer from '$components/global/Footer.svelte';
 </script>
@@ -35,6 +30,7 @@
   <!-- Site Content -->
   <content class="flex-1 mx-0 md:mx-12 2xl:mx-52 my-5">
     <slot />
+    <Toaster />
   </content>
 
   <!-- Footer -->
