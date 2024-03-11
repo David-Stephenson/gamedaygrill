@@ -2,6 +2,7 @@
   import { goto } from '$app/navigation';
   import { bag } from '$lib/stores';
   import validate from 'card-validator';
+  import toast from 'svelte-french-toast';
 
   let bagContent;
   let total = 0;
@@ -29,7 +30,6 @@
 
   $: {
     cardDetails = validate.number(cardNumber);
-    console.log(cardDetails);
   }
 </script>
 
@@ -46,16 +46,18 @@
         <h2 class="text-2xl font-bold mb-4 text-center">Checkout</h2>
         <p class="text-center mb-4">Total: ${total.toFixed(2)}</p>
         <form on:submit|preventDefault={handleSubmit}>
+          <!-- Full name -->
           <div class="mb-4">
             <input
               class="w-full px-3 py-2 border rounded text-gray-700"
-              placeholder="Name"
+              placeholder="Full Name"
               type="text"
               required
               bind:value={name}
             />
           </div>
           <div class="grid grid-cols-2 gap-4 mb-4">
+            <!-- Phone number -->
             <input
               class="w-full px-3 py-2 border rounded text-gray-700"
               placeholder="Phone Number"
@@ -63,6 +65,8 @@
               required
               bind:value={phone}
             />
+
+            <!-- Email -->
             <input
               class="w-full px-3 py-2 border rounded text-gray-700"
               placeholder="Email"
@@ -72,6 +76,7 @@
             />
           </div>
           <div class="grid grid-cols-3 gap-4 mb-4">
+            <!-- Card Number -->
             <div class="relative">
               <input
                 class="w-full pl-10 pr-3 py-2 border rounded text-gray-700"
@@ -80,6 +85,8 @@
                 required
                 bind:value={cardNumber}
               />
+
+              <!-- Card icon/logo -->
               <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                 <img
                   src="/vectors/cards/{cardDetails.card
@@ -91,6 +98,7 @@
               </div>
             </div>
 
+            <!-- Experation month -->
             <input
               class="w-full px-3 py-2 border rounded text-gray-700"
               placeholder="Expiry Date"
@@ -98,6 +106,8 @@
               required
               bind:value={cardExpiry}
             />
+
+            <!-- CVV -->
             <input
               class="w-full px-3 py-2 border rounded text-gray-700"
               placeholder="CVV"
@@ -113,6 +123,8 @@
               bind:value={cardCVV}
             />
           </div>
+
+          <!-- Submit button -->
           <button
             class="w-full py-2 px-4 bg-red-500 text-white hover:bg-red-600 rounded-full transition-colors duration-150"
             type="submit"
@@ -121,7 +133,8 @@
           </button>
         </form>
         <p class="text-center text-xs mt-4">
-          * No actual purchase will be made. This is a demo site.
+          By proceeding with payment, you authorize Game Day Grill to bill your
+          selected card for the amount of this transaction.
         </p>
       </div>
     </div>
