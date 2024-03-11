@@ -24,93 +24,9 @@
 <svelte:head>
   <title>Bag | Game Day Grill</title>
 </svelte:head>
-
-<div class="container mx-auto px-4 sm:px-8 py-8">
-  <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-    <div
-      class="inline-block min-w-full shadow rounded-[25px] border-2 border-red-500 overflow-hidden"
-    >
-      <table class="min-w-full leading-normal">
-        <thead>
-          <tr>
-            <th
-              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-            >
-              Product
-            </th>
-            <th
-              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-            >
-              Price
-            </th>
-            <th
-              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-            >
-              Customization
-            </th>
-            <th
-              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-            >
-              Comments
-            </th>
-            <th
-              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-            >
-              Quantity
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {#each bagContent as item}
-            <tr>
-              <td class="px-5 py-5 border-b border-gray-200 bg-white text-base">
-                <div class="flex items-center">
-                  <div class="flex-shrink-0 w-20 h-20">
-                    <picture class="w-full h-full rounded-full">
-                      <source type="image/avif" srcset="{item.image}.avif" />
-                      <source type="image/webp" srcset="{item.image}.webp" />
-                      <img
-                        src="{item.image}.png"
-                        alt={item.name}
-                        class="w-full object-cover"
-                        loading="lazy"
-                      />
-                    </picture>
-                  </div>
-                  <div class="ml-3">
-                    <p class="text-gray-900 whitespace-no-wrap">
-                      {item.name}
-                    </p>
-                  </div>
-                </div>
-              </td>
-              <td class="px-5 py-5 border-b border-gray-200 bg-white text-base">
-                <p class="text-gray-900 whitespace-no-wrap">${item.price}</p>
-              </td>
-              <td class="px-5 py-5 border-b border-gray-200 bg-white text-base">
-                <div class="text-gray-900 whitespace-no-wrap">
-                  {#each Object.entries(item.selectedOptions) as [optionName, selectedValues]}
-                    <p>
-                      <b>{optionName}</b>: {selectedValues.join(', ')}
-                    </p>
-                  {/each}
-                </div>
-              </td>
-
-              <td class="px-5 py-5 border-b border-gray-200 bg-white text-base">
-                <p class="text-gray-900 whitespace-no-wrap">
-                  {item.specialInstructions}
-                </p>
-              </td>
-              <td class="px-5 py-5 border-b border-gray-200 bg-white text-base">
-                <p class="text-gray-900 whitespace-no-wrap">
-                  {item.quantity}
-                </p>
-              </td>
-            </tr>
-          {/each}
-        </tbody>
-      </table>
+<div class="container mx-auto px-4 py-8">
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-2/3 md:pr-8">
       {#if bagContent.length === 0}
         <div class="text-center py-8">
           <h2 class="text-2xl font-semibold mb-4">Your bag is empty!</h2>
@@ -122,15 +38,64 @@
           >
         </div>
       {:else}
-        <div class="text-right py-4 pr-4">
-          <p class="text-2xl font-semibold">Total: ${total.toFixed(2)}</p>
-          <a
-            href="/bag/checkout"
-            class="bg-red-500 text-white font-bold py-2 px-4 rounded-full mt-4 inline-block hover:text-white hover:bg-red-600"
-            >Checkout</a
-          >
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {#each bagContent as item}
+            <div
+              class="bg-white shadow rounded-[25px] border-2 border-red-500 overflow-hidden"
+            >
+              <div class="p-4">
+                <picture
+                  class="w-full h-40 rounded-[20px] overflow-hidden mb-4"
+                >
+                  <source type="image/avif" srcset="{item.image}.avif" />
+                  <source type="image/webp" srcset="{item.image}.webp" />
+                  <img
+                    src="{item.image}.png"
+                    alt={item.name}
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </picture>
+                <h3 class="text-xl font-semibold mb-2">{item.name}</h3>
+                <p class="text-gray-500 mb-4">${item.price}</p>
+                <div class="mb-4">
+                  <p class="font-semibold">Customization:</p>
+                  {#each Object.entries(item.selectedOptions) as [optionName, selectedValues]}
+                    <p class="text-sm">
+                      <b>{optionName}</b>: {JSON.stringify(selectedValues)}
+                    </p>
+                  {/each}
+                </div>
+                <div class="mb-4">
+                  <p class="font-semibold">Comments:</p>
+                  <p class="text-sm">{item.specialInstructions}</p>
+                </div>
+                <p class="font-semibold">Quantity: {item.quantity}</p>
+              </div>
+            </div>
+          {/each}
         </div>
       {/if}
+    </div>
+    <div class="md:w-1/3">
+      <div class="bg-white shadow rounded-[25px] border-2 border-red-500 p-4">
+        <h2 class="text-2xl font-semibold mb-4">Order Summary</h2>
+        <p class="text-xl font-semibold mb-4">Total: ${total.toFixed(2)}</p>
+        <div class="mb-4">
+          <label for="coupon" class="block mb-2">Coupon Code:</label>
+          <input
+            type="text"
+            id="coupon"
+            class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
+            placeholder="Enter coupon code"
+          />
+        </div>
+        <a
+          href="/bag/checkout"
+          class="bg-red-500 text-white font-bold py-2 px-4 rounded-full block text-center hover:text-white hover:bg-red-600"
+          >Checkout</a
+        >
+      </div>
     </div>
   </div>
 </div>
