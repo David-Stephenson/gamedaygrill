@@ -4,6 +4,8 @@
   import Hours from '$components/home/Hours.svelte';
   import CustomerReview from '$components/home/CustomerReview.svelte';
 
+  import { ChevronRight } from 'lucide-svelte';
+
   import { popular_now } from '$lib/menu.js';
 </script>
 
@@ -16,9 +18,15 @@
 
 <!-- "Popular Items" -->
 <div class="mt-5">
-  <h1 class="text-2xl mb-1 text-center sm:text-left rounded-[25px] font-russo">
-    Popular Now
-  </h1>
+  <div class="flex justify-between items-center">
+    <h1 class="text-2xl mb-2 rounded-[25px] font-russo">Popular Now</h1>
+    <a
+      href="/menu"
+      class="inline-flex items-center text-red-500 hover:text-red-700 font-medium"
+    >
+      View More <ChevronRight size="20" class="ml-1" />
+    </a>
+  </div>
 
   <div
     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
@@ -46,14 +54,6 @@
         </div>
       </div>
     {/each}
-  </div>
-  <!-- Centered View More Button -->
-  <div class="text-center mt-4">
-    <a
-      href="/menu"
-      class="inline-block py-3 px-6 bg-red-500 rounded-full text-white font-medium text-lg hover:bg-red-600 hover:text-white transition-colors duration-200 ease-in-out"
-      >View More</a
-    >
   </div>
 </div>
 
