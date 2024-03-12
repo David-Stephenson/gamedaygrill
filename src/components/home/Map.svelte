@@ -1,6 +1,7 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
-  import { Map } from 'mapbox-gl';
+  import pkg from 'mapbox-gl';
+  const { Map } = pkg;
   import '../../../node_modules/mapbox-gl/dist/mapbox-gl.css';
 
   let map;
