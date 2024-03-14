@@ -28,13 +28,15 @@
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
         <div
-          class="flex flex-col p-5 space-y-4 h-full bg-gray-100 relative justify-center"
+          class="flex flex-col p-5 space-y-4 h-full bg-gradient-to-r from-black from-10% to-transparent relative justify-center"
         >
-          <h1 class="text-xl md:text-3xl lg:text-4xl font-bold">Great Food.</h1>
-          <h1 class="text-xl md:text-3xl lg:text-4xl font-bold">
+          <h1 class="text-xl md:text-3xl lg:text-4xl font-bold text-white">
+            Great Food.
+          </h1>
+          <h1 class="text-xl md:text-3xl lg:text-4xl font-bold text-white">
             Great Sports.
           </h1>
-          <h1 class="text-xl md:text-3xl lg:text-4xl font-bold">
+          <h1 class="text-xl md:text-3xl lg:text-4xl font-bold text-white">
             Game Day Grill.
           </h1>
 
