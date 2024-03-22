@@ -173,7 +173,7 @@
 
   <div class="mt-16 text-center">
     <a
-      href="/signup"
+      href="#"
       class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full inline-block text-xl"
     >
       Become an MVP Now
