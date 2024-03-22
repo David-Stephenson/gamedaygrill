@@ -5,10 +5,11 @@
   import LogoComponent from '$components/global/Logo.svelte';
 
   const links = {
-    About: '/about',
-    Events: '/events',
     Menu: '/menu',
     Reserve: '/reserve',
+    Events: '/events',
+    Rewards: '/rewards',
+    About: '/about',
   };
 
   let isOpen = false;
@@ -31,8 +32,10 @@
   }
 </script>
 
-<div class="bg-white text-gray-800 px-4 sm:px-8 pt-5 relative">
-  <nav class="flex justify-between items-center">
+<div
+  class="text-gray-800 py-5 relative backdrop-blur border-b-2 border-red-500"
+>
+  <nav class="flex justify-between items-center md:mx-12 2xl:mx-52">
     <a
       href="/"
       class="text-2xl text-center text-red-500 font-russo flex items-center"
@@ -46,8 +49,10 @@
       {/each}
     </div>
     <div class="hidden lg:flex items-center text-gray-800">
+      <!-- Bag icon -->
       <a href="/bag" class="text-sm mx-4 relative">
         <ShoppingBag />
+        <!-- Bag overlay -->
         {#if bagCount}
           <span
             class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2 py-0.5"
@@ -55,6 +60,8 @@
           >
         {/if}
       </a>
+
+      <!-- Account icon -->
       <a href="/account" class="text-sm mx-4">
         <User2 />
       </a>
@@ -66,6 +73,8 @@
       <Menu />
     </button>
   </nav>
+
+  <!-- Mobile dropdown -->
   {#if isOpen}
     <div
       id="dropdown"
