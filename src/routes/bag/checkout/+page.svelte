@@ -37,80 +37,112 @@
   <title>Checkout | Game Day Grill</title>
 </svelte:head>
 
-<section class="flex justify-center items-center py-12">
-  <div class="flex flex-wrap -mx-4">
-    <div class="w-full px-4 mb-4 lg:mb-0">
-      <div
-        class="max-w-xl mx-auto py-6 px-4 bg-white rounded-[25px] shadow-md border-2 border-red-500"
-      >
-        <h2 class="text-2xl font-bold mb-4 text-center">Checkout</h2>
-        <p class="text-center mb-4">Total: ${total.toFixed(2)}</p>
-        <form on:submit|preventDefault={handleSubmit}>
-          <!-- Full name -->
-          <div class="mb-4">
+<div class="flex-grow flex items-center justify-center">
+  <div class="max-w-4xl w-full mx-auto py-12 px-4">
+    <div class="bg-white rounded-[25px] shadow-lg p-8 border-2 border-red-500">
+      <h2 class="text-3xl font-bold text-center">Checkout</h2>
+      <p class="text-xl text-center mb-8">Total: ${total.toFixed(2)}</p>
+      <form on:submit|preventDefault={handleSubmit} class="space-y-6">
+        <!-- Full name -->
+        <div>
+          <label for="name" class="block text-gray-700 font-bold mb-2"
+            >Full Name</label
+          >
+          <input
+            id="name"
+            class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+            placeholder="Enter your full name"
+            type="text"
+            required
+            bind:value={name}
+          />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Phone number -->
+          <div>
+            <label for="phone" class="block text-gray-700 font-bold mb-2"
+              >Phone Number</label
+            >
             <input
-              class="w-full px-3 py-2 border rounded text-gray-700"
-              placeholder="Full Name"
-              type="text"
-              required
-              bind:value={name}
-            />
-          </div>
-          <div class="grid grid-cols-2 gap-4 mb-4">
-            <!-- Phone number -->
-            <input
-              class="w-full px-3 py-2 border rounded text-gray-700"
-              placeholder="Phone Number"
+              id="phone"
+              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              placeholder="Enter your phone number"
               type="tel"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              title="Please enter a valid phone number."
               required
               bind:value={phone}
             />
+          </div>
 
-            <!-- Email -->
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-gray-700 font-bold mb-2"
+              >Email</label
+            >
             <input
-              class="w-full px-3 py-2 border rounded text-gray-700"
-              placeholder="Email"
+              id="email"
+              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              placeholder="Enter your email"
               type="email"
               required
               bind:value={email}
             />
           </div>
-          <div class="grid grid-cols-3 gap-4 mb-4">
-            <!-- Card Number -->
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card Number -->
+          <div>
+            <label for="cardNumber" class="block text-gray-700 font-bold mb-2"
+              >Card Number</label
+            >
             <div class="relative">
               <input
-                class="w-full pl-10 pr-3 py-2 border rounded text-gray-700"
-                placeholder="Card Number"
+                id="cardNumber"
+                class="w-full pl-12 pr-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                placeholder="Enter your card number"
                 type="text"
                 required
                 bind:value={cardNumber}
               />
 
               <!-- Card icon/logo -->
-              <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <div class="absolute inset-y-0 left-0 flex items-center pl-4">
                 <img
                   src="/vectors/cards/{cardDetails.card
                     ? cardDetails.card.type
                     : 'generic'}.svg"
-                  alt="Visa"
-                  class="h-5 w-5"
+                  alt="Card"
+                  class="h-6 w-6"
                 />
               </div>
             </div>
+          </div>
 
-            <!-- Experation month -->
+          <!-- Expiration month -->
+          <div>
+            <label for="cardExpiry" class="block text-gray-700 font-bold mb-2"
+              >Expiry Date</label
+            >
             <input
-              class="w-full px-3 py-2 border rounded text-gray-700"
-              placeholder="Expiry Date"
+              id="cardExpiry"
+              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              placeholder="MM/YY"
               type="month"
               required
               bind:value={cardExpiry}
             />
+          </div>
 
-            <!-- CVV -->
+          <!-- CVV -->
+          <div>
+            <label for="cardCVV" class="block text-gray-700 font-bold mb-2"
+              >CVV</label
+            >
             <input
-              class="w-full px-3 py-2 border rounded text-gray-700"
-              placeholder="CVV"
+              id="cardCVV"
+              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              placeholder="Enter CVV"
               type="number"
               max="9999"
               on:input={event => {
@@ -123,21 +155,20 @@
               bind:value={cardCVV}
             />
           </div>
+        </div>
 
-          <!-- Submit button -->
-          <button
-            class="w-full py-2 px-4 bg-red-500 text-white hover:bg-red-600 rounded-full transition-colors duration-150"
-            type="submit"
-          >
-            Complete Purchase
-          </button>
-        </form>
-        <p class="text-center text-xs mt-4">
-          By proceeding with payment, you authorize Game Day Grill to bill your
-          selected card for the amount of this transaction.
-        </p>
-      </div>
+        <!-- Submit button -->
+        <button
+          class="w-full py-3 px-6 bg-red-500 text-white font-bold rounded-full hover:bg-red-600 transition-colors duration-300"
+          type="submit"
+        >
+          Complete Purchase
+        </button>
+      </form>
+      <p class="text-center text-sm mt-4 text-gray-500">
+        By proceeding with payment, you authorize Game Day Grill to bill your
+        selected card for the amount of this transaction.
+      </p>
     </div>
-    <div class="w-full lg:w-1/2 px-4"></div>
   </div>
-</section>
+</div>
