@@ -6,10 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
-a {
+nav a {
   @apply hover:text-red-600 transition-colors duration-200 ease-in-out;
 }
 
 .font-russo {
-  font-family: "Russo One", sans-serif;
+  font-family: 'Russo One', sans-serif;
 }
