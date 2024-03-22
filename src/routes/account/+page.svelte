@@ -47,55 +47,57 @@
 </svelte:head>
 
 <div class="p-4">
-  <main class=" mx-auto">
+  <main class="max-w-5xl mx-auto">
     <!-- User Info Card -->
     <div
-      class="bg-white rounded-[25px] shadow-md p-5 mb-6 flex items-center justify-between border-2 border-red-500"
+      class="bg-white rounded-[25px] shadow-lg p-6 mb-8 flex items-center justify-between border-2 border-red-500"
     >
-      <div class="flex items-center space-x-4">
-        <picture class="w-full h-full rounded-full">
+      <div class="flex items-center space-x-6">
+        <picture class="w-20 h-20 rounded-full">
           <source type="image/avif" srcset="/images/account/profile.avif" />
           <source type="image/webp" srcset="/images/account/profile.webp" />
           <img
             src="/images/account/profile.png"
             alt="User Profile"
-            class="h-16 w-16 rounded-[25px]"
+            class="w-full h-full object-cover rounded-full"
             loading="lazy"
           />
         </picture>
         <div>
-          <div class="font-semibold text-xl">{user.name}</div>
-          <div class="text-gray-500 text-sm">
+          <div class="text-2xl font-bold">{user.name}</div>
+          <div class="text-gray-500">
             Member since: {user.memberSince}
           </div>
         </div>
       </div>
-      <div class="text-lg font-semibold">{user.totalPoints} Points</div>
+      <div class="text-xl font-semibold">{user.totalPoints} Points</div>
     </div>
 
-    <div class="grid gap-6 md:grid-cols-2">
+    <div class="grid gap-8 md:grid-cols-2">
       <!-- Point Transaction History Card -->
       <div
-        class="bg-white rounded-[25px] shadow-md p-5 border-2 border-red-500"
+        class="bg-white rounded-[25px] shadow-lg p-6 border-2 border-red-500"
       >
-        <h3 class="text-lg font-semibold mb-4">Point Transaction History</h3>
+        <h3 class="text-xl font-semibold mb-4">Point Transaction History</h3>
         <div class="overflow-auto">
           <table class="min-w-full text-sm">
             <thead>
-              <tr class="border-b text-center">
-                <th class="px-2 py-1 text-left">Date</th>
-                <th class="px-2 py-1 text-left">Points</th>
+              <tr class="border-b">
+                <th class="px-4 py-2 text-left font-semibold text-left">Date</th
+                >
+                <th class="px-4 py-2 text-left font-semibold text-left"
+                  >Points</th
+                >
               </tr>
             </thead>
             <tbody>
               {#each user.transactions as transaction}
                 <tr class="border-b">
-                  <td class="px-2 py-1">{transaction.date}</td>
-                  <td class="px-2 py-1">
+                  <td class="px-4 py-2">{transaction.date}</td>
+                  <td class="px-4 py-2">
                     <span
-                      class:class={transaction.points.startsWith('+')
-                        ? 'text-green-500'
-                        : 'text-red-500'}
+                      class:text-green-500={transaction.points.startsWith('+')}
+                      class:text-red-500={!transaction.points.startsWith('+')}
                     >
                       {transaction.points}
                     </span>
@@ -109,24 +111,24 @@
 
       <!-- Upcoming Reservations Card -->
       <div
-        class="bg-white rounded-[25px] shadow-md p-5 border-2 border-red-500"
+        class="bg-white rounded-[25px] shadow-lg p-6 border-2 border-red-500"
       >
-        <h3 class="text-lg font-semibold mb-4">Upcoming Reservations</h3>
+        <h3 class="text-xl font-semibold mb-4">Upcoming Reservations</h3>
         <div class="overflow-auto">
           <table class="min-w-full text-sm">
             <thead>
               <tr class="border-b">
-                <th class="px-2 py-1 text-left">Party Name</th>
-                <th class="px-2 py-1 text-left">Date</th>
-                <th class="px-2 py-1 text-left">Time</th>
+                <th class="px-4 py-2 text-left font-semibold">Party Name</th>
+                <th class="px-4 py-2 text-left font-semibold">Date</th>
+                <th class="px-4 py-2 text-left font-semibold">Time</th>
               </tr>
             </thead>
             <tbody>
               {#each reservationDetails as reservation}
                 <tr class="border-b">
-                  <td class="px-2 py-1">{reservation.partyName}</td>
-                  <td class="px-2 py-1">{reservation.date}</td>
-                  <td class="px-2 py-1">{reservation.time}</td>
+                  <td class="px-4 py-2">{reservation.partyName}</td>
+                  <td class="px-4 py-2">{reservation.date}</td>
+                  <td class="px-4 py-2">{reservation.time}</td>
                 </tr>
               {/each}
             </tbody>
@@ -136,24 +138,28 @@
 
       <!-- Available Rewards Card -->
       <div
-        class="bg-white rounded-[25px] shadow-md p-5 border-2 border-red-500"
+        class="bg-white rounded-[25px] shadow-lg p-6 border-2 border-red-500"
       >
-        <h3 class="text-lg font-semibold mb-4">Available Rewards</h3>
+        <h3 class="text-xl font-semibold mb-4">Available Rewards</h3>
         <div class="overflow-auto">
           <table class="min-w-full text-sm">
             <thead>
               <tr class="border-b">
-                <th class="px-2 py-1 text-left">Reward</th>
-                <th class="px-2 py-1 text-left">Points Required</th>
-                <th class="px-2 py-1 text-left">Expiration Date</th>
+                <th class="px-4 py-2 text-left font-semibold">Reward</th>
+                <th class="px-4 py-2 text-left font-semibold"
+                  >Points Required</th
+                >
+                <th class="px-4 py-2 text-left font-semibold"
+                  >Expiration Date</th
+                >
               </tr>
             </thead>
             <tbody>
               {#each user.rewards as reward}
                 <tr class="border-b">
-                  <td class="px-2 py-1">{reward.reward}</td>
-                  <td class="px-2 py-1">{reward.pointsRequired}</td>
-                  <td class="px-2 py-1">{reward.expirationDate}</td>
+                  <td class="px-4 py-2 text-left">{reward.reward}</td>
+                  <td class="px-4 py-2 text-left">{reward.pointsRequired}</td>
+                  <td class="px-4 py-2 text-left">{reward.expirationDate}</td>
                 </tr>
               {/each}
             </tbody>
