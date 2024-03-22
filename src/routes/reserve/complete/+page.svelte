@@ -1,5 +1,7 @@
 <script>
   import { onMount } from 'svelte';
+  import { Confetti } from 'svelte-confetti';
+
   let partyName = '';
   let date = '';
   let time = '';
@@ -20,19 +22,36 @@
   <title>Reservation Complete | Game Day Grill</title>
 </svelte:head>
 
-<section class="flex justify-center items-center py-12">
+<div class="flex-grow flex items-center justify-center">
   <div
-    class="max-w-xl mx-auto py-6 px-4 bg-white rounded-[25px] shadow-md text-center border-2 border-red-500"
+    class="fixed top-[-50px] left-0 h-screen w-screen flex justify-center overflow-hidden pointer-events-none z-[-1]"
   >
-    <h2 class="text-2xl font-bold mb-4">Thank You for Your Reservation!</h2>
-    <p class="mb-4">
-      We have reserved a table for <strong>{partyName}</strong> on
-      <strong>{date}</strong>
-      at <strong>{time}</strong>.
-    </p>
-    <p>
-      Your reservation ID is <strong>{reservationId}</strong>. Please keep this
-      ID for your records.
-    </p>
+    <Confetti
+      x={[-5, 5]}
+      y={[0, 0.1]}
+      delay={[500, 2000]}
+      infinite
+      rounded
+      duration="5000"
+      amount="250"
+      fallDistance="100vh"
+    />
   </div>
-</section>
+
+  <section class="flex justify-center items-center py-12">
+    <div
+      class="backdrop-blur max-w-xl mx-auto py-6 px-4 rounded-[25px] shadow-md text-center border-2 border-red-500"
+    >
+      <h2 class="text-2xl font-bold mb-4">Thank You for Your Reservation!</h2>
+      <p class="mb-4">
+        We have reserved a table for <strong>{partyName}</strong> on
+        <strong>{date}</strong>
+        at <strong>{time}</strong>.
+      </p>
+      <p>
+        Your reservation ID is <strong>{reservationId}</strong>. Please keep
+        this ID for your records.
+      </p>
+    </div>
+  </section>
+</div>
