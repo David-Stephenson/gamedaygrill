@@ -1,16 +1,12 @@
 <script>
-  import { onMount } from 'svelte';
-
   import { fade, scale } from 'svelte/transition';
-
+  import { createDialog, melt } from '@melt-ui/svelte';
+  import { X, Plus, Minus, ShoppingBag } from 'lucide-svelte';
+  import { nanoid } from 'nanoid';
+  import toast from 'svelte-french-toast';
   import { bag } from '$lib/stores.js';
   import Card from '$components/menu/Card.svelte';
   import menu from '$lib/menu.js';
-
-  import { createDialog, melt } from '@melt-ui/svelte';
-  import { X, Plus, Minus, ShoppingBag } from 'lucide-svelte';
-
-  import { nanoid } from 'nanoid';
 
   const {
     elements: { overlay, content, title, description, close, portalled },
@@ -26,6 +22,7 @@
   let quantity = 0;
   let orderId;
 
+  // Check if the user has selected the maximum number of options
   function toggleOption(category, choice, selectMax) {
     if (!selectedOptions[category]) {
       selectedOptions[category] = {};
@@ -37,9 +34,6 @@
       if (Object.keys(selectedOptions[category]).length < selectMax) {
         selectedOptions[category][choice] = true;
       } else {
-        console.log(
-          `Maximum of ${selectMax} selections allowed for ${category}.`,
-        );
         return;
       }
     }
@@ -47,7 +41,20 @@
     selectedOptions = { ...selectedOptions };
   }
 
-  function updateBag() {
+  // Update the bag
+  function updateBag(updateQuantity) {
+    // Check if all required options are selected
+    if (selectedItem.options) {
+      const allOptionsSelected = selectedItem.options.every(
+        option => Object.keys(selectedOptions[option.name]).length > 0,
+      );
+      if (!allOptionsSelected) {
+        toast.error('Please select all required options.');
+        return;
+      }
+    }
+
+    quantity += updateQuantity;
     bag.update(items => {
       const index = items.findIndex(item => item.orderId === orderId);
       if (index === -1) {
@@ -71,6 +78,7 @@
     });
   }
 
+  // Logic to open the modal
   function openModal(event) {
     selectedOptions = {};
     quantity = 0;
@@ -84,22 +92,51 @@
     }
     $open = true;
   }
+
+  function scrollToSection(section) {
+    const el = document.getElementById(section);
+    const stickyEl = document.querySelector('.sticky');
+    const stickyElHeight = stickyEl.offsetHeight;
+    const rect = el.getBoundingClientRect();
+    const top = rect.top + window.pageYOffset - stickyElHeight - 20;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
 </script>
 
 <svelte:head>
   <title>Menu | Game Day Grill</title>
 </svelte:head>
 
+<!-- Section buttons -->
+
+<div
+  class="mx-auto sticky top-0 bg-white/45 backdrop-blur-md py-3 px-1 z-10 border-2 border-t-0 border-red-500 rounded-b-[25px]"
+>
+  <div class="flex flex-wrap justify-center">
+    {#each Object.keys(menu) as section (section)}
+      <div class="px-3">
+        <button
+          class="text-gray-600 hover:text-red-500 font-semibold capitalize flex items-center"
+          on:click={() => scrollToSection(menu[section].realName)}
+        >
+          {menu[section].realName}
+        </button>
+      </div>
+    {/each}
+  </div>
+</div>
+
 <!-- Menu Content -->
-<div class="container mx-auto px-6 py-8">
+<div class="container mx-auto px-6 pt-4">
   {#each Object.keys(menu) as section (section)}
-    <div class="mb-8">
-      <h2 class="text-2xl capitalize font-russo">
-        {section}
+    <div class="mb-8" id={menu[section].realName}>
+      <h2 class="text-3xl capitalize font-russo text-center">
+        {menu[section].name} ({menu[section].realName})
       </h2>
+
       <div class="flex flex-wrap -mx-2 justify-center">
         <!-- Added justify-center here -->
-        {#each menu[section] as item (item.name)}
+        {#each menu[section].items as item (item.name)}
           <Card {item} on:modalTrigger={openModal} />
         {/each}
       </div>
@@ -142,11 +179,10 @@
         >
           <X size="20" />
         </button>
-        <!-- Rest of your content goes here -->
       </div>
 
-      <!-- Top -->
-      <div class="">
+      <!-- Item text: name, price description -->
+      <div>
         <h2 class="text-xl md:text-2xl font-semibold" use:melt={$title}>
           {selectedItem.name} • ${selectedItem.price}
         </h2>
@@ -155,6 +191,7 @@
         </p>
       </div>
 
+      <!-- Item image -->
       <div class="flex flex-col md:flex-row gap-4">
         <div class="md:flex-1">
           <div class="srounded-[25px] overflow-hidden">
@@ -171,6 +208,7 @@
           </div>
         </div>
 
+        <!-- Item options -->
         <div class="md:flex-1 space-y-4">
           {#if selectedItem.options}
             <div class="space-y-2">
@@ -207,8 +245,7 @@
             <button
               class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-150 flex items-center justify-center"
               on:click={() => {
-                quantity = 1;
-                updateBag();
+                updateBag(1);
               }}
             >
               <span class="mr-1"><ShoppingBag size="20" /></span> Add to Bag
@@ -221,8 +258,8 @@
                 class="focus:outline-none"
                 on:click={() => {
                   if (quantity > 0) {
-                    quantity -= 1;
-                    updateBag();
+                    quantity;
+                    updateBag(-1);
                   }
                 }}
               >
@@ -235,16 +272,13 @@
               <button
                 class="focus:outline-none"
                 on:click={() => {
-                  quantity += 1;
-                  updateBag();
+                  updateBag(1);
                 }}
               >
                 <Plus size="20" />
               </button>
             </div>
           {/if}
-          <!-- Warning Text -->
-          <!-- <p class="text-center">Please select</p> -->
         </div>
       </div>
     </div>
