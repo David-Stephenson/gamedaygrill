@@ -1,5 +1,5 @@
 ---
-title: '🍀 Dublinfest 2024 🍀'
+title: 'Dublinfest 2024'
 date: 7/20/24
 description:
   'Celebrate Dublinfest 2024 on July 20th at Game Day Grill, a day of Irish

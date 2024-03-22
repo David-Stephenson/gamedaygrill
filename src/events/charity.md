@@ -1,5 +1,5 @@
 ---
-title: '🐾 Paws & Play Charity Event 🍔🏈'
+title: 'Paws & Play Charity Event'
 date: 3/17/24
 description:
   'Experience fun with a charity event supporting local shelter dogs through

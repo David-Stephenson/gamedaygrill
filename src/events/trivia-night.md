@@ -1,9 +1,9 @@
 ---
-title: '🧠 Trivia Night 🧠'
+title: 'Trivia Night'
 date: 11/18/24
 description:
   'Join us for Trivia Night, where teams compete in a battle of wits for prizes
-  and glory, accompanied by great food and a lively atmosphere..'
+  and glory, accompanied by great food and a lively atmosphere.'
 image: '/images/events/trivia-night/header'
 ---
 

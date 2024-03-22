@@ -1,5 +1,5 @@
 ---
-title: '🎤 Karaoke for Cancer 🎤'
+title: 'Karaoke for Cancer'
 date: 9/9/24
 host: 'Karaoke for Cancer'
 description:

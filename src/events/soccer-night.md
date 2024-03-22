@@ -1,5 +1,5 @@
 ---
-title: '⚽ Soccer Night ⚽'
+title: 'Soccer Night'
 date: 10/14/24
 description:
   'Celebrate the passion of the beautiful game at Soccer Night, featuring live

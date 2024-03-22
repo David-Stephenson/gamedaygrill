@@ -1,5 +1,5 @@
 ---
-title: '🏈 College Football Night 🏈'
+title: 'College Football Night'
 date: 5/4/24
 description:
   'Experience the thrill of College Football Night on May 4th, cheering for the

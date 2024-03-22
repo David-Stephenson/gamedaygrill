@@ -1,5 +1,5 @@
 ---
-title: '🏆 Fantasy Sports Drafts Night 🏆'
+title: 'Fantasy Sports Drafts Night'
 date: 8/15/24
 description:
   'Join us for Fantasy Sports Drafts Night, featuring live drafts, expert
