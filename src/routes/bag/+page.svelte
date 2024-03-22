@@ -52,7 +52,7 @@
   <title>Bag | Game Day Grill</title>
 </svelte:head>
 
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto px-4 mt-4">
   <div class="flex flex-col md:flex-row">
     <div class="md:w-2/3 md:pr-8">
       {#if bagContent.length === 0}
