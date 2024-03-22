@@ -3,6 +3,7 @@
   import { Toaster } from 'svelte-french-toast';
   import Navbar from '$components/global/Navbar.svelte';
   import Footer from '$components/global/Footer.svelte';
+  import ScrollToTop from '$components/ScrollToTop.svelte';
 </script>
 
 <!-- Import Fonts -->
@@ -28,9 +29,10 @@
   </header>
 
   <!-- Site Content -->
-  <content class="flex-1 mx-0 md:mx-12 2xl:mx-52 my-5">
+  <content class="flex-grow flex flex-col mx-0 md:mx-12 2xl:mx-52">
     <slot />
     <Toaster />
+    <ScrollToTop />
   </content>
 
   <!-- Footer -->
