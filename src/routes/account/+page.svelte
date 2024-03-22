@@ -66,7 +66,7 @@
         <div>
           <div class="text-2xl font-bold">{user.name}</div>
           <div class="text-gray-500">
-            Member since: {user.memberSince}
+            MVP Since: {user.memberSince}
           </div>
         </div>
       </div>
@@ -78,7 +78,9 @@
       <div
         class="bg-white rounded-[25px] shadow-lg p-6 border-2 border-red-500"
       >
-        <h3 class="text-xl font-semibold mb-4">Point Transaction History</h3>
+        <h3 class="text-xl text-center font-semibold mb-4">
+          Point Transaction History
+        </h3>
         <div class="overflow-auto">
           <table class="min-w-full text-sm">
             <thead>
@@ -113,7 +115,9 @@
       <div
         class="bg-white rounded-[25px] shadow-lg p-6 border-2 border-red-500"
       >
-        <h3 class="text-xl font-semibold mb-4">Upcoming Reservations</h3>
+        <h3 class="text-xl text-center font-semibold mb-4">
+          Upcoming Reservations
+        </h3>
         <div class="overflow-auto">
           <table class="min-w-full text-sm">
             <thead>
@@ -140,7 +144,9 @@
       <div
         class="bg-white rounded-[25px] shadow-lg p-6 border-2 border-red-500"
       >
-        <h3 class="text-xl font-semibold mb-4">Available Rewards</h3>
+        <h3 class="text-xl text-center font-semibold mb-4">
+          Available Rewards
+        </h3>
         <div class="overflow-auto">
           <table class="min-w-full text-sm">
             <thead>
