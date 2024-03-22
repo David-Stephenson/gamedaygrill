@@ -1,11 +1,10 @@
 <script>
+  import toast from 'svelte-french-toast';
   import Carousel from '$components/home/Carousel.svelte';
   import Map from '$components/home/Map.svelte';
   import Hours from '$components/home/Hours.svelte';
   import CustomerReview from '$components/home/CustomerReview.svelte';
-
   import { ChevronRight } from 'lucide-svelte';
-
   import { popular_now } from '$lib/menu.js';
 </script>
 
@@ -16,7 +15,7 @@
 
 <Carousel />
 
-<!-- "Popular Items" -->
+<!-- Popular items heading text  -->
 <div class="mt-5">
   <div class="flex justify-between items-center">
     <h1 class="text-2xl mb-2 rounded-[25px] font-russo">Popular Now</h1>
@@ -28,15 +27,16 @@
     </a>
   </div>
 
+  <!-- Popular items cards  -->
   <div
     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
   >
     {#each popular_now as item, index}
       <div
-        class="flex flex-col border-2 border-red-500 rounded-[25px] overflow-hidden"
+        class="flex flex-col w-full h-full rounded-[25px] border-2 border-red-500"
       >
-        <div class="aspect-w-1 aspect-h-1 w-full">
-          <picture class="aspect-w-1 aspect-h-1 w-full">
+        <div class="w-full">
+          <picture class="w-full">
             <source type="image/avif" srcset="{item.image}.avif" />
             <source type="image/webp" srcset="{item.image}.webp" />
             <img
@@ -47,8 +47,8 @@
             />
           </picture>
         </div>
-        <div class="p-4 flex flex-col flex-grow">
-          <h1 class="text-2xl font-bold rounded-[25px] mb-2 text-center">
+        <div class="p-4 flex-grow">
+          <h1 class="text-2xl font-bold mb-2 text-center">
             {item.name}
           </h1>
         </div>
@@ -61,6 +61,7 @@
   class="my-5 rounded-[25px] overflow-hidden flex flex-col md:flex-row gap-4"
 >
   <div class="flex-grow md:flex-grow-3 w-full h-auto flex justify-center">
+    <!-- Map -->
     <div
       class="w-full h-[550px] relative rounded-[25px] overflow-hidden border-2 border-red-500"
     >
@@ -68,6 +69,7 @@
     </div>
   </div>
 
+  <!-- Hours -->
   <div
     class="flex-grow md:flex-grow-1 w-full h-auto flex justify-center items-center rounded-[25px] overflow-hidden border-2 border-red-500"
   >
@@ -77,32 +79,11 @@
   </div>
 </div>
 
+<!-- Cutomer Reviews -->
 <CustomerReview />
 
-<!-- <section
-  class="my-5 py-12 px-4 md:px-12 bg-red-600 text-white text-center rounded-[25px] shadow-lg transform"
->
-  <h2 class="text-3xl md:text-4xl font-extrabold mb-8">
-    Reserve Your Table Now
-  </h2>
-  <p class="text-lg md:text-xl mb-8">
-    What are you waiting for? Experience the best game day dishes in town!
-    Reserve your table now and enjoy the game with us.
-  </p>
-  <a
-    href="/reserve"
-    class="inline-block py-3 md:py-4 px-6 md:px-8 bg-white text-red-600 text-lg md:text-xl font-bold rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-opacity-90"
-    >Reserve Now</a
-  >
-</section>
-<div
-  class="w-full h-96 rounded-[25px]"
-  style="background-image: url('/images/test/bar.png');"
->
-  <h1>Milkshke Bar</h1>
-</div> -->
-
-<div class="my-5 rounded-[25px] overflow-hidden">
+<!-- News letter -->
+<div class=" rounded-[25px] overflow-hidden border-2 border-red-500">
   <div class="bg-gray-100 p-5">
     <h2 class="text-lg font-bold text-center mb-4">
       Subscribe to Our Newsletter
@@ -111,7 +92,14 @@
       Stay updated with the latest news, exclusive offers, and special events at
       Game Day Grill. Sign up now to not miss out!
     </p>
-    <form method="POST" class="flex flex-col items-center gap-2">
+    <form
+      class="flex flex-col items-center gap-2"
+      on:submit|preventDefault={() => {
+        toast.success("You're now subscribed to our newsletter!", {
+          icon: '📧',
+        });
+      }}
+    >
       <input
         type="email"
         name="email"
@@ -120,7 +108,6 @@
         class="px-4 py-2 border rounded-md w-full max-w-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
       />
       <button
-        type="submit"
         class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full max-w-md transition duration-150 ease-in-out"
         >Subscribe</button
       >
