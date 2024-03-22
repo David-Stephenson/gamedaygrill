@@ -5,14 +5,14 @@
 
 <article>
   <header
-    class="relative h-96 w-full rounded-none md:rounded-[25px] overflow-hidden border-2 border-red-500"
+    class="relative h-96 w-full rounded-none md:rounded-[25px] overflow-hidden border-2 border-red-500 mt-4"
   >
     <picture class="w-full h-full rounded-full">
       <source type="image/avif" srcset="{data.meta.image}.avif" />
       <source type="image/webp" srcset="{data.meta.image}.webp" />
       <img
         src="{data.meta.image}.png"
-        alt="Header Image"
+        alt="Header"
         class="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
       />
