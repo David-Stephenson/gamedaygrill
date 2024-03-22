@@ -1,99 +1,175 @@
 <script>
   import { bag } from '$lib/stores';
-  let bagContent;
+  let bagContent = [];
+
+  import { Dot, X } from 'lucide-svelte';
 
   bag.subscribe(value => {
     bagContent = value;
   });
 
   let total = 0;
+  let couponCode = '';
+  let appliedCoupons = [];
+  let disabledButton = true;
 
-  $: total = bagContent.reduce(
-    (acc, item) => acc + parseFloat(item.price) * item.quantity,
-    0,
-  );
+  $: {
+    // Calculate the total price of the bag
+    total = bagContent.reduce(
+      (acc, item) => acc + parseFloat(item.price) * item.quantity,
+      0,
+    );
+
+    // Disable the checkout button if the bag is empty
+    if (bagContent.length > 0) {
+      disabledButton = false;
+    } else {
+      disabledButton = true;
+    }
+  }
+
+  function applyCoupon() {
+    if (couponCode === 'Chicago' && !appliedCoupons.includes('Chicago')) {
+      total *= 0.75;
+      appliedCoupons = [...appliedCoupons, 'Chicago'];
+      couponCode = '';
+    }
+  }
+
+  function removeItem(id) {
+    console.log(id);
+    bag.update(bagContent => {
+      return bagContent.filter(item => item.orderId !== id);
+    });
+  }
 
   $: {
     console.log(bagContent);
-    bagContent.forEach(item => {
-      console.log(item);
-    });
   }
 </script>
 
 <svelte:head>
   <title>Bag | Game Day Grill</title>
 </svelte:head>
+
 <div class="container mx-auto px-4 py-8">
   <div class="flex flex-col md:flex-row">
     <div class="md:w-2/3 md:pr-8">
       {#if bagContent.length === 0}
         <div class="text-center py-8">
           <h2 class="text-2xl font-semibold mb-4">Your bag is empty!</h2>
-          <p class="mb-4">Go to the Menu to add food to your bag.</p>
+          <p class="mb-4">Go to the Menu to fill your roster!</p>
           <a
             href="/menu"
-            class="bg-red-500 hover:bg-red-700 hover:text-white text-white py-2 px-4 rounded-full"
+            class="bg-red-500 hover:bg-red-700 text-white py-3 px-6 rounded-full inline-block"
             >Menu</a
           >
         </div>
       {:else}
-        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          class="bg-white shadow rounded-[25px] border-2 border-red-500 overflow-hidden"
+        >
+          <div
+            class="flex px-4 py-2 bg-red-500 text-white font-semibold text-center"
+          >
+            <div class="w-1/2">Item</div>
+            <div class="w-1/6">Price</div>
+            <div class="w-1/6">Quantity</div>
+            <div class="w-1/6">Total</div>
+            <div class="w-1/6">Remove</div>
+          </div>
           {#each bagContent as item}
-            <div
-              class="bg-white shadow rounded-[25px] border-2 border-red-500 overflow-hidden"
-            >
-              <div class="p-4">
-                <picture
-                  class="w-full h-40 rounded-[20px] overflow-hidden mb-4"
-                >
-                  <source type="image/avif" srcset="{item.image}.avif" />
-                  <source type="image/webp" srcset="{item.image}.webp" />
-                  <img
-                    src="{item.image}.png"
-                    alt={item.name}
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </picture>
-                <h3 class="text-xl font-semibold mb-2">{item.name}</h3>
-                <p class="text-gray-500 mb-4">${item.price}</p>
-                <div class="mb-4">
-                  <p class="font-semibold">Customization:</p>
+            <div class="flex items-center px-4 py-4 border-b">
+              <div class="w-1/2 flex items-center">
+                <img
+                  src="{item.image}.png"
+                  alt={item.name}
+                  class="w-16 h-16 object-cover rounded mr-4"
+                  loading="lazy"
+                />
+                <div>
+                  <!-- Item name -->
+                  <p class="font-semibold">{item.name}</p>
+
+                  <!-- Item customization -->
                   {#each Object.entries(item.selectedOptions) as [optionName, selectedValues]}
-                    <p class="text-sm">
-                      <b>{optionName}</b>: {JSON.stringify(selectedValues)}
+                    <p class="text-sm text-gray-600">
+                      <span
+                        ><b>{optionName}</b>: {Object.keys(selectedValues)
+                          .filter(key => selectedValues[key])
+                          .join(', ')}
+                      </span>
                     </p>
                   {/each}
+
+                  <!-- Item comments -->
+                  <p class="text-sm text-gray-600">
+                    {item.specialInstructions}
+                  </p>
                 </div>
-                <div class="mb-4">
-                  <p class="font-semibold">Comments:</p>
-                  <p class="text-sm">{item.specialInstructions}</p>
-                </div>
-                <p class="font-semibold">Quantity: {item.quantity}</p>
+              </div>
+              <div class="w-1/6 text-center">${item.price}</div>
+              <div class="w-1/6 text-center">{item.quantity}</div>
+              <div class="w-1/6 text-center">
+                ${(item.price * item.quantity).toFixed(2)}
+              </div>
+              <div class="w-1/6 text-center">
+                <button
+                  on:click={() => removeItem(item.orderId)}
+                  class="text-red-500 hover:text-red-700 focus:outline-none"
+                >
+                  <X class="w-5 h-5" />
+                </button>
               </div>
             </div>
           {/each}
         </div>
       {/if}
     </div>
-    <div class="md:w-1/3">
-      <div class="bg-white shadow rounded-[25px] border-2 border-red-500 p-4">
-        <h2 class="text-2xl font-semibold mb-4">Order Summary</h2>
-        <p class="text-xl font-semibold mb-4">Total: ${total.toFixed(2)}</p>
-        <div class="mb-4">
-          <label for="coupon" class="block mb-2">Coupon Code:</label>
-          <input
-            type="text"
-            id="coupon"
-            class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
-            placeholder="Enter coupon code"
-          />
+    <div class="md:w-1/3 mt-8 md:mt-0">
+      <div class="bg-white shadow rounded-[25px] border-2 border-red-500 p-6">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Order Summary</h2>
+        <p class="text-xl mb-4">
+          <span class="font-semibold">Total:</span> ${total.toFixed(2)}
+        </p>
+        <div class="mb-6">
+          <label for="coupon" class="block mb-2 font-semibold"
+            >Coupon Code:</label
+          >
+          <div class="flex">
+            <input
+              type="text"
+              id="coupon"
+              bind:value={couponCode}
+              class="w-full px-4 py-2 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-red-500"
+              placeholder="Enter coupon code"
+            />
+            <button
+              on:click={applyCoupon}
+              class="bg-red-500 text-white font-bold py-2 px-4 rounded-r-full hover:bg-red-600"
+            >
+              Apply
+            </button>
+          </div>
+          {#if appliedCoupons.length > 0}
+            <div class="mt-4">
+              <p class="font-semibold mb-2">Applied Coupons:</p>
+              <ul class="space-y-1">
+                {#each appliedCoupons as coupon}
+                  <li class="flex items-center">
+                    <Dot class="mr-2" />
+                    <span>{coupon}</span>
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          {/if}
         </div>
         <a
           href="/bag/checkout"
-          class="bg-red-500 text-white font-bold py-2 px-4 rounded-full block text-center hover:text-white hover:bg-red-600"
-          >Checkout</a
+          class="bg-red-500 text-white font-bold py-3 px-6 rounded-full block text-center hover:bg-red-600 {disabledButton
+            ? 'opacity-50 cursor-not-allowed pointer-events-none'
+            : ''}">Proceed to Checkout</a
         >
       </div>
     </div>
