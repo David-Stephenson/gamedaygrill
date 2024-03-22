@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class="h-96 rounded-none md:rounded-[25px] overflow-hidden border-2 border-red-500"
+  class="h-96 rounded-none md:rounded-[25px] overflow-hidden border-2 border-red-500 mt-4"
 >
   <Splide
     aria-label="My Favorite Images"
@@ -42,7 +42,7 @@
 
           <a
             href="/menu"
-            class="bg-red-500 text-white text-center px-5 py-3 rounded-full mt-4 hover:text-white hover:bg-red-600"
+            class="bg-red-500 text-white text-center px-5 py-3 rounded-full mt-4 hover:bg-red-600"
           >
             Make An Order
           </a>
@@ -56,33 +56,36 @@
         <picture class="absolute inset-0 w-full h-full">
           <source
             type="image/avif"
-            srcset="/images/home/banners/football.avif"
+            srcset="/images/home/banners/national-salad-day.avif"
           />
           <source
             type="image/webp"
-            srcset="/images/home/banners/football.webp"
+            srcset="/images/home/banners/national-salad-day.webp"
           />
           <img
-            src="/images/home/banners/football.png"
-            alt="Friday Football Feast"
+            src="/images/home/banners/national-salad-day.png"
+            alt="National Salad Day"
             class="h-full w-full object-cover"
             loading="lazy"
           />
         </picture>
-        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"
+        ></div>
         <div class="z-10 text-center">
-          <h1 class="text-5xl mt-12 md:text-6xl font-bold text-white">
-            Friday Football Feast
+          <h1 class="text-5xl md:text-6xl font-bold text-white drop-shadow-xl">
+            National Salad Day
           </h1>
-          <p class="text-xl md:text-2xl font-semibold text-white mt-4">
-            Kickstart your weekend with live football and our special game day
-            menu!
+          <p
+            class="text-xl md:text-2xl font-semibold text-white mt-4 drop-shadow-lg"
+          >
+            Join us on May 1st for a celebration of fresh flavors!
           </p>
           <a
             href="/events"
-            class="mt-6 my-12 inline-block bg-white text-red-500 px-8 py-3 text-lg font-semibold rounded-[25px] shadow-md hover:bg-red-500 hover:text-white transition-colors duration-200"
+            class="mt-8 inline-block bg-green-500 text-white px-8 py-3 text-lg font-semibold rounded-full shadow-md hover:bg-green-600 transition-colors duration-200"
           >
-            Discover More
+            Learn More
           </a>
         </div>
       </div>
@@ -152,7 +155,7 @@
           </p>
           <a
             href="/account"
-            class="mt-4 inline-block bg-white text-red-500 px-6 py-3 text-lg lg:text-xl font-semibold rounded-full drop-shadow-md hover:bg-red-500 hover:text-white transition-colors duration-300 ease-in-out"
+            class="mt-4 inline-block bg-white text-red-500 px-6 py-3 text-lg lg:text-xl font-semibold rounded-full drop-shadow-md hover:bg-red-500 transition-colors duration-300 ease-in-out"
           >
             Join
           </a>
