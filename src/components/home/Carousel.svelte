@@ -145,7 +145,7 @@
           <h1
             class="text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg"
           >
-            Victory Club Rewards
+            MVP Rewards
           </h1>
           <p
             class="text-lg md:text-xl lg:text-2xl font-semibold text-white mt-4 drop-shadow"
