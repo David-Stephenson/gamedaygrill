@@ -51,7 +51,6 @@
               class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
               placeholder="Enter phone number"
               type="tel"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               title="Please enter a valid phone number."
               required
             />
