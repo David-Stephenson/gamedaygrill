@@ -22,7 +22,8 @@
         loading="lazy"
       />
     </picture>
-    <span class="text-lg font-bold">{item.name} • ${item.price}</span>
+    <span class="text-lg font-bold text-center">{item.name}</span>
+    <p class="text-lg text-center">${item.price}</p>
     <span class="truncate-lines">{item.description}</span>
   </div>
 </div>
