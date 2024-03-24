@@ -10,18 +10,24 @@
   ];
 </script>
 
-<div class="flex flex-col h-full">
+<div
+  class="flex flex-col h-full bg-white dark:bg-neutral-800 rounded-[25px] shadow-lg overflow-hidden"
+>
   <div class="flex bg-red-500 text-white">
     <div class="flex-1 p-2 text-center">Day</div>
     <div class="flex-1 p-2 text-center">Hours</div>
   </div>
   <div class="flex flex-col flex-grow">
     {#each hoursData as { day, hours }}
-      <div class="flex flex-grow border-t border-red-500">
-        <div class="flex-1 p-2 text-center flex items-center justify-center">
+      <div class="flex flex-grow border-t border-red-500 dark:border-red-600">
+        <div
+          class="flex-1 p-2 text-center flex items-center justify-center text-gray-800 dark:text-gray-200"
+        >
           {day}
         </div>
-        <div class="flex-1 p-2 text-center flex items-center justify-center">
+        <div
+          class="flex-1 p-2 text-center flex items-center justify-center text-gray-800 dark:text-gray-200"
+        >
           {hours}
         </div>
       </div>

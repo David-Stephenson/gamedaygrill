@@ -45,35 +45,10 @@
     map.on('move', () => {
       updateData();
     });
-
-    map.on('load', () => {
-      // Add 3D buildings and remove label layers to enhance the map
-      const layers = map.getStyle().layers;
-      let labelLayerId;
-      for (const layer of layers) {
-        if (layer.type === 'symbol' && layer.layout['text-field']) {
-          // remove text labels
-          // map.removeLayer(layer.id);
-          labelLayerId = layer.id;
-          console.log(layer.id);
-        }
-      }
-
-      // Add the label layer again so it's on top of the buildings
-      if (labelLayerId) {
-        const labelLayer = layers.find(layer => layer.id === labelLayerId);
-        map.addLayer(labelLayer);
-      }
-    });
   });
 </script>
 
 <div>
-  <!-- <div class="sidebar">
-    Longitude: {lng.toFixed(4)} | Latitude: {lat.toFixed(4)} | Pitch: {pitch} | Bearing:
-    {bearing} | Zoom:
-    {zoom.toFixed(2)}
-  </div> -->
   <div>
     <div class="map" bind:this={mapContainer} />
   </div>
@@ -85,18 +60,5 @@
     top: 0;
     bottom: 0;
     width: 100%;
-  }
-
-  .sidebar {
-    background-color: rgb(35 55 75 / 90%);
-    color: #fff;
-    padding: 6px 12px;
-    font-family: monospace;
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 12px;
-    border-radius: 4px;
   }
 </style>

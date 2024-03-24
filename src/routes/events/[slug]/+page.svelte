@@ -18,7 +18,9 @@
       />
     </picture>
 
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div
+      class="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-75"
+    ></div>
     <div class="flex absolute z-10 w-full h-full items-center justify-center">
       <hgroup class="text-center flex flex-col items-center justify-center">
         <h1 class="text-white text-3xl md:text-7xl font-bold drop-shadow-xl">
@@ -35,7 +37,7 @@
 
   <!-- Post -->
   <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-    <div class="prose prose-lg mx-auto">
+    <div class="prose prose-lg mx-auto dark:prose-invert">
       <svelte:component this={data.content} />
     </div>
   </div>

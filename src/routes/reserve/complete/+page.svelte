@@ -40,7 +40,7 @@
 
   <section class="flex justify-center items-center py-12">
     <div
-      class="backdrop-blur max-w-xl mx-auto py-6 px-4 rounded-[25px] shadow-md text-center border-2 border-red-500"
+      class="backdrop-blur max-w-xl mx-auto py-6 px-4 rounded-[25px] shadow-md text-center border-2 border-red-500 dark:text-white"
     >
       <h2 class="text-2xl font-bold mb-4">Thank You for Your Reservation!</h2>
       <p class="mb-4">

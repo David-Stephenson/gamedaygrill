@@ -29,7 +29,9 @@
   </header>
 
   <!-- Site Content -->
-  <content class="flex-grow flex flex-col mx-0 md:mx-12 2xl:mx-52 my-4">
+  <content
+    class="flex-grow flex flex-col mx-0 md:mx-12 2xl:mx-52 my-4 dark:text-white"
+  >
     <slot />
     <Toaster />
     <ScrollToTop />

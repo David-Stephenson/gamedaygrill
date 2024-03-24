@@ -23,13 +23,13 @@
 
 <div class="flex-grow flex items-center justify-center">
   <div
-    class="backdrop-blur shadow-lg rounded-[25px] p-10 border-2 border-red-500 text-center"
+    class="backdrop-blur shadow-lg rounded-[25px] p-10 border-2 border-red-500 text-center dark:text-white relative z-10"
   >
     <div class="mb-4">
       <h1 class="text-8xl">🎉</h1>
     </div>
-    <h1 class="text-4xl font-bold text-gray-800 mb-4">Your Order is In!</h1>
-    <p class="text-xl text-gray-600 mb-8">
+    <h1 class="text-4xl font-bold mb-4">Your Order is In!</h1>
+    <p class="text-xl mb-8">
       Thank you for your order. We'll call you 5 minutes before your order is
       ready for pickup.
     </p>

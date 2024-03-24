@@ -38,18 +38,24 @@
   <title>Reserve a Table | Game Day Grill</title>
 </svelte:head>
 
-<div class="flex-grow flex items-center justify-center">
+<div class="flex-grow flex items-center justify-center dark:bg-neutral-950">
   <div class="max-w-4xl w-full mx-auto px-4">
-    <div class="bg-white rounded-[25px] shadow-lg p-8 border-2 border-red-500">
-      <h2 class="text-3xl font-bold mb-6 text-center">Reserve a Table</h2>
+    <div
+      class="bg-white dark:bg-neutral-900 rounded-[25px] shadow-lg p-8 border-2 border-red-500"
+    >
+      <h2 class="text-3xl font-bold mb-6 text-center dark:text-white">
+        Reserve a Table
+      </h2>
       <form on:submit|preventDefault={handleSubmit} class="space-y-6">
         <div>
-          <label for="partyName" class="block text-gray-700 font-bold mb-2"
+          <label
+            for="partyName"
+            class="block text-gray-700 dark:text-gray-200 font-bold mb-2"
             >Party Name</label
           >
           <input
             id="partyName"
-            class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+            class="w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
             placeholder="Enter party name"
             type="text"
             required
@@ -58,12 +64,14 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label for="phone" class="block text-gray-700 font-bold mb-2"
+            <label
+              for="phone"
+              class="block text-gray-700 dark:text-gray-200 font-bold mb-2"
               >Phone Number</label
             >
             <input
               id="phone"
-              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
               placeholder="Enter phone number"
               type="tel"
               title="Please enter a valid phone number."
@@ -72,12 +80,14 @@
             />
           </div>
           <div>
-            <label for="email" class="block text-gray-700 font-bold mb-2"
+            <label
+              for="email"
+              class="block text-gray-700 dark:text-gray-200 font-bold mb-2"
               >Email</label
             >
             <input
               id="email"
-              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
               placeholder="Enter email"
               type="email"
               required
@@ -86,12 +96,14 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label for="date" class="block text-gray-700 font-bold mb-2"
+            <label
+              for="date"
+              class="block text-gray-700 dark:text-gray-200 font-bold mb-2"
               >Select Date</label
             >
             <input
               id="date"
-              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
               placeholder="Select date"
               type="date"
               min={new Date().toISOString().split('T')[0]}
@@ -100,12 +112,14 @@
             />
           </div>
           <div>
-            <label for="time" class="block text-gray-700 font-bold mb-2"
+            <label
+              for="time"
+              class="block text-gray-700 dark:text-gray-200 font-bold mb-2"
               >Select Time</label
             >
             <input
               id="time"
-              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
               placeholder="Select time"
               type="time"
               required
@@ -115,13 +129,15 @@
         </div>
 
         <div>
-          <label for="guests" class="block text-gray-700 font-bold mb-2"
+          <label
+            for="guests"
+            class="block text-gray-700 dark:text-gray-200 font-bold mb-2"
             >Number of Guests</label
           >
           <div class="relative">
             <select
               id="guests"
-              class="appearance-none w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="appearance-none w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
               required
             >
               <option value="" disabled selected hidden
@@ -135,7 +151,7 @@
               >
             </select>
             <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-700"
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-700 dark:text-gray-200"
             >
               <svg
                 class="h-4 w-4"
@@ -153,12 +169,14 @@
           </div>
         </div>
         <div>
-          <label for="requests" class="block text-gray-700 font-bold mb-2"
+          <label
+            for="requests"
+            class="block text-gray-700 dark:text-gray-200 font-bold mb-2"
             >Special Requests</label
           >
           <textarea
             id="requests"
-            class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+            class="w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
             placeholder="Enter any special requests"
             rows="3"
           ></textarea>

@@ -33,7 +33,7 @@
 </script>
 
 <div
-  class="text-gray-800 py-5 relative backdrop-blur border-b-2 border-red-500"
+  class="text-gray-800 dark:text-white py-5 relative backdrop-blur border-b-2 border-red-500 dark:bg-neutral-900"
 >
   <nav class="flex justify-between items-center md:mx-12 2xl:mx-52">
     <a
@@ -43,12 +43,16 @@
       <LogoComponent class="h-8 fill-current" />
       <span class="ml-3 hidden md:inline">{information.name}</span>
     </a>
-    <div class="hidden md:flex justify-center flex-grow text-gray-800">
+    <div
+      class="hidden md:flex justify-center flex-grow text-gray-800 dark:text-white"
+    >
       {#each Object.entries(links) as [name, url]}
-        <a href={url} class="text-base mx-4 capitalize">{name}</a>
+        <a href={url} class="text-base mx-4 capitalize hover:text-red-500"
+          >{name}</a
+        >
       {/each}
     </div>
-    <div class="hidden lg:flex items-center text-gray-800">
+    <div class="hidden lg:flex items-center text-gray-800 dark:text-white">
       <!-- Bag icon -->
       <a href="/bag" class="text-sm mx-4 relative">
         <ShoppingBag />
@@ -67,7 +71,7 @@
       </a>
     </div>
     <button
-      class="lg:hidden flex items-center px-3 py-2"
+      class="lg:hidden flex items-center px-3 py-2 text-gray-800 dark:text-white"
       on:click={toggleDropdown}
     >
       <Menu />
@@ -78,24 +82,24 @@
   {#if isOpen}
     <div
       id="dropdown"
-      class="lg:hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10"
+      class="lg:hidden absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-800 rounded-md shadow-lg z-10"
       tabindex="0"
     >
       {#each Object.entries(links) as [name, url]}
         <a
           href={url}
-          class="block px-4 py-2 text-base capitalize text-gray-800"
+          class="block px-4 py-2 text-base capitalize text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700"
           on:click={closeDropdown}>{name}</a
         >
       {/each}
       <a
         href="/bag"
-        class="block px-4 py-2 text-base text-gray-800"
+        class="block px-4 py-2 text-base text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700"
         on:click={closeDropdown}>Bag</a
       >
       <a
         href="/account"
-        class="block px-4 py-2 text-base text-gray-800"
+        class="block px-4 py-2 text-base text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700"
         on:click={closeDropdown}>Account</a
       >
     </div>

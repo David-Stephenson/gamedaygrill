@@ -56,7 +56,7 @@
   <div class="flex flex-col md:flex-row">
     <div class="md:w-2/3 md:pr-8">
       {#if bagContent.length === 0}
-        <div class="text-center py-8">
+        <div class="text-center py-8 dark:text-white">
           <h2 class="text-2xl font-semibold mb-4">Your bag is empty!</h2>
           <p class="mb-4">Go to the Menu to fill your roster!</p>
           <a
@@ -67,7 +67,7 @@
         </div>
       {:else}
         <div
-          class="bg-white shadow rounded-[25px] border-2 border-red-500 overflow-hidden"
+          class="bg-white shadow rounded-[25px] border-2 border-red-500 overflow-hidden dark:bg-neutral-800"
         >
           <div
             class="flex px-4 py-2 bg-red-500 text-white font-semibold text-center"
@@ -79,7 +79,9 @@
             <div class="w-1/6">Remove</div>
           </div>
           {#each bagContent as item}
-            <div class="flex items-center px-4 py-4 border-b">
+            <div
+              class="flex items-center px-4 py-4 border-b dark:border-neutral-700"
+            >
               <div class="w-1/2 flex items-center">
                 <img
                   src="{item.image}.png"
@@ -87,13 +89,13 @@
                   class="w-16 h-16 object-cover rounded mr-4"
                   loading="lazy"
                 />
-                <div>
+                <div class="dark:text-white">
                   <!-- Item name -->
                   <p class="font-semibold">{item.name}</p>
 
                   <!-- Item customization -->
                   {#each Object.entries(item.selectedOptions) as [optionName, selectedValues]}
-                    <p class="text-sm text-gray-600">
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
                       <span
                         ><b>{optionName}</b>: {Object.keys(selectedValues)
                           .filter(key => selectedValues[key])
@@ -103,14 +105,16 @@
                   {/each}
 
                   <!-- Item comments -->
-                  <p class="text-sm text-gray-600">
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
                     {item.specialInstructions}
                   </p>
                 </div>
               </div>
-              <div class="w-1/6 text-center">${item.price}</div>
-              <div class="w-1/6 text-center">{item.quantity}</div>
-              <div class="w-1/6 text-center">
+              <div class="w-1/6 text-center dark:text-white">${item.price}</div>
+              <div class="w-1/6 text-center dark:text-white">
+                {item.quantity}
+              </div>
+              <div class="w-1/6 text-center dark:text-white">
                 ${(item.price * item.quantity).toFixed(2)}
               </div>
               <div class="w-1/6 text-center">
@@ -127,7 +131,9 @@
       {/if}
     </div>
     <div class="md:w-1/3 mt-8 md:mt-0">
-      <div class="bg-white shadow rounded-[25px] border-2 border-red-500 p-6">
+      <div
+        class="bg-white shadow rounded-[25px] border-2 border-red-500 p-6 dark:bg-neutral-800 dark:text-white"
+      >
         <h2 class="text-2xl font-semibold mb-4 text-center">Order Summary</h2>
         <p class="text-xl mb-4">
           <span class="font-semibold">Total:</span> ${total.toFixed(2)}
@@ -141,7 +147,7 @@
               type="text"
               id="coupon"
               bind:value={couponCode}
-              class="w-full px-4 py-2 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="w-full px-4 py-2 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               placeholder="Enter coupon code"
             />
             <button

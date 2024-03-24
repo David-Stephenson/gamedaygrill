@@ -101,6 +101,8 @@
     const top = rect.top + window.pageYOffset - stickyElHeight - 20;
     window.scrollTo({ top, behavior: 'smooth' });
   }
+
+  function triggerConfetti(event) {}
 </script>
 
 <svelte:head>
@@ -109,13 +111,13 @@
 
 <!-- Section buttons -->
 <div
-  class="mx-auto sticky top-0 bg-white/45 backdrop-blur-md py-3 px-1 z-10 border-2 border-t-0 border-red-500 rounded-b-[25px] -mt-4"
+  class="mx-auto sticky top-0 bg-white/45 dark:bg-neutral-900/45 backdrop-blur-md py-3 px-1 z-10 border-2 border-t-0 border-red-500 rounded-b-[25px] -mt-4"
 >
   <div class="flex flex-wrap justify-center">
     {#each Object.keys(menu) as section (section)}
       <div class="px-3">
         <button
-          class="text-gray-600 hover:text-red-500 font-semibold capitalize flex items-center"
+          class="text-gray-600 dark:text-gray-300 hover:text-red-500 font-semibold capitalize flex items-center"
           on:click={() => scrollToSection(menu[section].realName)}
         >
           {menu[section].realName}
@@ -129,7 +131,7 @@
 <div class="container mx-auto px-6 pt-4">
   {#each Object.keys(menu) as section (section)}
     <div class="mb-8" id={menu[section].realName}>
-      <h2 class="text-3xl capitalize font-russo text-center">
+      <h2 class="text-3xl capitalize font-russo text-center dark:text-white">
         {menu[section].name} ({menu[section].realName})
       </h2>
 
@@ -149,7 +151,7 @@
     <!-- Background -->
     <div
       use:melt={$overlay}
-      class="fixed inset-0 z-50 bg-red-500/10 backdrop-blur-sm"
+      class="fixed inset-0 z-50 bg-red-500/10 dark:bg-red-500/20 backdrop-blur-sm"
       transition:fade={{ duration: 250 }}
     />
 
@@ -159,7 +161,7 @@
       class="fixed z-50 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]
            w-full max-w-md md:max-w-2xl lg:max-w-4xl max-h-[85vh]
            mx-auto p-6 md:p-6 space-y-4 md:space-y-6
-           bg-white rounded-[25px] shadow-2xl
+           bg-white dark:bg-neutral-800 rounded-[25px] shadow-2xl
            overflow-auto border-2 border-red-500"
       transition:scale={{
         duration: 250,
@@ -174,7 +176,7 @@
           aria-label="close"
           class="absolute right-3 top-3 inline-flex
                 items-center justify-center rounded-full p-1 text-red-500
-                hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-500"
+                hover:bg-red-100 dark:hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-500"
         >
           <X size="20" />
         </button>
@@ -182,10 +184,16 @@
 
       <!-- Item text: name, price description -->
       <div>
-        <h2 class="text-xl md:text-2xl font-semibold" use:melt={$title}>
+        <h2
+          class="text-xl md:text-2xl font-semibold dark:text-white"
+          use:melt={$title}
+        >
           {selectedItem.name} • ${selectedItem.price}
         </h2>
-        <p class="mt-2 text-sm md:text-base" use:melt={$description}>
+        <p
+          class="mt-2 text-sm md:text-base dark:text-gray-300"
+          use:melt={$description}
+        >
           {selectedItem.description}
         </p>
       </div>
@@ -213,14 +221,16 @@
             <div class="space-y-2">
               {#each selectedItem.options as option (option.name)}
                 <div>
-                  <h3 class="text-lg font-semibold">{option.name}</h3>
+                  <h3 class="text-lg font-semibold dark:text-white">
+                    {option.name}
+                  </h3>
                   <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
                     {#each option.choices as choice (choice)}
                       <button
                         class="relative inline-flex items-center justify-center py-2 px-4 rounded-lg transition-colors duration-150 cursor-pointer
                         {selectedOptions[option.name][choice]
                           ? 'bg-red-500 text-white'
-                          : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}"
+                          : 'bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-neutral-600'}"
                         on:click={() =>
                           toggleOption(option.name, choice, option.selectMax)}
                       >
@@ -235,7 +245,7 @@
 
           <textarea
             bind:value={specialInstructions}
-            class="w-full p-2 border border-gray-300 rounded-lg"
+            class="w-full p-2 border border-gray-300 dark:border-neutral-600 rounded-lg dark:bg-neutral-700 dark:text-white"
             placeholder="Special instructions, notes, comments..."
             rows="3"
           ></textarea>

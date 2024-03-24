@@ -47,18 +47,18 @@
 
 <div class="flex-grow flex items-center justify-center">
   <div class="max-w-4xl w-full mx-auto py-12 px-4">
-    <div class="bg-white rounded-[25px] shadow-lg p-8 border-2 border-red-500">
+    <div
+      class="bg-white rounded-[25px] shadow-lg p-8 border-2 border-red-500 dark:bg-neutral-800 dark:text-white"
+    >
       <h2 class="text-3xl font-bold text-center">Checkout</h2>
       <p class="text-xl text-center mb-8">Total: ${total.toFixed(2)}</p>
       <form on:submit|preventDefault={handleSubmit} class="space-y-6">
         <!-- Full name -->
         <div>
-          <label for="name" class="block text-gray-700 font-bold mb-2"
-            >Full Name</label
-          >
+          <label for="name" class="block font-bold mb-2">Full Name</label>
           <input
             id="name"
-            class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+            class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             placeholder="Enter your full name"
             type="text"
             required
@@ -68,12 +68,10 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Phone number -->
           <div>
-            <label for="phone" class="block text-gray-700 font-bold mb-2"
-              >Phone Number</label
-            >
+            <label for="phone" class="block font-bold mb-2">Phone Number</label>
             <input
               id="phone"
-              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               placeholder="Enter your phone number"
               type="tel"
               title="Please enter a valid phone number."
@@ -84,12 +82,10 @@
 
           <!-- Email -->
           <div>
-            <label for="email" class="block text-gray-700 font-bold mb-2"
-              >Email</label
-            >
+            <label for="email" class="block font-bold mb-2">Email</label>
             <input
               id="email"
-              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               placeholder="Enter your email"
               type="email"
               required
@@ -100,13 +96,13 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- Card Number -->
           <div>
-            <label for="cardNumber" class="block text-gray-700 font-bold mb-2"
+            <label for="cardNumber" class="block font-bold mb-2"
               >Card Number</label
             >
             <div class="relative">
               <input
                 id="cardNumber"
-                class="w-full pl-12 pr-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                class="w-full pl-12 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
                 placeholder="Enter your card number"
                 type="text"
                 required
@@ -128,12 +124,12 @@
 
           <!-- Expiration month -->
           <div>
-            <label for="cardExpiry" class="block text-gray-700 font-bold mb-2"
+            <label for="cardExpiry" class="block font-bold mb-2"
               >Expiry Date</label
             >
             <input
               id="cardExpiry"
-              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               placeholder="MM/YY"
               type="month"
               required
@@ -143,12 +139,10 @@
 
           <!-- CVV -->
           <div>
-            <label for="cardCVV" class="block text-gray-700 font-bold mb-2"
-              >CVV</label
-            >
+            <label for="cardCVV" class="block font-bold mb-2">CVV</label>
             <input
               id="cardCVV"
-              class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               placeholder="Enter CVV"
               type="number"
               max="9999"
@@ -172,7 +166,7 @@
           Complete Purchase
         </button>
       </form>
-      <p class="text-center text-sm mt-4 text-gray-500">
+      <p class="text-center text-sm mt-4 text-gray-500 dark:text-gray-400">
         By proceeding with payment, you authorize Game Day Grill to bill your
         selected card for the amount of this transaction.
       </p>

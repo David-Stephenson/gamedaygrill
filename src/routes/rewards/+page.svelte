@@ -65,12 +65,12 @@
   <title>MVP Rewards | Game Day Grill</title>
 </svelte:head>
 
-<main class="container mx-auto px-4 py-12">
+<main class="container mx-auto px-4 dark:text-white">
   <div class="text-center">
-    <h1 class="text-4xl font-bold mb-6 text-red-600">
+    <h1 class="text-4xl font-bold mb-2 text-red-600 dark:text-red-500">
       Join Our MVP Rewards Program
     </h1>
-    <p class="text-xl mb-10 text-gray-700">
+    <p class="text-xl mb-4 text-gray-700 dark:text-gray-300">
       Sign up now and start earning Grill Points towards free food and exclusive
       offers!
     </p>
@@ -78,55 +78,65 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     {#each benefits as benefit}
-      <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+      <div
+        class="bg-white rounded-3xl shadow-lg overflow-hidden dark:bg-neutral-800"
+      >
         <img
           class="w-full h-72 object-cover object-center"
           src={benefit.image}
           alt={benefit.title}
         />
         <div class="p-6">
-          <h2 class="text-2xl font-bold mb-4 text-red-600">{benefit.title}</h2>
-          <p class="text-gray-700">{benefit.description}</p>
+          <h2 class="text-2xl font-bold mb-4 text-red-600 dark:text-red-500">
+            {benefit.title}
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300">{benefit.description}</p>
         </div>
       </div>
     {/each}
   </div>
 
   <div class="mt-16">
-    <h2 class="text-3xl font-bold mb-8 text-red-600 text-center">
+    <h2
+      class="text-3xl font-bold mb-8 text-red-600 dark:text-red-500 text-center"
+    >
       How It Works
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="bg-red-100 rounded-3xl p-8">
-        <h3 class="text-2xl font-bold mb-4 text-red-600">Step 1: Sign Up</h3>
-        <p class="text-gray-700">
+      <div class="bg-red-100 rounded-3xl p-8 dark:bg-neutral-800">
+        <h3 class="text-2xl font-bold mb-4 text-red-600 dark:text-red-500">
+          Step 1: Sign Up
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
           Sign up for our MVP Rewards program at Game Day Grill or online.
           Membership is free, and you can start earning Grill Points right away!
         </p>
       </div>
-      <div class="bg-red-100 rounded-3xl p-8">
-        <h3 class="text-2xl font-bold mb-4 text-red-600">
+      <div class="bg-red-100 rounded-3xl p-8 dark:bg-neutral-800">
+        <h3 class="text-2xl font-bold mb-4 text-red-600 dark:text-red-500">
           Step 2: Earn Points
         </h3>
-        <p class="text-gray-700">
+        <p class="text-gray-700 dark:text-gray-300">
           Earn 1 Grill Point for every $1 spent on food and drinks at Game Day
           Grill. Be sure to provide your MVP Rewards member number when placing
           your order.
         </p>
       </div>
-      <div class="bg-red-100 rounded-3xl p-8">
-        <h3 class="text-2xl font-bold mb-4 text-red-600">
+      <div class="bg-red-100 rounded-3xl p-8 dark:bg-neutral-800">
+        <h3 class="text-2xl font-bold mb-4 text-red-600 dark:text-red-500">
           Step 3: Redeem Rewards
         </h3>
-        <p class="text-gray-700">
+        <p class="text-gray-700 dark:text-gray-300">
           Redeem your Grill Points for free appetizers, entrees, and more at any
           Game Day Grill location. Simply let your server know that you'd like
           to redeem your points when placing your order.
         </p>
       </div>
-      <div class="bg-red-100 rounded-3xl p-8">
-        <h3 class="text-2xl font-bold mb-4 text-red-600">Step 4: Enjoy!</h3>
-        <p class="text-gray-700">
+      <div class="bg-red-100 rounded-3xl p-8 dark:bg-neutral-800">
+        <h3 class="text-2xl font-bold mb-4 text-red-600 dark:text-red-500">
+          Step 4: Enjoy!
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
           Enjoy your rewards and keep earning Grill Points every time you dine
           at Game Day Grill. The more you visit, the more rewards you'll earn!
         </p>
@@ -135,20 +145,28 @@
   </div>
 
   <div class="mt-16">
-    <h2 class="text-3xl font-bold mb-8 text-red-600 text-center">
+    <h2
+      class="text-3xl font-bold mb-8 text-red-600 dark:text-red-500 text-center"
+    >
       What Our MVPs Say
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {#each testimonials as testimonial}
-        <div class="bg-red-100 rounded-3xl p-8 flex items-center space-x-6">
+        <div
+          class="bg-red-100 rounded-3xl p-8 flex items-center space-x-6 dark:bg-neutral-800"
+        >
           <img
             class="w-20 h-20 rounded-full"
             src={testimonial.avatar}
             alt={testimonial.name}
           />
           <div>
-            <p class="text-xl mb-4 text-gray-800">{testimonial.quote}</p>
-            <p class="font-bold text-red-600">{testimonial.name}</p>
+            <p class="text-xl mb-4 text-gray-800 dark:text-gray-200">
+              {testimonial.quote}
+            </p>
+            <p class="font-bold text-red-600 dark:text-red-500">
+              {testimonial.name}
+            </p>
           </div>
         </div>
       {/each}
@@ -156,16 +174,18 @@
   </div>
 
   <div class="mt-16">
-    <h2 class="text-3xl font-bold mb-8 text-red-600 text-center">
+    <h2
+      class="text-3xl font-bold mb-8 text-red-600 dark:text-red-500 text-center"
+    >
       Frequently Asked Questions
     </h2>
     <div class="space-y-6">
       {#each faqItems as faqItem}
-        <div class="bg-red-100 rounded-3xl p-8">
-          <h3 class="text-2xl font-bold mb-4 text-red-600">
+        <div class="bg-red-100 rounded-3xl p-8 dark:bg-neutral-800">
+          <h3 class="text-2xl font-bold mb-4 text-red-600 dark:text-red-500">
             {faqItem.question}
           </h3>
-          <p class="text-gray-700">{faqItem.answer}</p>
+          <p class="text-gray-700 dark:text-gray-300">{faqItem.answer}</p>
         </div>
       {/each}
     </div>
@@ -174,7 +194,7 @@
   <div class="mt-16 text-center">
     <a
       href="#"
-      class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full inline-block text-xl"
+      class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full inline-block text-xl dark:bg-red-500 dark:hover:bg-red-600"
     >
       Become an MVP Now
     </a>

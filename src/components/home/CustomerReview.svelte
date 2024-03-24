@@ -8,7 +8,7 @@
       reviewerName: 'Connor C.',
     },
     {
-      rating: 4,
+      rating: 5,
       reviewText: 'Great screens, the game was awesome!',
       reviewerName: 'David S.',
     },
@@ -18,7 +18,7 @@
       reviewerName: 'Salam S.',
     },
     {
-      rating: 4,
+      rating: 5,
       reviewText: 'A fantastic place to catch a game.',
       reviewerName: 'Yousif A.',
     },
@@ -29,7 +29,7 @@
   {#each reviews as review}
     <div class="px-2 mb-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
       <div
-        class="flex flex-col rounded-[25px] border-2 border-red-500 p-4 h-full"
+        class="flex flex-col rounded-[25px] bg-white border-2 border-red-500 p-6 h-full shadow-md dark:bg-neutral-800"
       >
         <div class="flex justify-center space-x-1">
           {#each Array(5) as _, i}
@@ -40,8 +40,10 @@
             />
           {/each}
         </div>
-        <p class="text-gray-700 text-center flex-grow">{review.reviewText}</p>
-        <div class="text-center text-sm text-gray-500">
+        <p class="text-gray-700 dark:text-gray-200 text-center flex-grow mt-4">
+          {review.reviewText}
+        </p>
+        <div class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
           {review.reviewerName}
         </div>
       </div>

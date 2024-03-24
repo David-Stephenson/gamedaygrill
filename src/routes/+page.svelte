@@ -18,7 +18,9 @@
 <!-- Popular items heading text  -->
 <div class="mt-5">
   <div class="flex justify-between items-center">
-    <h1 class="text-2xl mb-2 rounded-[25px] font-russo">Popular Now</h1>
+    <h1 class="text-2xl mb-2 rounded-[25px] font-russo dark:text-white">
+      Popular Now
+    </h1>
     <a
       href="/menu"
       class="inline-flex items-center text-red-500 hover:text-red-700 font-medium"
@@ -33,7 +35,7 @@
   >
     {#each popular_now as item, index}
       <div
-        class="flex flex-col w-full h-full rounded-[25px] border-2 border-red-500"
+        class="flex flex-col w-full h-full rounded-[25px] border-2 border-red-500 bg-white dark:bg-neutral-800"
       >
         <div class="w-full">
           <picture class="w-full">
@@ -48,7 +50,7 @@
           </picture>
         </div>
         <div class="p-4 flex-grow">
-          <h1 class="text-2xl font-bold mb-2 text-center">
+          <h1 class="text-2xl font-bold mb-2 text-center dark:text-white">
             {item.name}
           </h1>
         </div>
@@ -83,34 +85,37 @@
 <CustomerReview />
 
 <!-- News letter -->
-<div class=" rounded-[25px] overflow-hidden border-2 border-red-500">
-  <div class="bg-gray-100 p-5">
-    <h2 class="text-lg font-bold text-center mb-4">
-      Subscribe to Our Newsletter
-    </h2>
-    <p class="text-sm text-gray-700 text-center mb-4">
-      Stay updated with the latest news, exclusive offers, and special events at
-      Game Day Grill. Sign up now to not miss out!
-    </p>
-    <form
-      class="flex flex-col items-center gap-2"
-      on:submit|preventDefault={() => {
-        toast.success("You're now subscribed to our newsletter!", {
-          icon: '📧',
-        });
-      }}
-    >
-      <input
-        type="email"
-        name="email"
-        placeholder="Enter your email"
-        required
-        class="px-4 py-2 border rounded-md w-full max-w-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-      />
-      <button
-        class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full max-w-md transition duration-150 ease-in-out"
-        >Subscribe</button
+<div class="rounded-[25px] overflow-hidden border-2 border-red-500">
+  <div class="bg-white dark:bg-neutral-800 p-8">
+    <div class="max-w-md mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-4 text-red-500">
+        Stay Connected
+      </h2>
+      <p class="text-base text-gray-700 dark:text-gray-300 text-center mb-6">
+        Sign up for our newsletter to receive exclusive offers, updates on
+        events, and the latest news from Game Day Grill.
+      </p>
+      <form
+        class="flex flex-col sm:flex-row items-center gap-4"
+        on:submit|preventDefault={() => {
+          toast.success("You're now subscribed to our newsletter!", {
+            icon: '📧',
+          });
+        }}
       >
-    </form>
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+          class="px-4 py-2 border rounded-full w-full sm:w-2/3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+        />
+        <button
+          class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full w-full sm:w-1/3 transition duration-150 ease-in-out"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
   </div>
 </div>
