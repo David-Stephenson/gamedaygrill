@@ -3,11 +3,14 @@
 
   const dispatch = createEventDispatcher();
   export let item;
+
+  console.log(item);
 </script>
 
 <button
   class="p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-transparent border-none cursor-pointer"
   on:click={() => dispatch('modalTrigger', item)}
+  id={item.name}
 >
   <div
     class="bg-white dark:bg-neutral-800 shadow-md rounded-[25px] px-4 pb-4 flex flex-col items-center overflow-hidden h-full border-2 border-red-500"

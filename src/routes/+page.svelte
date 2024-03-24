@@ -34,8 +34,9 @@
   <!-- Popular items cards  -->
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
     {#each popular_now as item, index}
-      <div
+      <a
         class="flex flex-col w-full h-full rounded-[25px] border-2 border-red-500 bg-white dark:bg-neutral-800"
+        href="/menu/#{item.name}"
       >
         <div class="w-full">
           <picture class="w-full">
@@ -54,7 +55,7 @@
             {item.name}
           </h1>
         </div>
-      </div>
+      </a>
     {/each}
   </div>
 </div>
