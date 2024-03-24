@@ -30,7 +30,7 @@
     </div>
     <h1 class="text-4xl font-bold mb-4">Your Order is In!</h1>
     <p class="text-xl mb-8">
-      Thank you for your order. We'll call you 5 minutes before your order is
+      Thank you for your order. We'll call you 10 minutes before your order is
       ready for pickup.
     </p>
     <a
