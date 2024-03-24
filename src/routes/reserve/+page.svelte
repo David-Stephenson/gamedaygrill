@@ -1,12 +1,22 @@
 <script>
+  import { phone } from 'phone';
   import { goto } from '$app/navigation';
   import { reservations } from '$lib/stores';
+  import toast from 'svelte-french-toast';
 
   let partyName = '';
   let date = '';
   let time = '';
 
+  let phoneNum = '';
+  let phoneDetails;
+
   function handleSubmit() {
+    if (!phoneDetails.isValid) {
+      toast.error('Please enter a valid phone number.');
+      return;
+    }
+
     reservations.update(value => [
       ...value,
       {
@@ -16,6 +26,11 @@
       },
     ]);
     goto(`/reserve/complete?partyName=${partyName}&date=${date}&time=${time}`);
+  }
+
+  $: {
+    phoneDetails = phone(phoneNum);
+    console.log(phoneDetails);
   }
 </script>
 
@@ -53,6 +68,7 @@
               type="tel"
               title="Please enter a valid phone number."
               required
+              bind:value={phoneNum}
             />
           </div>
           <div>

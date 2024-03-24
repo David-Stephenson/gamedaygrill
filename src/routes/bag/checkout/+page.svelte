@@ -3,6 +3,7 @@
   import { bag } from '$lib/stores';
   import validate from 'card-validator';
   import toast from 'svelte-french-toast';
+  import { phone } from 'phone';
 
   let bagContent;
   let total = 0;
@@ -17,19 +18,26 @@
 
   let name = '';
   let email = '';
-  let phone = '';
+  let phoneNum = '';
   let cardNumber = '';
   let cardExpiry = '';
   let cardCVV = '';
   let cardDetails;
+  let phoneDetails;
 
   function handleSubmit() {
+    if (!phoneDetails.isValid) {
+      toast.error('Please enter a valid phone number.');
+      return;
+    }
+
     bag.set([]);
     goto('/bag/checkout/success');
   }
 
   $: {
     cardDetails = validate.number(cardNumber);
+    phoneDetails = phone(phoneNum);
   }
 </script>
 
@@ -68,10 +76,9 @@
               class="w-full px-4 py-3 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
               placeholder="Enter your phone number"
               type="tel"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               title="Please enter a valid phone number."
               required
-              bind:value={phone}
+              bind:value={phoneNum}
             />
           </div>
 
