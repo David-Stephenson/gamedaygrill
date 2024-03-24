@@ -52,6 +52,26 @@
         >
       {/each}
     </div>
+    <div
+      class="lg:hidden flex items-center justify-center flex-grow text-gray-800 dark:text-white"
+    >
+      <!-- Bag icon -->
+      <a href="/bag" class="text-sm mx-4 relative">
+        <ShoppingBag />
+        <!-- Bag overlay -->
+        {#if bagCount}
+          <span
+            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2 py-0.5"
+            >{bagCount}</span
+          >
+        {/if}
+      </a>
+
+      <!-- Account icon -->
+      <a href="/account" class="text-sm mx-4">
+        <User2 />
+      </a>
+    </div>
     <div class="hidden lg:flex items-center text-gray-800 dark:text-white">
       <!-- Bag icon -->
       <a href="/bag" class="text-sm mx-4 relative">
@@ -77,31 +97,20 @@
       <Menu />
     </button>
   </nav>
-
-  <!-- Mobile dropdown -->
-  {#if isOpen}
-    <div
-      id="dropdown"
-      class="lg:hidden absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-800 rounded-md shadow-lg z-10"
-      tabindex="0"
-    >
-      {#each Object.entries(links) as [name, url]}
-        <a
-          href={url}
-          class="block px-4 py-2 text-base capitalize text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700"
-          on:click={closeDropdown}>{name}</a
-        >
-      {/each}
-      <a
-        href="/bag"
-        class="block px-4 py-2 text-base text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700"
-        on:click={closeDropdown}>Bag</a
-      >
-      <a
-        href="/account"
-        class="block px-4 py-2 text-base text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700"
-        on:click={closeDropdown}>Account</a
-      >
-    </div>
-  {/if}
 </div>
+
+<!-- Mobile dropdown -->
+{#if isOpen}
+  <div
+    id="dropdown"
+    class="lg:hidden absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-800 rounded-md shadow-lg z-50 overflow-hidden"
+  >
+    {#each Object.entries(links) as [name, url]}
+      <a
+        href={url}
+        class="block px-4 py-2 text-base capitalize text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700"
+        on:click={closeDropdown}>{name}</a
+      >
+    {/each}
+  </div>
+{/if}
