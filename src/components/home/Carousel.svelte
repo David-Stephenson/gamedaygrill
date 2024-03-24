@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class="h-96 rounded-none md:rounded-[25px] overflow-hidden border-2 border-red-500 mt-4"
+  class="h-96 rounded-none md:rounded-[25px] overflow-hidden border-2 border-red-500"
 >
   <Splide
     aria-label="My Favorite Images"

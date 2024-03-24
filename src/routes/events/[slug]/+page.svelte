@@ -5,7 +5,7 @@
 
 <article>
   <header
-    class="relative h-96 w-full rounded-none md:rounded-[25px] overflow-hidden border-2 border-red-500 mt-4"
+    class="relative h-96 w-full rounded-none md:rounded-[25px] overflow-hidden border-2 border-red-500"
   >
     <picture class="w-full h-full rounded-full">
       <source type="image/avif" srcset="{data.meta.image}.avif" />

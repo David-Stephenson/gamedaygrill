@@ -6,7 +6,7 @@
   <title>Events | Game Day Grill</title>
 </svelte:head>
 
-<div class="container mx-auto px-4 py-12">
+<div class="container mx-auto px-4">
   <div class="flex flex-wrap justify-center gap-8">
     {#each data.events as event}
       <a

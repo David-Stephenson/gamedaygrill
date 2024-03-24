@@ -108,9 +108,8 @@
 </svelte:head>
 
 <!-- Section buttons -->
-
 <div
-  class="mx-auto sticky top-0 bg-white/45 backdrop-blur-md py-3 px-1 z-10 border-2 border-t-0 border-red-500 rounded-b-[25px]"
+  class="mx-auto sticky top-0 bg-white/45 backdrop-blur-md py-3 px-1 z-10 border-2 border-t-0 border-red-500 rounded-b-[25px] -mt-4"
 >
   <div class="flex flex-wrap justify-center">
     {#each Object.keys(menu) as section (section)}
@@ -145,7 +144,7 @@
 </div>
 
 <!-- Modal -->
-<div class="" use:melt={$portalled}>
+<div use:melt={$portalled}>
   {#if $open}
     <!-- Background -->
     <div
