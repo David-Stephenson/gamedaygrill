@@ -40,10 +40,10 @@
             />
           {/each}
         </div>
-        <p class="text-gray-700 dark:text-gray-200 text-center flex-grow mt-4">
+        <p class="text-gray-700 dark:text-gray-200 text-center flex-grow mt-1">
           {review.reviewText}
         </p>
-        <div class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
+        <div class="text-center text-sm text-gray-500 dark:text-gray-400 mt-1">
           {review.reviewerName}
         </div>
       </div>
