@@ -6,11 +6,13 @@
   import CustomerReview from '$components/home/CustomerReview.svelte';
   import { ChevronRight } from 'lucide-svelte';
   import { popular_now } from '$lib/menu.js';
+
+  import { information } from '$lib/config.js';
 </script>
 
 <!-- HTML Head -->
 <svelte:head>
-  <title>Game Day Grill</title>
+  <title>Game Day Grill | {information.slogan}</title>
 </svelte:head>
 
 <Carousel />
@@ -30,9 +32,7 @@
   </div>
 
   <!-- Popular items cards  -->
-  <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-  >
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
     {#each popular_now as item, index}
       <div
         class="flex flex-col w-full h-full rounded-[25px] border-2 border-red-500 bg-white dark:bg-neutral-800"
@@ -81,13 +81,13 @@
   </div>
 </div>
 
-<!-- Cutomer Reviews -->
+<!-- Customer Reviews -->
 <CustomerReview />
 
-<!-- News letter -->
+<!-- Newsletter -->
 <div class="rounded-[25px] overflow-hidden border-2 border-red-500">
   <div class="bg-white dark:bg-neutral-800 p-8">
-    <div class="max-w-md mx-auto">
+    <div class="max-w-md mx-auto text-center">
       <h2 class="text-2xl font-bold text-center mb-4 text-red-500">
         Stay Connected
       </h2>
@@ -96,7 +96,7 @@
         events, and the latest news from Game Day Grill.
       </p>
       <form
-        class="flex flex-col sm:flex-row items-center gap-4"
+        class="flex flex-col items-center gap-4"
         on:submit|preventDefault={() => {
           toast.success("You're now subscribed to our newsletter!", {
             icon: '📧',
@@ -108,10 +108,10 @@
           name="email"
           placeholder="Enter your email"
           required
-          class="px-4 py-2 border rounded-full w-full sm:w-2/3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+          class="px-4 py-2 border rounded-full w-full focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
         />
         <button
-          class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full w-full sm:w-1/3 transition duration-150 ease-in-out"
+          class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full w-full transition duration-150 ease-in-out"
         >
           Subscribe
         </button>
