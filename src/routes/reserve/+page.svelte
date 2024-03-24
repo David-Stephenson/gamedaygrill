@@ -30,7 +30,6 @@
 
   $: {
     phoneDetails = phone(phoneNum);
-    console.log(phoneDetails);
   }
 </script>
 

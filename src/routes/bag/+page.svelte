@@ -37,14 +37,9 @@
   }
 
   function removeItem(id) {
-    console.log(id);
     bag.update(bagContent => {
       return bagContent.filter(item => item.orderId !== id);
     });
-  }
-
-  $: {
-    console.log(bagContent);
   }
 </script>
 

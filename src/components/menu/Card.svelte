@@ -3,8 +3,6 @@
 
   const dispatch = createEventDispatcher();
   export let item;
-
-  console.log(item);
 </script>
 
 <button

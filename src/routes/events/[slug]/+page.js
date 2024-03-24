@@ -1,7 +1,6 @@
 import { error } from '@sveltejs/kit';
 
 export async function load({ params }) {
-  console.log(params);
   try {
     const post = await import(`../../../events/${params.slug}.md`);
     return {
