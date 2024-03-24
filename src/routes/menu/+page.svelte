@@ -31,11 +31,12 @@
     if (selectedOptions[category][choice]) {
       delete selectedOptions[category][choice];
     } else {
-      if (Object.keys(selectedOptions[category]).length < selectMax) {
-        selectedOptions[category][choice] = true;
-      } else {
-        return;
+      if (Object.keys(selectedOptions[category]).length >= selectMax) {
+        // If the maximum limit is reached, unselect the first selected item
+        const firstSelectedItem = Object.keys(selectedOptions[category])[0];
+        delete selectedOptions[category][firstSelectedItem];
       }
+      selectedOptions[category][choice] = true;
     }
 
     selectedOptions = { ...selectedOptions };
@@ -208,7 +209,7 @@
               <img
                 src="{selectedItem.image}.png"
                 alt={selectedItem.name}
-                class="w-96 object-cover"
+                class="w-96 object-cover drop-shadow"
                 loading="lazy"
               />
             </picture>
