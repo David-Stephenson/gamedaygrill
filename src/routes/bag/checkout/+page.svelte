@@ -26,6 +26,11 @@
   let phoneDetails;
 
   function handleSubmit() {
+    if (!cardDetails.isValid) {
+      toast.error('Please enter a valid card number.');
+      return;
+    }
+
     if (!phoneDetails.isValid) {
       toast.error('Please enter a valid phone number.');
       return;
