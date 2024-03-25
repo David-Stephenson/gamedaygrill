@@ -112,7 +112,7 @@
               <div class="w-1/6 text-center dark:text-white">
                 ${(item.price * item.quantity).toFixed(2)}
               </div>
-              <div class="w-1/6 text-center">
+              <div class="w-1/6 text-center flex items-center justify-center">
                 <button
                   on:click={() => removeItem(item.orderId)}
                   class="text-red-500 hover:text-red-700 focus:outline-none"
