@@ -43,6 +43,7 @@
       zoom: initialState.zoom,
       pitch: initialState.pitch,
       bearing: initialState.bearing,
+      attributionControl: false,
     });
 
     // Get system theme and listen for system theme changes
@@ -53,6 +54,8 @@
         .addEventListener('change', event => {
           isDarkMode = event.matches;
         });
+
+      console.log(map);
     });
 
     map.on('move', () => {
