@@ -1,4 +1,6 @@
 <script>
+  import { browser } from '$app/environment';
+
   import { onMount, onDestroy } from 'svelte';
   import pkg from 'mapbox-gl';
   const { Map } = pkg;
@@ -7,6 +9,7 @@
   let map;
   let mapContainer;
   let lng, lat, zoom, pitch, bearing;
+  let isDarkMode;
 
   lng = -83.1099;
   lat = 40.1021;
@@ -35,17 +38,36 @@
       container: mapContainer,
       accessToken:
         'pk.eyJ1Ijoic3RhY2syNzU0IiwiYSI6ImNsa2ExcjYybzAyY2UzY3BoODluYWNwNHEifQ.3VEJkpyfWNjLcgqVZ7N55w',
-      style: 'mapbox://styles/stack2754/clsqkity3006a01o19ucrh05z',
+      style: 'mapbox://styles/mapbox/standard',
       center: [initialState.lng, initialState.lat],
       zoom: initialState.zoom,
       pitch: initialState.pitch,
       bearing: initialState.bearing,
     });
 
+    // Get system theme and listen for system theme changes
+    map.on('style.load', () => {
+      isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', event => {
+          isDarkMode = event.matches;
+        });
+    });
+
     map.on('move', () => {
       updateData();
     });
   });
+
+  // Detect when isDarkMode changes and update map theme
+  $: {
+    if (isDarkMode === true) {
+      map.setConfigProperty('basemap', 'lightPreset', 'night');
+    } else if (isDarkMode === false) {
+      map.setConfigProperty('basemap', 'lightPreset', 'day');
+    }
+  }
 </script>
 
 <div>
