@@ -10,13 +10,13 @@
   class="fixed top-[-50px] left-0 h-screen w-screen flex justify-center overflow-hidden pointer-events-none z-[-1]"
 >
   <Confetti
-    x={[-5, 5]}
+    x={[-7, 7]}
     y={[0, 0.1]}
     delay={[500, 2000]}
     infinite
     rounded
-    duration="5000"
-    amount="250"
+    duration="6000"
+    amount="350"
     fallDistance="100vh"
   />
 </div>
