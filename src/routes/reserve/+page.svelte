@@ -1,15 +1,21 @@
 <script>
   import { phone } from 'phone';
+  import toast from 'svelte-french-toast';
   import { goto } from '$app/navigation';
   import { reservations } from '$lib/stores';
-  import toast from 'svelte-french-toast';
+  import { hours } from '$lib/config';
 
   let partyName = '';
   let date = '';
   let time = '';
+  let email = '';
+  let guests = '';
+  let specialRequests = '';
 
   let phoneNum = '';
   let phoneDetails;
+
+  let timeOptions = [];
 
   function handleSubmit() {
     if (!phoneDetails.isValid) {
@@ -23,13 +29,44 @@
         partyName,
         date,
         time,
+        phoneNum,
+        email,
+        guests,
+        specialRequests,
       },
     ]);
     goto(`/reserve/complete?partyName=${partyName}&date=${date}&time=${time}`);
   }
 
-  $: {
-    phoneDetails = phone(phoneNum);
+  $: phoneDetails = phone(phoneNum);
+
+  $: if (date) {
+    const selectedDate = new Date(date);
+    const dayOfWeek = selectedDate.toLocaleDateString('en-US', {
+      weekday: 'long',
+    });
+    const operatingHours = hours.find(day => day.day === dayOfWeek);
+
+    if (operatingHours) {
+      timeOptions = generateTimeOptions(
+        operatingHours.hours.open,
+        operatingHours.hours.close,
+      );
+    }
+  }
+
+  function generateTimeOptions(open, close) {
+    let options = [];
+    for (let hour = open; hour <= close; hour++) {
+      ['00', '30'].forEach(minute => {
+        if (!(hour === close && minute === '30')) {
+          // Prevent adding 30 minutes past closing time
+          const timeFormat = `${hour % 12 === 0 ? 12 : hour % 12}:${minute} ${hour < 12 || hour === 24 ? 'AM' : 'PM'}`;
+          options.push(timeFormat);
+        }
+      });
+    }
+    return options;
   }
 </script>
 
@@ -90,6 +127,7 @@
               placeholder="Enter email"
               type="email"
               required
+              bind:value={email}
             />
           </div>
         </div>
@@ -116,56 +154,37 @@
               class="block text-gray-700 dark:text-gray-200 font-bold mb-2"
               >Select Time</label
             >
-            <input
+            <select
               id="time"
               class="w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
-              placeholder="Select time"
-              type="time"
               required
               bind:value={time}
-            />
+            >
+              <option value="" disabled selected>Select time</option>
+              {#each timeOptions as timeOption}
+                <option value={timeOption}>{timeOption}</option>
+              {/each}
+            </select>
           </div>
         </div>
-
         <div>
           <label
             for="guests"
             class="block text-gray-700 dark:text-gray-200 font-bold mb-2"
             >Number of Guests</label
           >
-          <div class="relative">
-            <select
-              id="guests"
-              class="appearance-none w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
-              required
-            >
-              <option value="" disabled selected hidden
-                >Select number of guests</option
-              >
-              {#each Array.from({ length: 9 }, (_, i) => i + 1) as number (number)}
-                <option value={number}>{number}</option>
-              {/each}
-              <option value="10+" disabled
-                >10+ Please contact Game Day Grill</option
-              >
-            </select>
-            <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-700 dark:text-gray-200"
-            >
-              <svg
-                class="h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
+          <select
+            id="guests"
+            class="appearance-none w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
+            required
+            bind:value={guests}
+          >
+            <option value="" disabled selected>Select number of guests</option>
+            {#each Array.from({ length: 9 }, (_, i) => i + 1) as number}
+              <option value={number}>{number}</option>
+            {/each}
+            <option value="10+">10+ Please contact Game Day Grill</option>
+          </select>
         </div>
         <div>
           <label
@@ -178,14 +197,13 @@
             class="w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-gray-200 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-red-500"
             placeholder="Enter any special requests"
             rows="3"
+            bind:value={specialRequests}
           ></textarea>
         </div>
         <button
           class="w-full py-3 px-6 bg-red-500 text-white font-bold rounded-full hover:bg-red-600 transition-colors duration-300"
-          type="submit"
+          type="submit">Reserve Now</button
         >
-          Reserve Now
-        </button>
       </form>
     </div>
   </div>

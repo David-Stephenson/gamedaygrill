@@ -1,13 +1,11 @@
 <script>
-  let hoursData = [
-    { day: 'Monday', hours: '11am - 11pm' },
-    { day: 'Tuesday', hours: '11am - 11pm' },
-    { day: 'Wednesday', hours: '11am - 11pm' },
-    { day: 'Thursday', hours: '11am - 11pm' },
-    { day: 'Friday', hours: '11am - 1am' },
-    { day: 'Saturday', hours: '11am - 1am' },
-    { day: 'Sunday', hours: '11am - 10pm' },
-  ];
+  import { hours } from '$lib/config.js';
+
+  function formatTime(hour) {
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const formattedHour = hour % 12 || 12;
+    return `${formattedHour}:00 ${ampm}`;
+  }
 </script>
 
 <div
@@ -18,7 +16,7 @@
     <div class="flex-1 p-2 text-center">Hours</div>
   </div>
   <div class="flex flex-col flex-grow">
-    {#each hoursData as { day, hours }}
+    {#each hours as { day, hours: { open, close } }}
       <div class="flex flex-grow border-t border-red-500 dark:border-red-600">
         <div
           class="flex-1 p-2 text-center flex items-center justify-center text-gray-800 dark:text-gray-200"
@@ -28,7 +26,7 @@
         <div
           class="flex-1 p-2 text-center flex items-center justify-center text-gray-800 dark:text-gray-200"
         >
-          {hours}
+          {formatTime(open)} - {formatTime(close)}
         </div>
       </div>
     {/each}
