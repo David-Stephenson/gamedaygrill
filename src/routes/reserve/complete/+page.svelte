@@ -22,22 +22,22 @@
   <title>Reservation Complete | Game Day Grill</title>
 </svelte:head>
 
-<div class="flex-grow flex items-center justify-center">
-  <div
-    class="fixed top-[-50px] left-0 h-screen w-screen flex justify-center overflow-hidden pointer-events-none z-[-1]"
-  >
-    <Confetti
-      x={[-5, 5]}
-      y={[0, 0.1]}
-      delay={[500, 2000]}
-      infinite
-      rounded
-      duration="5000"
-      amount="250"
-      fallDistance="100vh"
-    />
-  </div>
+<div
+  class="fixed top-[-50px] left-0 h-screen w-screen flex justify-center overflow-hidden pointer-events-none z-[-1]"
+>
+  <Confetti
+    x={[-7, 7]}
+    y={[0, 0.1]}
+    delay={[500, 2000]}
+    infinite
+    rounded
+    duration="6000"
+    amount="350"
+    fallDistance="100vh"
+  />
+</div>
 
+<div class="flex-grow flex items-center justify-center">
   <section class="flex justify-center items-center py-12">
     <div
       class="backdrop-blur max-w-xl mx-auto py-6 px-4 rounded-[25px] shadow-md text-center border-2 border-red-500 dark:text-white"
