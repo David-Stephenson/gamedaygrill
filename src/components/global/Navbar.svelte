@@ -35,14 +35,18 @@
 <div
   class="text-gray-800 dark:text-white py-5 relative backdrop-blur border-b-2 border-red-500 dark:bg-neutral-900"
 >
-  <nav class="flex justify-between items-center md:mx-12 2xl:mx-52">
-    <a
-      href="/"
-      class="text-2xl text-center text-red-500 font-russo flex items-center"
-    >
-      <LogoComponent class="h-8 fill-current" />
-      <span class="ml-3 hidden md:inline">{information.name}</span>
-    </a>
+  <nav class="flex items-center justify-between md:mx-12 2xl:mx-52">
+    <div class="flex items-center">
+      <a
+        href="/"
+        class="text-2xl text-center text-red-500 font-russo flex items-center ml-4 md:ml-0"
+      >
+        <LogoComponent class="h-8 fill-current" />
+        <span class="ml-3 hidden md:inline whitespace-nowrap"
+          >{information.name}</span
+        >
+      </a>
+    </div>
     <div
       class="hidden md:flex justify-center flex-grow text-gray-800 dark:text-white"
     >
@@ -52,9 +56,7 @@
         >
       {/each}
     </div>
-    <div
-      class="lg:hidden flex items-center justify-center flex-grow text-gray-800 dark:text-white"
-    >
+    <div class="md:hidden flex items-center justify-center flex-grow">
       <!-- Bag icon -->
       <a href="/bag" class="text-sm mx-4 relative">
         <ShoppingBag />
@@ -72,7 +74,7 @@
         <User2 />
       </a>
     </div>
-    <div class="hidden lg:flex items-center text-gray-800 dark:text-white">
+    <div class="hidden md:flex items-center text-gray-800 dark:text-white">
       <!-- Bag icon -->
       <a href="/bag" class="text-sm mx-4 relative">
         <ShoppingBag />
@@ -90,12 +92,14 @@
         <User2 />
       </a>
     </div>
-    <button
-      class="lg:hidden flex items-center px-3 py-2 text-gray-800 dark:text-white"
-      on:click={toggleDropdown}
-    >
-      <Menu />
-    </button>
+    <div class="md:hidden flex items-center justify-end mr-4">
+      <button
+        class="flex items-center px-3 py-2 text-gray-800 dark:text-white"
+        on:click={toggleDropdown}
+      >
+        <Menu />
+      </button>
+    </div>
   </nav>
 </div>
 
@@ -103,7 +107,7 @@
 {#if isOpen}
   <div
     id="dropdown"
-    class="lg:hidden absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-800 rounded-md shadow-lg z-50 overflow-hidden"
+    class="md:hidden absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-800 rounded-md shadow-lg z-50 overflow-hidden"
   >
     {#each Object.entries(links) as [name, url]}
       <a
@@ -112,5 +116,35 @@
         on:click={closeDropdown}>{name}</a
       >
     {/each}
+    <!-- Bag icon -->
+    <a
+      href="/bag"
+      class="block px-4 py-2 text-base text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700"
+      on:click={closeDropdown}
+    >
+      Bag
+      {#if bagCount}
+        <span
+          class="bg-red-500 text-white text-xs rounded-full px-2 py-0.5 ml-2"
+          >{bagCount}</span
+        >
+      {/if}
+    </a>
+    <!-- Account icon -->
+    <a
+      href="/account"
+      class="block px-4 py-2 text-base text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700"
+      on:click={closeDropdown}
+    >
+      Account
+    </a>
   </div>
 {/if}
+
+<style>
+  @media (max-width: 767px) {
+    .whitespace-nowrap {
+      font-size: 1.25rem;
+    }
+  }
+</style>
