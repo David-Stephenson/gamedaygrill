@@ -19,7 +19,9 @@
   };
 </script>
 
-<footer class="bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-white">
+<footer
+  class="backdrop-blur bg-gray-100/50 text-gray-800 dark:bg-neutral-800 dark:text-white"
+>
   <div class="container mx-auto px-4 py-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
       <div class="flex justify-center md:justify-start items-center space-x-2">
