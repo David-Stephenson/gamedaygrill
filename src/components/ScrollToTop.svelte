@@ -17,7 +17,7 @@
 
 {#if showButton}
   <button
-    class="fixed bottom-4 right-4 bg-red-500 text-white rounded-full p-4 shadow-md hover:bg-red-600 transition-colors duration-300"
+    class="fixed bottom-4 right-4 bg-red-500 text-white rounded-full p-4 drop-shadow-md hover:drop-shadow-lg transition-drop-shadow duration-300 z-50 -mx-3 -my-1"
     on:click={scrollToTop}
     transition:scale={{ duration: 300, start: 0.8 }}
   >
