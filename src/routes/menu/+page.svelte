@@ -102,8 +102,6 @@
     const top = rect.top + window.pageYOffset - stickyElHeight - 20;
     window.scrollTo({ top, behavior: 'smooth' });
   }
-
-  function triggerConfetti(event) {}
 </script>
 
 <svelte:head>
@@ -163,7 +161,7 @@
            w-full max-w-md md:max-w-2xl lg:max-w-4xl max-h-[85vh]
            mx-auto p-6 md:p-6 space-y-4 md:space-y-6
            bg-white dark:bg-neutral-800 rounded-[25px] shadow-2xl
-           overflow-auto border-2 border-red-500"
+           overflow-auto"
       transition:scale={{
         duration: 250,
         opacity: 0.0,
@@ -199,10 +197,10 @@
         </p>
       </div>
 
-      <!-- Item image -->
-      <div class="flex flex-col md:flex-row gap-4">
+      <!-- Item image and options -->
+      <div class="flex flex-col md:flex-row gap-4 items-center">
         <div class="md:flex-1">
-          <div class="srounded-[25px] overflow-hidden">
+          <div class="rounded-[25px] overflow-hidden">
             <picture class="aspect-w-1 aspect-h-1 w-full">
               <source type="image/avif" srcset="{selectedItem.image}.avif" />
               <source type="image/webp" srcset="{selectedItem.image}.webp" />
@@ -222,7 +220,7 @@
             <div class="space-y-2">
               {#each selectedItem.options as option (option.name)}
                 <div>
-                  <h3 class="text-lg font-semibold dark:text-white">
+                  <h3 class="text-lg font-semibold dark:text-white mb-1">
                     {option.name}
                   </h3>
                   <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
@@ -254,8 +252,8 @@
           {#if quantity == 0}
             <button
               class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-150 flex items-center justify-center"
-              on:click={() => {
-                updateBag(1);
+              on:click={event => {
+                updateBag(1, event);
               }}
             >
               <span class="mr-1"><ShoppingBag size="20" /></span> Add to Bag
