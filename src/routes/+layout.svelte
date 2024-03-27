@@ -1,9 +1,10 @@
 <script>
-  import '../app.css';
   import { Toaster } from 'svelte-french-toast';
+
+  import '../app.css';
   import Navbar from '$components/global/Navbar.svelte';
   import Footer from '$components/global/Footer.svelte';
-  import ScrollToTop from '$components/ScrollToTop.svelte';
+  import ScrollToTop from '$components/global/ScrollToTop.svelte';
   import Confetti from '$components/global/Confetti.svelte';
   import { confettiEnabled } from '$lib/stores.js';
 </script>

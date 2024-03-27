@@ -1,5 +1,4 @@
 <script>
-  import { information, contact } from '$config';
   import {
     Facebook,
     Twitter,
@@ -9,8 +8,10 @@
     MapPin,
     Mail,
   } from 'lucide-svelte';
+  import { information, contact } from '$config';
   import Logo from '$components/global/Logo.svelte';
 
+  // Social icons links that will be displayed in the footer
   const socialLinks = {
     Facebook: { component: Facebook, url: 'https://www.facebook.com' },
     Twitter: { component: Twitter, url: 'https://www.twitter.com' },
@@ -20,11 +21,12 @@
 </script>
 
 <footer
-  class="backdrop-blur bg-gray-100/50 text-gray-800 dark:bg-neutral-800/40 dark:text-white z-10"
+  class="z-10 bg-gray-100/50 text-gray-800 backdrop-blur dark:bg-neutral-800/40 dark:text-white"
 >
-  <div class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-      <div class="flex justify-center md:justify-start items-center space-x-2">
+  <!-- Name and slogan -->
+  <div class="container px-4 py-8 mx-auto">
+    <div class="grid grid-cols-1 gap-8 items-center md:grid-cols-3">
+      <div class="flex items-center justify-center space-x-2 md:justify-start">
         <Logo class="h-8 fill-red-500" />
         <div>
           <h5 class="text-xl font-russo text-red-500">
@@ -35,39 +37,43 @@
           </p>
         </div>
       </div>
-      <div class="flex flex-col items-center space-y-2">
+
+      <!-- General information -->
+      <nav class="flex flex-col items-center space-y-2">
         <a
-          class="text-sm flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-red-500"
+          class="flex items-center gap-2 text-sm text-gray-600 hover:text-red-500 dark:text-gray-400"
           href="tel:{contact.phone}"
         >
           <Phone size="16" /><span>{contact.phone}</span>
         </a>
         <a
-          class="text-sm flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-red-500"
+          class="flex items-center gap-2 text-sm text-gray-600 hover:text-red-500 dark:text-gray-400"
           href="mailto:{contact.email}"
         >
           <Mail size="16" /><span>{contact.email}</span>
         </a>
         <a
-          class="text-sm flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-red-500"
+          class="flex items-center gap-2 text-sm text-gray-600 hover:text-red-500 dark:text-gray-400"
           href="#"
         >
           <MapPin size="16" /><span>{contact.address}</span>
         </a>
-      </div>
-      <div class="flex justify-center md:justify-end">
+      </nav>
+
+      <!-- Social media icons -->
+      <nav class="flex justify-center md:justify-end">
         <div class="flex space-x-4">
           {#each Object.entries(socialLinks) as [name, link]}
             <a
               href={link.url}
-              class="text-gray-600 dark:text-gray-400 hover:text-red-500"
+              class="text-gray-600 hover:text-red-500 dark:text-gray-400"
             >
               <svelte:component this={link.component} size={20} />
             </a>
           {/each}
         </div>
-      </div>
+      </nav>
     </div>
   </div>
-  <div class="h-2 w-full bg-red-500" />
+  <div class="w-full h-2 bg-red-500" />
 </footer>

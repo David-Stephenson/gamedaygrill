@@ -1,6 +1,6 @@
 <script>
-  import { particlesInit } from '@tsparticles/svelte';
   import { onMount, onDestroy } from 'svelte';
+  import { particlesInit } from '@tsparticles/svelte';
   import { loadSlim } from '@tsparticles/slim';
   import { confetti } from '@tsparticles/confetti';
 

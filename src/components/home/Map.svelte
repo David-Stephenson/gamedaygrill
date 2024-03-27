@@ -1,6 +1,4 @@
 <script>
-  import { browser } from '$app/environment';
-
   import { onMount, onDestroy } from 'svelte';
   import pkg from 'mapbox-gl';
   const { Map } = pkg;
@@ -11,12 +9,14 @@
   let lng, lat, zoom, pitch, bearing;
   let isDarkMode;
 
+  // Starting data
   lng = -83.1099;
   lat = 40.1021;
   zoom = 18.35;
   pitch = 48.56313198624079;
   bearing = 128.29087118596465;
 
+  // Update data when the map moves
   function updateData() {
     zoom = map.getZoom();
     lng = map.getCenter().lng;
@@ -26,23 +26,16 @@
   }
 
   onMount(() => {
-    const initialState = {
-      lng: lng,
-      lat: lat,
-      zoom: zoom,
-      pitch: pitch,
-      bearing: bearing,
-    };
-
+    // Initialize map
     map = new Map({
       container: mapContainer,
       accessToken:
         'pk.eyJ1Ijoic3RhY2syNzU0IiwiYSI6ImNsa2ExcjYybzAyY2UzY3BoODluYWNwNHEifQ.3VEJkpyfWNjLcgqVZ7N55w',
       style: 'mapbox://styles/mapbox/standard',
-      center: [initialState.lng, initialState.lat],
-      zoom: initialState.zoom,
-      pitch: initialState.pitch,
-      bearing: initialState.bearing,
+      center: [lng, lat],
+      zoom: zoom,
+      pitch: pitch,
+      bearing: bearing,
       attributionControl: false,
     });
 
@@ -54,13 +47,16 @@
         .addEventListener('change', event => {
           isDarkMode = event.matches;
         });
-
-      console.log(map);
     });
 
     map.on('move', () => {
       updateData();
     });
+  });
+
+  // Destroy map on unmount
+  onDestroy(() => {
+    map = null;
   });
 
   // Detect when isDarkMode changes and update map theme
@@ -73,11 +69,7 @@
   }
 </script>
 
-<div>
-  <div>
-    <div class="map" bind:this={mapContainer} />
-  </div>
-</div>
+<div class="map" bind:this={mapContainer} />
 
 <style>
   .map {
