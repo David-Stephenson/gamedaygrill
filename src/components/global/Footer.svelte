@@ -20,7 +20,7 @@
 </script>
 
 <footer
-  class="backdrop-blur bg-gray-100/50 text-gray-800 dark:bg-neutral-800 dark:text-white"
+  class="backdrop-blur bg-gray-100/50 text-gray-800 dark:bg-neutral-800/40 dark:text-white z-10"
 >
   <div class="container mx-auto px-4 py-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -69,5 +69,5 @@
       </div>
     </div>
   </div>
-  <div class="h-2 w-full bg-red-500"></div>
+  <div class="h-2 w-full bg-red-500" />
 </footer>
