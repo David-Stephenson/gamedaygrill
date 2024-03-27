@@ -33,7 +33,7 @@
 </script>
 
 <div
-  class="backdrop-blur text-gray-800 dark:text-white py-5 relative border-b-2 border-red-500 dark:bg-neutral-900/40"
+  class="backdrop-blur text-gray-800 dark:text-white py-5 relative border-b-2 border-red-500 dark:bg-neutral-900/40 z-10"
 >
   <nav class="flex items-center justify-between md:mx-12 2xl:mx-52">
     <div class="flex items-center">
