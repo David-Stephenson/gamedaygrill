@@ -4,6 +4,8 @@
   import Navbar from '$components/global/Navbar.svelte';
   import Footer from '$components/global/Footer.svelte';
   import ScrollToTop from '$components/ScrollToTop.svelte';
+  import Confetti from '$components/global/Confetti.svelte';
+  import { confettiEnabled } from '$lib/stores.js';
 </script>
 
 <!-- Import Fonts -->
@@ -30,7 +32,7 @@
 
   <!-- Site Content -->
   <content
-    class="flex-grow flex flex-col mx-4 md:mx-12 2xl:mx-52 my-4 dark:text-white"
+    class="flex-grow flex flex-col mx-4 md:mx-12 2xl:mx-52 my-4 dark:text-white z-50"
   >
     <slot />
     <Toaster />
@@ -40,3 +42,7 @@
   <!-- Footer -->
   <Footer />
 </main>
+
+{#if $confettiEnabled}
+  <Confetti />
+{/if}

@@ -1,42 +1,39 @@
 <script>
-  import { Confetti } from 'svelte-confetti';
+  import { confettiEnabled } from '$lib/stores.js';
+  import { onDestroy } from 'svelte';
+  import { Home } from 'lucide-svelte';
+
+  // Enable confetti
+  confettiEnabled.set(true);
+
+  // Disable confetti on page destroy
+  onDestroy(() => {
+    confettiEnabled.set(false);
+  });
 </script>
 
 <svelte:head>
   <title>Order Success | Game Day Grill</title>
 </svelte:head>
 
-<div
-  class="fixed top-[-50px] left-0 h-screen w-screen flex justify-center overflow-hidden pointer-events-none z-[-1]"
->
-  <Confetti
-    x={[-7, 7]}
-    y={[0, 0.1]}
-    delay={[500, 2000]}
-    infinite
-    rounded
-    duration="6000"
-    amount="350"
-    fallDistance="100vh"
-  />
-</div>
-
-<div class="flex-grow flex items-center justify-center">
+<div class="flex flex-grow items-center justify-center">
   <div
-    class="backdrop-blur shadow-lg rounded-[25px] p-10 border-2 border-red-500 text-center dark:text-white relative z-10"
+    class="relative z-10 rounded-3xl bg-white/20 p-10 text-center shadow-lg backdrop-blur-lg dark:bg-neutral-600/20 dark:text-white"
   >
-    <div class="mb-4">
+    <div class="mb-6">
       <h1 class="text-8xl">🎉</h1>
     </div>
-    <h1 class="text-4xl font-bold mb-4">Your Order is In!</h1>
-    <p class="text-xl mb-8">
+    <h1 class="mb-6 text-4xl font-bold">Your Order is In!</h1>
+    <p class="mb-12 text-xl">
       Thank you for your order. We'll call you 10 minutes before your order is
       ready for pickup.
     </p>
     <a
       href="/"
-      class="inline-block bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300"
-      >Back to Home</a
+      class="inline-flex items-center rounded-full bg-red-500 px-8 py-3 text-white transition duration-300 hover:bg-red-600"
     >
+      <Home class="mr-2 h-5 w-5" />
+      Back to Home
+    </a>
   </div>
 </div>

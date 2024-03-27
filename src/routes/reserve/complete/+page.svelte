@@ -1,11 +1,12 @@
 <script>
   import { onMount } from 'svelte';
-  import { Confetti } from 'svelte-confetti';
+  import { confettiEnabled } from '$lib/stores.js';
+  import { onDestroy } from 'svelte';
+  import { Home } from 'lucide-svelte';
 
   let partyName = '';
   let date = '';
   let time = '';
-  let reservationId = '';
 
   onMount(() => {
     // Get the reservation details from the URL parameters or local storage
@@ -13,8 +14,14 @@
     partyName = urlParams.get('partyName');
     date = urlParams.get('date');
     time = urlParams.get('time');
-    // Generate a random reservation ID
-    reservationId = Math.floor(Math.random() * 1000000);
+  });
+
+  // Enable confetti
+  confettiEnabled.set(true);
+
+  // Disable confetti on page destroy
+  onDestroy(() => {
+    confettiEnabled.set(false);
   });
 </script>
 
@@ -22,36 +29,24 @@
   <title>Reservation Complete | Game Day Grill</title>
 </svelte:head>
 
-<div
-  class="fixed top-[-50px] left-0 h-screen w-screen flex justify-center overflow-hidden pointer-events-none z-[-1]"
->
-  <Confetti
-    x={[-7, 7]}
-    y={[0, 0.1]}
-    delay={[500, 2000]}
-    infinite
-    rounded
-    duration="6000"
-    amount="350"
-    fallDistance="100vh"
-  />
-</div>
-
-<div class="flex-grow flex items-center justify-center">
-  <section class="flex justify-center items-center py-12">
-    <div
-      class="backdrop-blur max-w-xl mx-auto py-6 px-4 rounded-[25px] shadow-md text-center border-2 border-red-500 dark:text-white"
-    >
-      <h2 class="text-2xl font-bold mb-4">Thank You for Your Reservation!</h2>
-      <p class="mb-4">
-        We have reserved a table for <strong>{partyName}</strong> on
-        <strong>{date}</strong>
-        at <strong>{time}</strong>.
-      </p>
-      <p>
-        Your reservation ID is <strong>{reservationId}</strong>. Please keep
-        this ID for your records.
-      </p>
+<div class="flex flex-grow items-center justify-center">
+  <div
+    class="relative z-10 rounded-3xl bg-white/20 p-10 text-center shadow-lg backdrop-blur-lg dark:bg-neutral-600/20 dark:text-white"
+  >
+    <div class="mb-6">
+      <h1 class="text-8xl">🎉</h1>
     </div>
-  </section>
+    <h1 class="mb-6 text-4xl font-bold">Thank You for Your Reservation!</h1>
+    <p class="mb-12 text-xl">
+      We have reserved a table for <strong>{partyName}</strong> on
+      <strong>{date}</strong> at <strong>{time}</strong>!
+    </p>
+    <a
+      href="/"
+      class="inline-flex items-center rounded-full bg-red-500 px-8 py-3 text-white transition duration-300 hover:bg-red-600"
+    >
+      <Home class="mr-2 h-5 w-5" />
+      Back to Home
+    </a>
+  </div>
 </div>

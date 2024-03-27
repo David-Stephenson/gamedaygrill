@@ -19,3 +19,5 @@ function localStore(key, initialValue) {
 
 export const bag = localStore('bag', []);
 export const reservations = localStore('reservations', []);
+
+export const confettiEnabled = writable(false);
